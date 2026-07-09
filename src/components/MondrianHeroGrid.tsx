@@ -38,15 +38,32 @@ function shuffleArray(array: string[]) {
 }
 
 export function MondrianHeroGrid() {
-  const [images, setImages] = useState(IMAGES);
+  const [displayedImages, setDisplayedImages] = useState<string[]>([]);
 
-  // 4초마다 이미지를 섞어서 위치를 바꿈 (퍼즐 이동 효과)
+  // 초기화
+  useEffect(() => {
+    setDisplayedImages(shuffleArray(IMAGES).slice(0, SLOTS.length));
+  }, []);
+
+  // 4초마다 무작위로 1~2개의 이미지만 교체 (부하 최소화, 먹통 방지)
   useEffect(() => {
     const interval = setInterval(() => {
-      setImages(prev => shuffleArray(prev));
+      setDisplayedImages(prev => {
+        const newArr = [...prev];
+        const slotToReplace = Math.floor(Math.random() * SLOTS.length);
+        const availableImages = IMAGES.filter(img => !newArr.includes(img));
+        
+        if (availableImages.length > 0) {
+          const randomNewImage = availableImages[Math.floor(Math.random() * availableImages.length)];
+          newArr[slotToReplace] = randomNewImage;
+        }
+        return newArr;
+      });
     }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  if (displayedImages.length === 0) return null;
 
   if (displayedImages.length === 0) return null;
 
@@ -54,26 +71,23 @@ export function MondrianHeroGrid() {
     <div className="absolute inset-y-0 left-0 w-[45%] h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-8 py-8">
       {/* 4x4 다이나믹 퍼즐 그리드 (2번째 페이지와 동일) */}
       <div className="w-full aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
-        {images.map((src, index) => {
-          const slotClass = SLOTS[index];
+        {SLOTS.map((slotClass, index) => {
+          const currentImg = displayedImages[index];
           return (
-            <motion.div
-              key={src} // src를 key로 써야 서로 위치가 부드럽게 이동함
-              layout
-              transition={{
-                type: "spring",
-                stiffness: 40,
-                damping: 14,
-                mass: 1.2
-              }}
-              className={`relative overflow-hidden rounded-xl bg-white/5 ${slotClass}`}
-            >
-              <img 
-                src={src} 
-                alt={`Hero Lookbook ${index}`} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-              />
-            </motion.div>
+            <div key={index} className={`relative overflow-hidden rounded-xl bg-white/5 ${slotClass}`}>
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={currentImg}
+                  src={currentImg}
+                  alt={`Hero Lookbook ${index}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+            </div>
           );
         })}
       </div>

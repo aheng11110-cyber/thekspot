@@ -8,10 +8,10 @@ export const COPYRIGHT = '© 2026 THE K-SPOT. All rights reserved.';
 export const SITE_CONTENT = {
   EN: {
     hero: {
-      titleLeft: ['Live K-Memes,', 'Active Popups'],
-      titleRight: ['Clean', 'Food Map'],
+      titleLeft: ["Korea's Real Hotspots,", ""],
+      titleRight: ["Only the Trending", "Places Right Now."],
       watermark: 'K-SPOT',
-      description: "Stop getting fooled by fake reviews and outdated travel blogs. We curate real-time popup stores, trending community memes, and 100% ad-free local restaurants that Koreans actually love.",
+      description: "No ads, no outdated info. We curate the hottest pop-up stores, restaurants, cafes, and travel spots in Korea in real-time. Meet Korea's today, faster than anyone.",
     },
     cinematic: {
       text: "Korean trends move at lightning speed. The typical travel guide shows you places that closed six months ago. THE K-SPOT tracks live community forums, maps active popup store schedules, and filters Naver Map ratings to deliver the raw, authentic vibe of Seoul with zero marketing noise.",
@@ -67,10 +67,10 @@ export const SITE_CONTENT = {
   },
   KO: {
     hero: {
-      titleLeft: ['실시간 밈과', '최신 팝업,'],
-      titleRight: ['클린 맛집', '지도'],
+      titleLeft: ['한국의 진짜 핫플,', ''],
+      titleRight: ['지금 가장 인기 있는', '곳만.'],
       watermark: 'K-SPOT',
-      description: "가짜 리뷰나 오래된 여행 블로그에 속지 마세요. 한국인들이 찐으로 좋아하는 실시간 팝업스토어, 트렌디한 커뮤니티 밈, 광고 없는 100% 진짜 맛집만 큐레이션 해드립니다.",
+      description: '광고와 오래된 정보는 빼고, 지금 한국에서 가장 뜨는 팝업스토어, 맛집, 카페, 여행지를 실시간으로 큐레이션합니다. 한국의 오늘을 가장 빠르게 만나보세요.',
     },
     cinematic: {
       text: "한국의 트렌드는 빛의 속도로 변합니다. 평범한 가이드북은 이미 반년 전에 폐업한 곳을 추천하죠. THE K-SPOT은 실시간 커뮤니티 동향, 최신 팝업스토어 일정, 네이버 평점을 엄격하게 필터링하여 마케팅 소음이 0%인 진짜 서울의 바이브를 전달합니다.",
@@ -126,10 +126,10 @@ export const SITE_CONTENT = {
   },
   JP: {
     hero: {
-      titleLeft: ['最新ミームと', 'ポップアップ、'],
-      titleRight: ['クリーン', 'グルメマップ'],
+      titleLeft: ['韓国の本当の', 'ホットプレイス、'],
+      titleRight: ['今最も人気のある', '場所だけ。'],
       watermark: 'K-SPOT',
-      description: "偽のレビューや古いブログに騙されないでください。韓国人が本当に愛するリアルタイムのポップアップストア、トレンドのミーム、広告なしのローカルグルメだけを厳選してお届けします。",
+      description: '広告や古い情報は省き、今韓国で最も熱いポップアップストア、グルメ、カフェ、旅行先をリアルタイムでキュレーションします。韓国の「今日」を誰よりも早く体験してください。',
     },
     cinematic: {
       text: "韓国のトレンドは光の速さで変化します。普通のガイドブックは半年前に閉店した場所を紹介しています。THE K-SPOTは、リアルタイムのコミュニティやポップアップのスケジュールを追跡し、マーケティングノイズのない「本物」のソウルの雰囲気をお届けします。",
@@ -185,10 +185,10 @@ export const SITE_CONTENT = {
   },
   CN: {
     hero: {
-      titleLeft: ['实时韩国热梗，', '最新快闪店，'],
-      titleRight: ['纯净', '美食地图'],
+      titleLeft: ['韩国真正的', '热门打卡地，'],
+      titleRight: ['只去现在', '最火的地方。'],
       watermark: 'K-SPOT',
-      description: "不要再被虚假的评论和过时的旅游博客所欺骗。我们为您精选韩国人真正喜爱的实时快闪店、热门社区热梗，以及100%无广告的当地美食。",
+      description: '告别广告与过时信息，为您实时精选韩国当下最热门的快闪店、美食、咖啡厅与旅行地。带您最快遇见韩国的“今天”。',
     },
     cinematic: {
       text: "韩国的流行趋势瞬息万变。普通的旅游指南会向您推荐半年前就已关门的地点。THE K-SPOT实时追踪社区论坛、绘制最新的快闪店时间表，并过滤掉虚假评分，为您带来零营销噪音的最真实的韩国氛围。",
@@ -244,10 +244,10 @@ export const SITE_CONTENT = {
   },
   VN: {
     hero: {
-      titleLeft: ['Meme Hàn trực tiếp,', 'Pop-up mới nhất,'],
-      titleRight: ['Bản đồ', 'Ẩm thực Sạch'],
+      titleLeft: ['Những địa điểm hot', 'thực sự của Hàn Quốc,'],
+      titleRight: ['Chỉ những nơi', 'phổ biến nhất hiện nay.'],
       watermark: 'K-SPOT',
-      description: "Đừng để bị lừa bởi các đánh giá giả mạo và blog du lịch lỗi thời. Chúng tôi tuyển chọn các cửa hàng pop-up thời gian thực, meme thịnh hành và các nhà hàng địa phương 100% không quảng cáo mà người Hàn Quốc thực sự yêu thích.",
+      description: 'Không có quảng cáo và thông tin lỗi thời. Chúng tôi tuyển chọn các cửa hàng pop-up, nhà hàng, quán cà phê và điểm du lịch hot nhất Hàn Quốc theo thời gian thực. Khám phá Hàn Quốc của ngày hôm nay một cách nhanh nhất.',
     },
     cinematic: {
       text: "Xu hướng ở Hàn Quốc thay đổi với tốc độ ánh sáng. Những cẩm nang du lịch thông thường chỉ cho bạn những nơi đã đóng cửa từ 6 tháng trước. THE K-SPOT theo dõi các diễn đàn trực tiếp, cập nhật lịch trình pop-up và lọc các đánh giá để mang đến cho bạn cảm nhận chân thực nhất về Seoul mà không có bất kỳ tiếng ồn marketing nào.",

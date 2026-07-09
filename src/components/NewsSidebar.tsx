@@ -114,8 +114,7 @@ export function NewsSidebar() {
 
   return (
     <>
-      {/* ──────────────── 사이드바 영역 ──────────────── */}
-      <div className="absolute top-0 right-0 h-full w-[280px] lg:w-[320px] bg-black/50 backdrop-blur-xl border-l border-white/10 z-30 flex flex-col pt-24 pb-12 px-6">
+      <div className="absolute top-0 right-0 h-full w-[280px] lg:w-[320px] bg-black/50 backdrop-blur-xl border-l border-purple-500/30 z-30 flex flex-col pt-24 pb-12 px-6">
         
         {/* 헤더 */}
         <div className="flex items-center gap-3 mb-8">

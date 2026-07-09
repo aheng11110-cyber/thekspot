@@ -97,8 +97,8 @@ export default function App() {
         >
           <div className="flex flex-col gap-6 md:gap-12">
             <h1
-              className="text-white font-light leading-[0.95] tracking-[-0.03em] text-left"
-              style={{ fontSize: 'clamp(40px, 8vw, 90px)' }}
+              className="text-white font-light leading-[1.05] tracking-[-0.03em] text-left"
+              style={{ fontSize: 'clamp(32px, 4.5vw, 60px)' }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}

@@ -38,56 +38,45 @@ function shuffleArray(array: string[]) {
 }
 
 export function MondrianHeroGrid() {
-  const [displayedImages, setDisplayedImages] = useState<string[]>([]);
+  const [images, setImages] = useState(IMAGES);
 
-  // 초기화
-  useEffect(() => {
-    setDisplayedImages(shuffleArray(IMAGES).slice(0, SLOTS.length));
-  }, []);
-
-  // 4초마다 무작위로 1~2개의 이미지만 교체 (부하 최소화, 먹통 방지)
+  // 4초마다 이미지를 섞어서 위치를 바꿈 (퍼즐 이동 효과)
   useEffect(() => {
     const interval = setInterval(() => {
-      setDisplayedImages(prev => {
-        const newArr = [...prev];
-        const slotToReplace = Math.floor(Math.random() * SLOTS.length);
-        const availableImages = IMAGES.filter(img => !newArr.includes(img));
-        
-        if (availableImages.length > 0) {
-          const randomNewImage = availableImages[Math.floor(Math.random() * availableImages.length)];
-          newArr[slotToReplace] = randomNewImage;
-        }
-        return newArr;
-      });
+      setImages(prev => shuffleArray(prev));
     }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-  if (displayedImages.length === 0) return null;
+  if (images.length === 0) return null;
 
-  if (displayedImages.length === 0) return null;
+
 
   return (
     <div className="absolute inset-y-0 left-0 w-full h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-12 py-8">
       {/* 4x4 다이나믹 퍼즐 그리드 (크기 축소) */}
       <div className="w-[85%] lg:w-[80%] xl:w-[75%] aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
-        {SLOTS.map((slotClass, index) => {
-          const currentImg = displayedImages[index];
+        {images.map((src, index) => {
+          const slotClass = SLOTS[index];
           return (
-            <div key={index} className={`relative overflow-hidden rounded-xl bg-white/5 ${slotClass}`}>
-              <AnimatePresence mode="popLayout">
-                <motion.img
-                  key={currentImg}
-                  src={currentImg}
-                  alt={`Hero Lookbook ${index}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </AnimatePresence>
-            </div>
+            <motion.div
+              key={src} // src를 key로 써야 서로 위치가 부드럽게 이동함
+              layout
+              transition={{
+                type: "spring",
+                stiffness: 40,
+                damping: 14,
+                mass: 1.2
+              }}
+              className={`relative overflow-hidden rounded-xl bg-white/5 ${slotClass}`}
+            >
+              <div className="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-500" />
+              <img 
+                src={src} 
+                alt={`Hero Lookbook ${index}`} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
+              />
+            </motion.div>
           );
         })}
       </div>

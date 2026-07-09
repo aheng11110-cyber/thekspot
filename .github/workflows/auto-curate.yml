@@ -31,9 +31,12 @@ jobs:
           NODE_ENV: production
 
       - name: 새로운 데이터 GitHub DB에 자동 저장(Commit)
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "K-SPOT AI Curator"
           git config --global user.email "ai-curator@thekspot.today"
+          git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/aheng11110-cyber/thekspot.git
           git add src/data/curationDB.json
           git commit -m "🤖 AI Auto Update: 새로운 핫플 데이터 추가" || echo "No changes to commit"
           git push

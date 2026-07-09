@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { LocationData } from '../../data/mockCurationData';
-import { Calendar, Instagram, Link2, MapPin, X } from 'lucide-react';
+import { Calendar, Instagram, Link2, MapPin, X, ExternalLink } from 'lucide-react';
 
 interface ScheduleAndLinksProps {
   locations: LocationData[];
@@ -8,6 +9,8 @@ interface ScheduleAndLinksProps {
 }
 
 export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps) {
+  const [selectedInstaUrl, setSelectedInstaUrl] = useState<string | null>(null);
+
   if (locations.length === 0) {
     return (
       <div className="text-white/40 text-sm mt-8 text-center p-8 border border-white/5 rounded-2xl bg-white/[0.02]">
@@ -73,10 +76,16 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
             {loc.links && (
               <div className="flex items-center gap-3 mt-auto">
                 {loc.links.instagram && (
-                  <a href={loc.links.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedInstaUrl(loc.links!.instagram!);
+                    }}
+                    className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
+                  >
                     <Instagram size={14} />
                     Instagram
-                  </a>
+                  </button>
                 )}
                 {loc.links.blog && (
                   <a href={loc.links.blog} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full">
@@ -96,6 +105,62 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
           </div>
         </motion.div>
       ))}
+
+      {/* Instagram Modal */}
+      <AnimatePresence>
+        {selectedInstaUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setSelectedInstaUrl(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-md bg-black border border-white/20 rounded-2xl overflow-hidden flex flex-col"
+              style={{ height: '80vh' }}
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center p-4 border-b border-white/10">
+                <div className="flex items-center gap-2 text-white/80">
+                  <Instagram size={16} />
+                  <span className="text-sm font-medium">Instagram View</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a 
+                    href={selectedInstaUrl} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="p-1.5 text-white/50 hover:text-white transition-colors"
+                    title="새 창으로 열기"
+                  >
+                    <ExternalLink size={16} />
+                  </a>
+                  <button 
+                    onClick={() => setSelectedInstaUrl(null)}
+                    className="p-1.5 text-white/50 hover:text-white transition-colors"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+              </div>
+              
+              <div className="flex-1 w-full bg-white relative">
+                {/* 인스타그램 임베드는 URL 끝에 /embed 를 붙여야 동작합니다 */}
+                <iframe 
+                  src={selectedInstaUrl.endsWith('/') ? selectedInstaUrl + 'embed' : selectedInstaUrl + '/embed'} 
+                  className="w-full h-full border-none"
+                  allowTransparency={true}
+                  allow="encrypted-media"
+                ></iframe>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

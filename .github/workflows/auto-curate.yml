@@ -1,0 +1,39 @@
+name: Daily AI Curation Bot
+
+on:
+  schedule:
+    # 매일 새벽 3시에 자동 실행 (UTC 시간 기준 18:00은 KST 03:00)
+    - cron: '0 18 * * *'
+  # 수동으로도 실행할 수 있도록 허용
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  auto-curate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v3
+
+      - name: Node.js 환경 설정
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: AI 스크립트 실행 (데이터 수집 및 DB 업데이트)
+        run: node scripts/autoCurator.js
+        env:
+          # 나중에 대표님의 AI API 키가 생기면 이곳에 연결됩니다.
+          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NODE_ENV: production
+
+      - name: 새로운 데이터 GitHub DB에 자동 저장(Commit)
+        run: |
+          git config --global user.name "K-SPOT AI Curator"
+          git config --global user.email "ai-curator@thekspot.today"
+          git add src/data/curationDB.json
+          git commit -m "🤖 AI Auto Update: 새로운 핫플 데이터 추가" || echo "No changes to commit"
+          git push

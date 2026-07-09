@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MOCK_LOCATIONS, LocationData } from '../data/mockCurationData';
+import { LocationData, MOCK_LOCATIONS } from '../data/mockCurationData';
+import CURATION_DB from '../data/curationDB.json';
 import { MapDisplay } from './curation/MapDisplay';
 import { ScheduleAndLinks } from './curation/ScheduleAndLinks';
 import { PuzzleLookbook } from './PuzzleLookbook';
@@ -77,7 +78,8 @@ const UI_TEXT = {
 export function CurationSection() {
   const { lang } = useLanguage();
   const text = UI_TEXT[lang];
-  const locations = MOCK_LOCATIONS[lang];
+  // DB에 해당 언어 데이터가 있으면 가져오고, 없으면 기본 MOCK_LOCATIONS 사용 (안전 장치)
+  const locations = (CURATION_DB as Record<string, LocationData[]>)[lang] || MOCK_LOCATIONS[lang];
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);

@@ -78,7 +78,7 @@ export const MOCK_LOCATIONS: Record<Language, LocationData[]> = {
       tags: ["한국음식"], groupSizes: ["2-3명", "4-5명"],
     }
   ],
-  JA: [
+  JP: [
     {
       id: "1", name: "聖水洞 ポップアップストア", city: "ソウル", province: "ソウル", type: "popup",
       description: "ユニークな空間デザインが楽しめる限定展示",
@@ -105,7 +105,7 @@ export const MOCK_LOCATIONS: Record<Language, LocationData[]> = {
       tags: ["韓国料理"], groupSizes: ["2-3人", "4-5人"],
     }
   ],
-  ZH: [
+  CN: [
     {
       id: "1", name: "圣水洞 快闪店", city: "首尔", province: "首尔", type: "popup",
       description: "独特空间设计的限量展览",
@@ -132,7 +132,7 @@ export const MOCK_LOCATIONS: Record<Language, LocationData[]> = {
       tags: ["韩国美食"], groupSizes: ["2-3人", "4-5人"],
     }
   ],
-  VI: [
+  VN: [
     {
       id: "1", name: "Cửa Hàng Pop-up Seongsu", city: "Seoul", province: "Seoul", type: "popup",
       description: "Triển lãm phiên bản giới hạn với thiết kế không gian độc đáo.",

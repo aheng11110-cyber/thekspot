@@ -124,7 +124,7 @@ export const SITE_CONTENT = {
       contactSales: '도입 문의',
     }
   },
-  JA: {
+  JP: {
     hero: {
       titleLeft: ['最新ミームと', 'ポップアップ、'],
       titleRight: ['クリーン', 'グルメマップ'],
@@ -183,7 +183,7 @@ export const SITE_CONTENT = {
       contactSales: 'お問い合わせ',
     }
   },
-  ZH: {
+  CN: {
     hero: {
       titleLeft: ['实时韩国热梗，', '最新快闪店，'],
       titleRight: ['纯净', '美食地图'],
@@ -242,7 +242,7 @@ export const SITE_CONTENT = {
       contactSales: '联系销售',
     }
   },
-  VI: {
+  VN: {
     hero: {
       titleLeft: ['Meme Hàn trực tiếp,', 'Pop-up mới nhất,'],
       titleRight: ['Bản đồ', 'Ẩm thực Sạch'],

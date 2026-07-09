@@ -44,7 +44,7 @@ const MOCK_NEWS = {
       summary: "이번 주말 성수동에서 열리는 가장 핫한 팝업스토어 10곳의 리스트가 공개되었습니다. 인기 뷰티 브랜드부터 한정판 스니커즈 콜라보까지 다양합니다."
     }
   ],
-  JA: [
+  JP: [
     { 
       id: 1, title: "2026年の世界最高の旅行先にソウルが選定", time: "2時間前",
       summary: "世界の主要旅行雑誌が、最先端のインフラ、ポップアップ文化、歴史的な宮殿が完璧に調和している点を評価し、2026年に訪れるべき都市1位にソウルを選定しました。",
@@ -64,7 +64,7 @@ const MOCK_NEWS = {
       summary: "今週末に聖水洞でオープンする最もホットなポップアップストア10選が公開されました。限定のビューティーブランドやファッションコラボが含まれています。"
     }
   ],
-  ZH: [
+  CN: [
     { 
       id: 1, title: "首尔被评为2026年全球最佳旅游目的地", time: "2小时前",
       summary: "全球领先的旅游杂志正式将首尔列为2026年全球必访城市第一名，称赞其超现代基础设施、快闪文化与历史宫殿的完美融合。",
@@ -84,7 +84,7 @@ const MOCK_NEWS = {
       summary: "本周末圣水洞最热门的10家快闪店名单已发布，涵盖了独家美妆和时尚联名品牌。"
     }
   ],
-  VI: [
+  VN: [
     { 
       id: 1, title: "Seoul được vinh danh là điểm đến du lịch hàng đầu năm 2026", time: "2 giờ trước",
       summary: "Các tạp chí du lịch hàng đầu đã chính thức xếp hạng Seoul là thành phố phải đến số 1 thế giới năm 2026, nhờ sự kết hợp hoàn hảo giữa hạ tầng hiện đại, văn hóa pop-up và các cung điện lịch sử.",
@@ -207,8 +207,8 @@ export function NewsSidebar() {
                   <Search size={14} />
                   {lang === 'EN' ? 'Search for more details' : 
                    lang === 'KO' ? '자세한 내용 검색해보기' : 
-                   lang === 'JA' ? '詳細を検索する' : 
-                   lang === 'ZH' ? '搜索更多详情' : 'Tìm kiếm thêm thông tin'}
+                   lang === 'JP' ? '詳細を検索する' : 
+                   lang === 'CN' ? '搜索更多详情' : 'Tìm kiếm thêm thông tin'}
                 </a>
               </div>
             </motion.div>

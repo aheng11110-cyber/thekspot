@@ -122,15 +122,15 @@ export function Navbar({ entranceComplete }: NavbarProps) {
               <i className="bi bi-bookmark-star text-[18px]"></i>
               <span className="text-[14px] font-medium hidden lg:block">
                 {lang === 'KO' ? '내 일정' : 
-                 lang === 'JA' ? 'マイプラン' : 
-                 lang === 'ZH' ? '我的行程' : 
-                 lang === 'VI' ? 'Hành trình của tôi' : 'My Itinerary'}
+                 lang === 'JP' ? 'マイトリップ' :
+                 lang === 'CN' ? '我的行程' : 
+                 lang === 'VN' ? 'Lịch trình của tôi' : 'My Itinerary'}
               </span>
             </motion.button>
 
             {/* Language Selector */}
             <div className="flex items-center gap-1 bg-white/5 rounded-lg p-1 border border-white/10 backdrop-blur-md mr-4">
-              {(['EN', 'KO', 'JA', 'ZH', 'VI'] as Language[]).map(l => (
+              {(['EN', 'KO', 'JP', 'CN', 'VN'] as Language[]).map(l => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
@@ -278,9 +278,9 @@ export function Navbar({ entranceComplete }: NavbarProps) {
               >
                 <option value="EN" className="text-black">EN</option>
                 <option value="KO" className="text-black">KO</option>
-                <option value="JA" className="text-black">JA</option>
-                <option value="ZH" className="text-black">ZH</option>
-                <option value="VI" className="text-black">VI</option>
+                <option value="JP" className="text-black">JP</option>
+                <option value="CN" className="text-black">CN</option>
+                <option value="VN" className="text-black">VN</option>
               </select>
             </div>
 

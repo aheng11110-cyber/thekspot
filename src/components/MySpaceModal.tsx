@@ -76,9 +76,9 @@ export function MySpaceModal({ isOpen, onClose }: MySpaceModalProps) {
               <h2 className="text-xl font-light tracking-tight text-white flex items-center gap-2">
                 <i className="bi bi-bookmark-star"></i>
                 {lang === 'KO' ? '내 일정' : 
-                 lang === 'JA' ? 'マイプラン' : 
-                 lang === 'ZH' ? '我的行程' : 
-                 lang === 'VI' ? 'Hành trình của tôi' : 'My Itinerary'}
+                 lang === 'JP' ? 'マイトリップ' :
+                 lang === 'CN' ? '我的行程' : 
+                 lang === 'VN' ? 'Lịch trình của tôi' : 'My Itinerary'}
               </h2>
               <button
                 onClick={onClose}

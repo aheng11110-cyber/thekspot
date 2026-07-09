@@ -39,15 +39,50 @@ function shuffleArray(array: string[]) {
 }
 
 export function PuzzleLookbook() {
-  const [images, setImages] = useState(IMAGES);
+  const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    // 3초마다 이미지를 랜덤하게 섞어 퍼즐이 움직이는 효과
-    const interval = setInterval(() => {
-      setImages(prev => shuffleArray(prev));
-    }, 3000);
-    return () => clearInterval(interval);
+    setImages(shuffleArray(IMAGES).slice(0, SLOTS.length));
   }, []);
+
+  useEffect(() => {
+    if (images.length === 0) return;
+
+    // 5초마다 주변 작은 사진들 2개끼리 자리 교환
+    const smallInterval = setInterval(() => {
+      setImages(prev => {
+        const newArr = [...prev];
+        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+        const idx1 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        let idx2 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        while (idx1 === idx2) {
+          idx2 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        }
+        const temp = newArr[idx1];
+        newArr[idx1] = newArr[idx2];
+        newArr[idx2] = temp;
+        return newArr;
+      });
+    }, 5000);
+
+    // 10초마다 가운데 큰 사진(index 4)과 주변 사진 자리 교환
+    const centerInterval = setInterval(() => {
+      setImages(prev => {
+        const newArr = [...prev];
+        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+        const randomSmall = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        const temp = newArr[4];
+        newArr[4] = newArr[randomSmall];
+        newArr[randomSmall] = temp;
+        return newArr;
+      });
+    }, 10000);
+
+    return () => {
+      clearInterval(smallInterval);
+      clearInterval(centerInterval);
+    };
+  }, [images.length]);
 
   return (
     <section className="w-full min-h-screen bg-black flex flex-col items-center justify-center p-6 pt-16 md:p-12 md:pt-20 border-b border-white/10 relative overflow-hidden">
@@ -88,6 +123,7 @@ export function PuzzleLookbook() {
                   src={src} 
                   alt={`Lookbook ${index}`} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
+                  style={{ imageRendering: 'high-quality', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
                 />
               </motion.div>
             );

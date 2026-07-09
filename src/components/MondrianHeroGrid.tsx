@@ -53,9 +53,9 @@ export function MondrianHeroGrid() {
 
 
   return (
-    <div className="absolute inset-y-0 left-0 w-full h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-12 py-8">
-      {/* 4x4 다이나믹 퍼즐 그리드 (크기 축소) */}
-      <div className="w-[85%] lg:w-[80%] xl:w-[75%] aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
+    <div className="absolute inset-y-0 left-0 w-full h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-8 py-8">
+      {/* 4x4 다이나믹 퍼즐 그리드 (조금만 축소) */}
+      <div className="w-[95%] lg:w-[92%] xl:w-[90%] aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
         {images.map((src, index) => {
           const slotClass = SLOTS[index];
           return (

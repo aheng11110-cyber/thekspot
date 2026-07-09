@@ -56,7 +56,7 @@ export function MondrianHeroGrid() {
         }
         return newArr;
       });
-    }, 4000); // 4초마다 1장씩 교체해서 생동감 부여
+    }, 8000); // 8초마다 교체 (부하 감소)
 
     return () => clearInterval(interval);
   }, []);
@@ -76,10 +76,10 @@ export function MondrianHeroGrid() {
                   key={currentImg}
                   src={currentImg}
                   alt="Mondrian Gallery"
-                  initial={{ opacity: 0, filter: 'blur(5px)' }}
-                  animate={{ opacity: 1, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, filter: 'blur(5px)' }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </AnimatePresence>

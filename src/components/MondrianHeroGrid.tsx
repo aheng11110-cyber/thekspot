@@ -2,26 +2,22 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const IMAGES = [
-  '/images/11.jpg',
-  '/images/5.jpg',
-  '/images/6.jpg',
-  '/images/9.jpg',
-  '/images/32.jpg',
-  '/images/33.jpg',
-  '/images/39.jpg',
-  '/images/29.jpg',
-  '/images/37.jpg',
-  '/images/4.jpg',
+  '/page_images/10.jpg',
+  '/page_images/11.jpg',
+  '/page_images/ajs1980518-jusangjeolli-cliff-4810725.jpg',
+  '/page_images/yujeong_huh-gyeongbok-palace-6854763_1920.jpg',
+  '/page_images/vitamin-korean-village-snow-858232.jpg',
+  '/page_images/Two_women_walking_on_street_202607081305.jpeg',
 ];
 
-// 2열(가로 2칸) x 4행(세로 4칸) 레이아웃
+// 세로 2칸, 완벽한 정사각형(aspect-square) 타일 배열
 const SLOTS = [
-  "col-start-1 row-start-1 col-span-1 row-span-2", // 0: 길쭉한 거 (좌측 상단)
-  "col-start-2 row-start-1 col-span-1 row-span-1", // 1: 작은 거 (우측 상단)
-  "col-start-2 row-start-2 col-span-1 row-span-1", // 2: 작은 거 (우측 중단)
-  "col-start-1 row-start-3 col-span-1 row-span-1", // 3: 작은 거 (좌측 하단)
-  "col-start-2 row-start-3 col-span-1 row-span-2", // 4: 길쭉한 거 (우측 하단)
-  "col-start-1 row-start-4 col-span-1 row-span-1", // 5: 작은 거 (좌측 맨밑)
+  "col-span-1 aspect-square", // 좌측 1
+  "col-span-1 aspect-square", // 우측 1
+  "col-span-1 aspect-square", // 좌측 2
+  "col-span-1 aspect-square", // 우측 2
+  "col-span-1 aspect-square", // 좌측 3
+  "col-span-1 aspect-square", // 우측 3
 ];
 
 function shuffleArray(array: string[]) {
@@ -64,9 +60,9 @@ export function MondrianHeroGrid() {
   if (displayedImages.length === 0) return null;
 
   return (
-    <div className="absolute inset-y-0 left-0 w-[45%] h-full bg-black overflow-hidden z-0">
-      {/* 2열 4행 그리드 */}
-      <div className="absolute inset-0 grid grid-cols-2 grid-rows-4 gap-1 sm:gap-2 p-1 sm:p-2 opacity-100 h-full w-full">
+    <div className="absolute inset-y-0 left-0 w-[45%] h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 py-8">
+      {/* 2열 정사각형 그리드 */}
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full">
         {SLOTS.map((slotClass, index) => {
           const currentImg = displayedImages[index];
           return (

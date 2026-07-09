@@ -9,7 +9,7 @@ import {
 import { Navbar } from './components/Navbar';
 import { ConnectAILabLogo } from './components/ConnectAILabLogo';
 import { CurationSection } from './components/CurationSection';
-import { HeroPuzzleBackground } from './components/HeroPuzzleBackground';
+import { MondrianHeroGrid } from './components/MondrianHeroGrid';
 import { NewsSidebar } from './components/NewsSidebar';
 import PayPalCheckoutButton from './components/payment/PayPalCheckoutButton';
 import { useAuth } from './contexts/AuthContext';
@@ -19,14 +19,6 @@ import { VIDEO_URLS } from './config/videos';
 import { SITE_CONTENT, BRAND_NAME, COPYRIGHT } from './config/content';
 import { useLanguage } from './contexts/LanguageContext';
 
-const heroImages = [
-  "/page_images/10.jpg",
-  "/page_images/11.jpg",
-  "/page_images/ajs1980518-jusangjeolli-cliff-4810725.jpg",
-  "/page_images/yujeong_huh-gyeongbok-palace-6854763_1920.jpg",
-  "/page_images/vitamin-korean-village-snow-858232.jpg",
-  "/page_images/Two_women_walking_on_street_202607081305.jpeg"
-];
 
 export default function App() {
   const [entranceComplete, setEntranceComplete] = useState(false);
@@ -90,122 +82,60 @@ export default function App() {
       <Navbar entranceComplete={entranceComplete} />
 
       {/* ════════════════ SECTION 1: HERO ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden bg-black">
-        {/* Animated Puzzle Background instead of video/simple grid */}
-        <HeroPuzzleBackground />
-
-        {/* Dot grid overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none z-10"
-          style={{
-            backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
-            opacity: 0.05,
-          }}
-        />
-
-        {/* Watermark text */}
-        <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
-          style={{ paddingTop: 50 }}
-        >
-          <span
-            className="uppercase select-none"
-            style={{
-              fontFamily: '"Anton SC", sans-serif',
-              fontSize: 'clamp(120px, 30vw, 521px)',
-              letterSpacing: '-4px',
-              opacity: 0.1,
-              background:
-                'radial-gradient(circle, rgba(142,127,148,0) 0%, #8E7F94 70%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-              lineHeight: 1,
-            }}
-          >
-            {hero.watermark}
-          </span>
+      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-row overflow-hidden bg-black">
+        {/* Animated Mondrian Grid on the left */}
+        <div className="relative w-[45%] h-full shrink-0">
+          <MondrianHeroGrid />
         </div>
 
-        {/* News Sidebar Overlay */}
-        <NewsSidebar />
-
-        {/* Hero content */}
+        {/* Hero content on the right */}
         <motion.div
-          className="relative z-20 flex flex-col flex-1 px-4 sm:px-6 md:px-8 pr-[280px] lg:pr-[360px] pt-20 sm:pt-24 pb-8 sm:pb-12"
+          className="relative z-20 flex flex-col flex-1 px-8 lg:px-16 pr-[280px] lg:pr-[360px] justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: entranceComplete ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="flex-1" />
-
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            {/* Left column */}
-            <div className="flex flex-col gap-4">
-              <h1
-                className="text-white font-light leading-[0.95] tracking-[-0.03em]"
-                style={{ fontSize: 'clamp(40px, 10vw, 100px)' }}
-              >
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="inline-block"
-                >
-                  {hero.titleLeft[0]}
-                </motion.span>
-                <br />
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  className="inline-block"
-                >
-                  {hero.titleLeft[1]}
-                </motion.span>
-              </h1>
-
-              <motion.p
-                className="max-w-sm text-[13px] sm:text-[15px] text-white leading-relaxed font-normal"
-                initial={{ opacity: 0, y: 25 }}
-                animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 0.9,
-                  ease: [0.215, 0.61, 0.355, 1.0],
-                  delay: 0.2,
-                }}
-              >
-                {hero.description}
-              </motion.p>
-            </div>
-
-            {/* Right heading */}
+          <div className="flex flex-col gap-6 md:gap-12">
             <h1
-              className="text-white font-light leading-[0.95] tracking-[-0.03em] text-left md:text-right"
-              style={{ fontSize: 'clamp(40px, 10vw, 100px)' }}
+              className="text-white font-light leading-[0.95] tracking-[-0.03em] text-left"
+              style={{ fontSize: 'clamp(40px, 8vw, 90px)' }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="inline-block"
               >
-                {hero.titleRight[0]}
+                {hero.titleLeft[0]} {hero.titleLeft[1]}
               </motion.span>
               <br />
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="inline-block"
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="inline-block text-white/60"
               >
-                {hero.titleRight[1]}
+                {hero.titleRight[0]} {hero.titleRight[1]}
               </motion.span>
             </h1>
+
+            <motion.p
+              className="max-w-md text-[14px] sm:text-[16px] text-white/80 leading-relaxed font-normal"
+              initial={{ opacity: 0, y: 25 }}
+              animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.9,
+                ease: [0.215, 0.61, 0.355, 1.0],
+                delay: 0.6,
+              }}
+            >
+              {hero.description}
+            </motion.p>
           </div>
         </motion.div>
+
+        {/* News Sidebar Overlay */}
+        <NewsSidebar />
       </section>
 
       {/* ════════════════ SECTION 1.5: CURATION SECTION ════════════════ */}

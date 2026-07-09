@@ -38,17 +38,54 @@ function shuffleArray(array: string[]) {
 }
 
 export function MondrianHeroGrid() {
-  const [images, setImages] = useState(IMAGES);
+  const [images, setImages] = useState<string[]>([]);
 
-  // 4초마다 이미지를 섞어서 위치를 바꿈 (퍼즐 이동 효과)
+  // 최초 로드시 한번만 셔플
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImages(prev => shuffleArray(prev));
-    }, 4000);
-    return () => clearInterval(interval);
+    setImages(shuffleArray(IMAGES).slice(0, SLOTS.length));
   }, []);
 
-  if (images.length === 0) return null;
+  useEffect(() => {
+    if (images.length === 0) return;
+
+    // 5초마다 주변 작은 사진들 2개끼리 자리 교환
+    const smallInterval = setInterval(() => {
+      setImages(prev => {
+        const newArr = [...prev];
+        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+        // 랜덤으로 2개 선택
+        const idx1 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        let idx2 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        while (idx1 === idx2) {
+          idx2 = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        }
+        // 스왑
+        const temp = newArr[idx1];
+        newArr[idx1] = newArr[idx2];
+        newArr[idx2] = temp;
+        return newArr;
+      });
+    }, 5000);
+
+    // 10초마다 가운데 큰 사진(index 4)과 주변 사진 자리 교환
+    const centerInterval = setInterval(() => {
+      setImages(prev => {
+        const newArr = [...prev];
+        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+        const randomSmall = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+        // 스왑
+        const temp = newArr[4];
+        newArr[4] = newArr[randomSmall];
+        newArr[randomSmall] = temp;
+        return newArr;
+      });
+    }, 10000);
+
+    return () => {
+      clearInterval(smallInterval);
+      clearInterval(centerInterval);
+    };
+  }, [images.length]);
 
 
 

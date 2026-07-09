@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const IMAGES = [
-  '/page_images/10.jpg',
-  '/page_images/11.jpg',
-  '/page_images/ajs1980518-jusangjeolli-cliff-4810725.jpg',
-  '/page_images/yujeong_huh-gyeongbok-palace-6854763_1920.jpg',
-  '/page_images/vitamin-korean-village-snow-858232.jpg',
-  '/page_images/Two_women_walking_on_street_202607081305.jpeg',
-  '/page_images/dtteom-ocean-999811.jpg',
-  '/page_images/gimmungiyipotoraendeu-damyang-5608568.jpg',
-  '/page_images/hpuppet-woman-7292973.jpg',
-  '/page_images/kimdaejeung-early-summer-5174844.jpg',
+  '/images/11.jpg',
+  '/images/5.jpg',
+  '/images/6.jpg',
+  '/images/9.jpg',
+  '/images/32.jpg',
+  '/images/33.jpg',
+  '/images/39.jpg',
+  '/images/29.jpg',
+  '/images/37.jpg',
+  '/images/4.jpg',
 ];
 
 // 두번째 페이지(Puzzle Lookbook)와 완전히 동일한 4x4 퍼즐 레이아웃 (총 10칸)
@@ -114,7 +114,7 @@ export function MondrianHeroGrid() {
                 src={src} 
                 alt={`Hero Lookbook ${index}`} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                style={{ imageRendering: 'high-quality', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
+                style={{ imageRendering: 'high-quality' }}
               />
             </motion.div>
           );

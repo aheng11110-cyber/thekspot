@@ -128,7 +128,7 @@ export function PuzzleLookbook() {
                   src={src} 
                   alt={`Lookbook ${index}`} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                  style={{ imageRendering: 'high-quality', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
+                  style={{ imageRendering: 'high-quality' }}
                 />
               </motion.div>
             );

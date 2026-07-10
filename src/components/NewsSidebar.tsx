@@ -8,12 +8,10 @@ const MOCK_NEWS = {
     { 
       id: 1, title: "Seoul named top global travel destination for 2026", time: "2h ago",
       summary: "Leading travel magazines have officially ranked Seoul as the #1 must-visit city globally for 2026, citing its perfect blend of ultra-modern infrastructure, pop-up culture, and historical palaces.",
-      image: "/page_images/10.jpg"
     },
     { 
       id: 2, title: "New K-Pop mega concert announced at Busan Haeundae", time: "4h ago",
       summary: "A massive free concert featuring top K-pop idols will be held at Haeundae Beach this August. Over 100,000 global fans are expected to attend.",
-      image: "/page_images/11.jpg"
     },
     { 
       id: 3, title: "Michelin Guide adds 5 new traditional Korean BBQ spots", time: "5h ago",
@@ -28,12 +26,10 @@ const MOCK_NEWS = {
     { 
       id: 1, title: "2026년 세계 최고의 여행지로 선정된 서울", time: "2시간 전",
       summary: "세계적인 여행 매거진들이 2026년 꼭 방문해야 할 도시 1위로 서울을 선정했습니다. 최첨단 인프라, 성수동 팝업 컬쳐, 전통 고궁이 완벽하게 조화를 이룬다는 점이 높은 평가를 받았습니다.",
-      image: "/page_images/10.jpg"
     },
     { 
       id: 2, title: "부산 해운대에서 새로운 K-Pop 메가 콘서트 개최 발표", time: "4시간 전",
       summary: "올해 8월 부산 해운대 해수욕장에서 최정상 K-POP 아티스트들이 총출동하는 글로벌 메가 콘서트가 열립니다. 전 세계에서 10만 명 이상의 팬들이 모일 것으로 예상됩니다.",
-      image: "/page_images/11.jpg"
     },
     { 
       id: 3, title: "미슐랭 가이드, 새로운 전통 K-BBQ 레스토랑 5곳 추가", time: "5시간 전",
@@ -48,12 +44,10 @@ const MOCK_NEWS = {
     { 
       id: 1, title: "2026年の世界最高の旅行先にソウルが選定", time: "2時間前",
       summary: "世界の主要旅行雑誌が、最先端のインフラ、ポップアップ文化、歴史的な宮殿が完璧に調和している点を評価し、2026年に訪れるべき都市1位にソウルを選定しました。",
-      image: "/page_images/10.jpg"
     },
     { 
       id: 2, title: "釜山・海雲台で新しいK-POPメガコンサート開催決定", time: "4時間前",
       summary: "今年の8月、釜山の海雲台ビーチでトップK-POPアイドルが出演する大規模な無料コンサートが開催されます。世界中から10万人以上のファンが集まると予想されています。",
-      image: "/page_images/11.jpg"
     },
     { 
       id: 3, title: "ミシュランガイド、新しい伝統的K-BBQ店を5軒追加", time: "5時間前",
@@ -68,12 +62,10 @@ const MOCK_NEWS = {
     { 
       id: 1, title: "首尔被评为2026年全球最佳旅游目的地", time: "2小时前",
       summary: "全球领先的旅游杂志正式将首尔列为2026年全球必访城市第一名，称赞其超现代基础设施、快闪文化与历史宫殿的完美融合。",
-      image: "/page_images/10.jpg"
     },
     { 
       id: 2, title: "釜山海云台宣布举办全新K-Pop大型演唱会", time: "4小时前",
       summary: "一场由顶级K-pop偶像带来的大型免费演唱会将于今年8月在海云台海滩举行，预计将吸引全球超过10万名粉丝。",
-      image: "/page_images/11.jpg"
     },
     { 
       id: 3, title: "米其林指南新增5家传统韩国烤肉店", time: "5小时前",
@@ -88,12 +80,10 @@ const MOCK_NEWS = {
     { 
       id: 1, title: "Seoul được vinh danh là điểm đến du lịch hàng đầu năm 2026", time: "2 giờ trước",
       summary: "Các tạp chí du lịch hàng đầu đã chính thức xếp hạng Seoul là thành phố phải đến số 1 thế giới năm 2026, nhờ sự kết hợp hoàn hảo giữa hạ tầng hiện đại, văn hóa pop-up và các cung điện lịch sử.",
-      image: "/page_images/10.jpg"
     },
     { 
       id: 2, title: "Mega concert K-Pop mới được công bố tại Haeundae, Busan", time: "4 giờ trước",
       summary: "Một buổi hòa nhạc miễn phí quy mô lớn với sự tham gia của các thần tượng K-pop hàng đầu sẽ diễn ra tại bãi biển Haeundae vào tháng 8 này. Dự kiến thu hút hơn 100.000 người hâm mộ toàn cầu.",
-      image: "/page_images/11.jpg"
     },
     { 
       id: 3, title: "Michelin Guide thêm 5 nhà hàng K-BBQ truyền thống", time: "5 giờ trước",
@@ -168,18 +158,7 @@ export function NewsSidebar() {
                 <X size={18} />
               </button>
 
-              {selectedNews.image && (
-                <div className="w-full h-48 sm:h-56 relative overflow-hidden">
-                  <img 
-                    src={selectedNews.image} 
-                    alt="News coverage" 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] to-transparent" />
-                </div>
-              )}
-
-              <div className={`p-8 ${!selectedNews.image ? 'pt-12' : 'pt-4'}`}>
+              <div className={`p-8 pt-12`}>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="px-2 py-0.5 bg-white/10 rounded text-[10px] text-white/70 uppercase tracking-widest">
                     Trending

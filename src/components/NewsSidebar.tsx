@@ -134,7 +134,7 @@ export function NewsSidebar() {
               className="group cursor-pointer flex flex-col"
             >
               <p className="text-red-400 font-medium text-[10px] mb-1.5 uppercase tracking-widest">{news.time}</p>
-              <h4 className="text-white/90 group-hover:text-white text-[15px] leading-relaxed transition-colors line-clamp-3 font-light">
+              <h4 className="bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent group-hover:from-purple-200 group-hover:to-pink-300 text-[16px] font-medium leading-relaxed transition-all line-clamp-3">
                 {news.title}
               </h4>
               <div className="h-px w-full bg-white/5 mt-5 group-hover:bg-white/20 transition-colors" />

@@ -114,7 +114,7 @@ export function NewsSidebar() {
 
   return (
     <>
-      <div className="absolute top-24 right-4 bottom-6 w-[280px] lg:w-[320px] bg-black/50 backdrop-blur-xl border border-white/10 rounded-2xl z-30 flex flex-col py-6 px-6 shadow-2xl">
+      <div className="absolute top-24 right-4 bottom-6 w-[280px] lg:w-[320px] bg-black/50 backdrop-blur-xl border-2 border-white/30 rounded-2xl z-30 flex flex-col py-6 px-6 shadow-2xl">
         
         {/* 헤더 */}
         <div className="flex items-center gap-3 mb-8">
@@ -133,8 +133,8 @@ export function NewsSidebar() {
               onClick={() => setSelectedNews(news)}
               className="group cursor-pointer flex flex-col"
             >
-              <p className="text-white/30 text-[9px] mb-1.5 uppercase tracking-widest">{news.time}</p>
-              <h4 className="text-white/70 group-hover:text-white text-[13px] leading-relaxed transition-colors line-clamp-2 font-light">
+              <p className="text-red-400 font-medium text-[10px] mb-1.5 uppercase tracking-widest">{news.time}</p>
+              <h4 className="text-white/90 group-hover:text-white text-[15px] leading-relaxed transition-colors line-clamp-3 font-light">
                 {news.title}
               </h4>
               <div className="h-px w-full bg-white/5 mt-5 group-hover:bg-white/20 transition-colors" />

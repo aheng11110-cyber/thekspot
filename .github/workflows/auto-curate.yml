@@ -23,12 +23,14 @@ jobs:
         with:
           node-version: '18'
 
-      - name: AI 스크립트 실행 (데이터 수집 및 DB 업데이트)
-        run: node scripts/autoCurator.js
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run the auto-curator script
         env:
-          # 나중에 대표님의 AI API 키가 생기면 이곳에 연결됩니다.
-          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NODE_ENV: production
+        run: node scripts/autoCurator.js
 
       - name: 새로운 데이터 GitHub DB에 자동 저장(Commit)
         env:

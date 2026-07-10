@@ -161,6 +161,71 @@ const baseLocations = [
     links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
     tags: ["Healing/Relax", "Trending"],
     groupSizes: ["Solo", "2-3 People"]
+  },
+  {
+    id: "13",
+    en: { name: "Osulloc Tea Museum", desc: "Vast green tea fields and a beautiful cafe in the heart of Jeju Island." },
+    ko: { name: "오설록 티 뮤지엄", desc: "제주도 중심에 위치한 광활한 녹차 밭과 아름다운 카페." },
+    jp: { name: "オソルロックティーミュージアム", desc: "済州島の中心にある広大な緑茶畑と美しいカフェ。" },
+    cn: { name: "O'sulloc 雪绿茶博物馆", desc: "位于济州岛中心的广阔绿茶园和美丽的咖啡馆。" },
+    vn: { name: "Bảo tàng Trà Osulloc", desc: "Những cánh đồng trà xanh bạt ngàn và quán cà phê tuyệt đẹp ở trung tâm đảo Jeju." },
+    city: "Jeju", province: "Jeju", type: "cafe",
+    imageUrl: "/page_images/34.jpg",
+    links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
+    tags: ["Nature", "Healing/Relax"],
+    groupSizes: ["Solo", "2-3 People", "4-5 People"]
+  },
+  {
+    id: "14",
+    en: { name: "Donggung Palace and Wolji Pond", desc: "The most beautiful historical night view in Gyeongju." },
+    ko: { name: "동궁과 월지 (안압지)", desc: "경주에서 가장 아름다운 역사적인 야경 명소." },
+    jp: { name: "東宮と月池", desc: "慶州で最も美しい歴史的な夜景スポット。" },
+    cn: { name: "东宫和月池", desc: "庆州最美的历史夜景胜地。" },
+    vn: { name: "Cung điện Donggung và Hồ Wolji", desc: "Điểm ngắm cảnh đêm lịch sử đẹp nhất ở Gyeongju." },
+    city: "Gyeongju", province: "Gyeongsang", type: "concert",
+    imageUrl: "/page_images/10.jpg",
+    links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
+    tags: ["Culture", "Healing/Relax"],
+    groupSizes: ["Solo", "2-3 People", "4-5 People"]
+  },
+  {
+    id: "15",
+    en: { name: "Jeonju Hanok Village Street Food", desc: "Explore hundreds of traditional houses and taste amazing local street food." },
+    ko: { name: "전주 한옥마을 길거리 음식", desc: "수백 채의 한옥을 둘러보고 환상적인 로컬 길거리 음식을 맛보세요." },
+    jp: { name: "全州韓屋村の屋台料理", desc: "何百もの伝統的な家屋を探索し、素晴らしい地元の屋台料理を味わってください。" },
+    cn: { name: "全州韩屋村街头小吃", desc: "探索数百栋传统房屋，品尝令人惊叹的当地街头小吃。" },
+    vn: { name: "Ẩm thực đường phố Làng Hanok Jeonju", desc: "Khám phá hàng trăm ngôi nhà truyền thống và nếm thử các món ăn đường phố địa phương tuyệt vời." },
+    city: "Jeonju", province: "Jeolla", type: "restaurant",
+    imageUrl: "/images/11.jpg",
+    links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
+    tags: ["Culture", "Trending"],
+    groupSizes: ["Solo", "2-3 People", "4-5 People"]
+  },
+  {
+    id: "16",
+    en: { name: "Paradise City Cimer", desc: "A luxurious European-style spa and pool resort in Incheon." },
+    ko: { name: "파라다이스시티 씨메르", desc: "인천에 위치한 고급스러운 유럽 스타일의 스파 및 수영장 리조트." },
+    jp: { name: "パラダイスシティ シメール", desc: "仁川にある豪華なヨーロピアンスタイルのスパとプールリゾート。" },
+    cn: { name: "百乐达斯城 Cimer", desc: "仁川一家豪华的欧洲风格水疗和泳池度假村。" },
+    vn: { name: "Paradise City Cimer", desc: "Khu nghỉ dưỡng spa và hồ bơi kiểu Âu sang trọng ở Incheon." },
+    city: "Incheon", province: "Incheon", type: "cafe",
+    imageUrl: "/images/33.jpg",
+    links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
+    tags: ["Healing/Relax", "Trending"],
+    groupSizes: ["2-3 People", "4-5 People"]
+  },
+  {
+    id: "17",
+    en: { name: "ARTE MUSEUM Gangneung", desc: "An incredible immersive media art exhibition spanning massive rooms." },
+    ko: { name: "아르떼뮤지엄 강릉", desc: "거대한 공간에서 펼쳐지는 놀라운 몰입형 미디어 아트 전시." },
+    jp: { name: "アルテミュージアム江陵", desc: "広大な空間で繰り広げられる素晴らしい没入型メディアアート展。" },
+    cn: { name: "ARTE MUSEUM 江陵", desc: "跨越大空间的令人难以置信的沉浸式媒体艺术展。" },
+    vn: { name: "Bảo tàng Nghệ thuật ARTE Gangneung", desc: "Một cuộc triển lãm nghệ thuật truyền thông nhập vai đáng kinh ngạc trải dài trong các căn phòng rộng lớn." },
+    city: "Gangneung", province: "Gangwon", type: "concert",
+    imageUrl: "/images/39.jpg",
+    links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" },
+    tags: ["Culture", "Trending"],
+    groupSizes: ["Solo", "2-3 People", "4-5 People"]
   }
 ];
 

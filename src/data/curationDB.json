@@ -1,547 +1,1182 @@
 {
   "EN": [
     {
-      "id": "1783639486287",
-      "name": "Automated AI Secret Cafe",
+      "id": "1",
       "city": "Seoul",
       "province": "Seoul",
       "type": "cafe",
-      "description": "[AI Auto-Curated] A newly discovered hidden cafe trending on local forums today. Filtered and verified by AI.",
       "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "AI Pick",
+        "Trending",
+        "AI Pick"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Nudake Seongsu",
+      "description": "A trendy art dessert cafe known for its unique volcano matcha cake."
+    },
+    {
+      "id": "2",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "popup",
+      "imageUrl": "/images/39.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Popup Store",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo"
+      ],
+      "name": "Tamburins Flagship Store",
+      "description": "An immersive cosmetic popup store featuring signature scents and art installations."
+    },
+    {
+      "id": "3",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/10.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Gyeongbokgung Hanbok Tour",
+      "description": "Rent a beautiful Hanok and take photos at the historical Gyeongbokgung Palace."
+    },
+    {
+      "id": "4",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Trending"
+      ],
+      "groupSizes": [
+        "2-3 People"
+      ],
+      "name": "London Bagel Museum Dosan",
+      "description": "The most famous bagel shop in Korea. Prepare for a waiting line!"
+    },
+    {
+      "id": "5",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture"
+      ],
+      "groupSizes": [
+        "4-5 People"
+      ],
+      "name": "Born & Bred",
+      "description": "Premium Hanwoo (Korean Beef) dining experience featured in Michelin guide."
+    },
+    {
+      "id": "6",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/20.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Seoul Sky Lotte World Tower",
+      "description": "Enjoy a breathtaking panoramic view of Seoul from the 5th tallest building in the world."
+    },
+    {
+      "id": "7",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "K-Culture"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "HYBE INSIGHT",
+      "description": "A dynamic exhibition space where you can experience the music and culture of top K-Pop artists."
+    },
+    {
+      "id": "8",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/images/33.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Namsan Seoul Tower",
+      "description": "A romantic spot in the heart of Seoul surrounded by nature and beautiful trails."
+    },
+    {
+      "id": "9",
+      "city": "Busan",
+      "province": "Busan",
+      "type": "concert",
+      "imageUrl": "/page_images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Haeundae Blue Line Park",
+      "description": "Ride the romantic beach train along the stunning coastline of Busan."
+    },
+    {
+      "id": "10",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
         "Trending"
       ],
       "groupSizes": [
         "Solo",
         "2-3 People"
-      ]
+      ],
+      "name": "Gwangjang Market",
+      "description": "The ultimate destination for Korean street food. Try the famous mung bean pancakes!"
     },
     {
-      "id": "1",
-      "name": "Seongsu Popup Store",
+      "id": "11",
       "city": "Seoul",
       "province": "Seoul",
-      "type": "popup",
-      "description": "A limited-edition exhibition with unique spatial design.",
+      "type": "cafe",
       "imageUrl": "/images/39.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
-      "schedule": {
-        "startDate": "2026-07-15",
-        "endDate": "2026-08-15"
-      },
       "tags": [
-        "Popup Store",
-        "K-Culture"
-      ],
-      "groupSizes": [
-        "Solo",
-        "2-3 People",
-        "4-5 People"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Samcheong-dong Hanok Cafe",
-      "city": "Seoul",
-      "province": "Seoul",
-      "type": "cafe",
-      "description": "Enjoy a relaxing tea time in a traditional Korean Hanok.",
-      "imageUrl": "/images/29.jpg",
-      "links": {
-        "instagram": "https://www.instagram.com/p/BsOGulcndj-/",
-        "blog": "https://blog.naver.com"
-      },
-      "tags": [
-        "Healing/Relax",
-        "Culture"
+        "Culture",
+        "Healing/Relax"
       ],
       "groupSizes": [
         "Solo",
         "2-3 People"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "K-POP Master Concert",
-      "city": "Busan",
-      "province": "Busan",
-      "type": "concert",
-      "description": "A massive beach concert featuring top K-POP artists.",
-      "imageUrl": "/images/33.jpg",
-      "schedule": {
-        "startDate": "2026-08-20",
-        "endDate": "2026-08-21",
-        "time": "18:00"
-      },
-      "tags": [
-        "Concert",
-        "K-Culture"
       ],
-      "groupSizes": [
-        "2-3 People",
-        "4-5 People"
-      ]
+      "name": "Starfield Library COEX",
+      "description": "A magnificent open library located inside the giant COEX mall."
     },
     {
-      "id": "5",
-      "name": "Premium K-BBQ Dining",
+      "id": "12",
       "city": "Seoul",
       "province": "Seoul",
-      "type": "restaurant",
-      "description": "Modern Korean BBQ that foreigners can easily enjoy.",
-      "imageUrl": "/images/11.jpg",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "K-Food"
+        "Healing/Relax",
+        "Trending"
       ],
       "groupSizes": [
-        "2-3 People",
-        "4-5 People"
-      ]
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Baskin Robbins Brown Cheongdam",
+      "description": "A luxury 100-flavor ice cream concept store by Baskin Robbins."
     }
   ],
   "KO": [
     {
-      "id": "1783639486287",
-      "name": "AI 무인 자동화 시크릿 카페",
-      "city": "서울",
-      "province": "서울특별시",
+      "id": "1",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "cafe",
-      "description": "[AI 자동 수집] 오늘 새벽 로컬 커뮤니티에서 가장 뜨거운 반응을 얻은 숨겨진 카페. AI가 광고를 필터링하고 검증했습니다.",
       "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "AI 추천",
-        "실시간 트렌드"
+        "Trending",
+        "AI Pick"
       ],
       "groupSizes": [
-        "혼자",
-        "2-3명"
-      ]
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "누데이크 성수",
+      "description": "독특한 화산 모양의 말차 케이크로 유명한 트렌디한 아트 디저트 카페."
     },
     {
-      "id": "1",
-      "name": "성수동 팝업스토어",
-      "city": "서울",
-      "province": "서울특별시",
+      "id": "2",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "popup",
-      "description": "독특한 공간 디자인과 함께하는 한정판 전시",
       "imageUrl": "/images/39.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
-      "schedule": {
-        "startDate": "2026-07-15",
-        "endDate": "2026-08-15"
-      },
       "tags": [
-        "팝업스토어",
-        "K-컬쳐"
+        "Popup Store",
+        "Trending"
       ],
       "groupSizes": [
-        "혼자",
-        "2-3명",
-        "4-5명"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "삼청동 한옥 카페",
-      "city": "서울",
-      "province": "서울특별시",
-      "type": "cafe",
-      "description": "전통 한옥에서 즐기는 차분하고 여유로운 티타임",
-      "imageUrl": "/images/29.jpg",
-      "links": {
-        "instagram": "https://www.instagram.com/p/BsOGulcndj-/",
-        "blog": "https://blog.naver.com"
-      },
-      "tags": [
-        "힐링/여유",
-        "문화체험"
+        "Solo"
       ],
-      "groupSizes": [
-        "혼자",
-        "2-3명"
-      ]
+      "name": "탬버린즈 플래그십 스토어",
+      "description": "시그니처 향수와 설치 미술이 결합된 몰입형 코스메틱 팝업 스토어."
     },
     {
       "id": "3",
-      "name": "K-POP 글로벌 마스터 콘서트",
-      "city": "부산",
-      "province": "부산광역시",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "concert",
-      "description": "최정상 K-POP 아티스트들이 총출동하는 해변 콘서트",
-      "imageUrl": "/images/33.jpg",
-      "schedule": {
-        "startDate": "2026-08-20",
-        "endDate": "2026-08-21",
-        "time": "18:00"
+      "imageUrl": "/page_images/10.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "콘서트",
-        "K-컬쳐"
+        "Culture",
+        "Healing/Relax"
       ],
       "groupSizes": [
-        "2-3명",
-        "4-5명"
-      ]
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "경복궁 한복 투어",
+      "description": "아름다운 한복을 빌려 입고 전통적인 경복궁에서 인생샷을 남겨보세요."
+    },
+    {
+      "id": "4",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Trending"
+      ],
+      "groupSizes": [
+        "2-3 People"
+      ],
+      "name": "런던 베이글 뮤지엄 도산",
+      "description": "현재 한국에서 가장 인기 있는 베이글 맛집. 오픈런 필수!"
     },
     {
       "id": "5",
-      "name": "프리미엄 K-BBQ 다이닝",
-      "city": "서울",
-      "province": "서울특별시",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "restaurant",
-      "description": "외국인도 쉽게 즐길 수 있는 모던한 한식 고기구이",
       "imageUrl": "/images/11.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "한국음식"
+        "Culture"
       ],
       "groupSizes": [
-        "2-3명",
-        "4-5명"
-      ]
+        "4-5 People"
+      ],
+      "name": "본앤브레드",
+      "description": "미슐랭 가이드에 소개된 프리미엄 한우(Korean Beef) 오마카세 다이닝."
+    },
+    {
+      "id": "6",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/20.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "롯데월드타워 서울스카이",
+      "description": "세계에서 5번째로 높은 빌딩에서 숨 막히는 서울의 파노라마 야경을 즐겨보세요."
+    },
+    {
+      "id": "7",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "K-Culture"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "하이브 인사이트 (HYBE INSIGHT)",
+      "description": "최정상 K-Pop 아티스트들의 음악과 문화를 생생하게 체험할 수 있는 전시 공간."
+    },
+    {
+      "id": "8",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/images/33.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "남산 서울타워",
+      "description": "자연과 산책로로 둘러싸인 서울 중심부의 가장 로맨틱한 명소."
+    },
+    {
+      "id": "9",
+      "city": "Busan",
+      "province": "Busan",
+      "type": "concert",
+      "imageUrl": "/page_images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "해운대 블루라인파크",
+      "description": "눈부신 부산의 해안선을 따라 달리는 낭만적인 해변 열차 캡슐."
+    },
+    {
+      "id": "10",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "광장시장",
+      "description": "한국 길거리 음식의 끝판왕. 유명한 빈대떡과 육회를 꼭 맛보세요!"
+    },
+    {
+      "id": "11",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/39.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "코엑스 별마당 도서관",
+      "description": "거대한 코엑스 쇼핑몰 중앙에 위치한 압도적인 스케일의 열린 도서관."
+    },
+    {
+      "id": "12",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "배스킨라빈스 브라운 청담",
+      "description": "100가지 맛의 아이스크림을 맛볼 수 있는 프리미엄 배스킨라빈스 컨셉 스토어."
     }
   ],
   "JP": [
     {
-      "id": "1783639486287",
-      "name": "自動化AIシークレットカフェ",
-      "city": "ソウル",
-      "province": "ソウル",
+      "id": "1",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "cafe",
-      "description": "[AI自動収集] 本日ローカルフォーラムで最もトレンドになっている隠れ家カフェ。AIが広告を排除し検証済み。",
       "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "AIピック",
-        "トレンド"
+        "Trending",
+        "AI Pick"
       ],
       "groupSizes": [
-        "1人",
-        "2-3人"
-      ]
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "ヌデイク聖水",
+      "description": "ユニークな火山抹茶ケーキで有名なトレンディなアートデザートカフェ。"
     },
     {
-      "id": "1",
-      "name": "聖水洞 ポップアップストア",
-      "city": "ソウル",
-      "province": "ソウル",
+      "id": "2",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "popup",
-      "description": "ユニークな空間デザインが楽しめる限定展示",
       "imageUrl": "/images/39.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
-      "schedule": {
-        "startDate": "2026-07-15",
-        "endDate": "2026-08-15"
-      },
       "tags": [
-        "ポップアップ",
-        "K-カルチャー"
+        "Popup Store",
+        "Trending"
       ],
       "groupSizes": [
-        "1人",
-        "2-3人",
-        "4-5人"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "三清洞 韓屋カフェ",
-      "city": "ソウル",
-      "province": "ソウル",
-      "type": "cafe",
-      "description": "伝統的な韓屋で楽しむ落ち着いたティータイム",
-      "imageUrl": "/images/29.jpg",
-      "links": {
-        "instagram": "https://www.instagram.com/p/BsOGulcndj-/",
-        "blog": "https://blog.naver.com"
-      },
-      "tags": [
-        "ヒーリング",
-        "文化体験"
+        "Solo"
       ],
-      "groupSizes": [
-        "1人",
-        "2-3人"
-      ]
+      "name": "タンバリンズ旗艦店",
+      "description": "シグネチャーの香りとインスタレーションアートが融合した没入型コスメティックポップアップ。"
     },
     {
       "id": "3",
-      "name": "K-POP マスターコンサート",
-      "city": "釜山",
-      "province": "釜山",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "concert",
-      "description": "トップK-POPアーティストが出演するビーチコンサート",
-      "imageUrl": "/images/33.jpg",
-      "schedule": {
-        "startDate": "2026-08-20",
-        "endDate": "2026-08-21",
-        "time": "18:00"
+      "imageUrl": "/page_images/10.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "コンサート",
-        "K-カルチャー"
+        "Culture",
+        "Healing/Relax"
       ],
       "groupSizes": [
-        "2-3人",
-        "4-5人"
-      ]
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "景福宮 韓服ツアー",
+      "description": "美しい韓服をレンタルして、歴史的な景福宮で写真を撮りましょう。"
+    },
+    {
+      "id": "4",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Trending"
+      ],
+      "groupSizes": [
+        "2-3 People"
+      ],
+      "name": "ロンドンベーグルミュージアム島山",
+      "description": "現在韓国で最も人気のあるベーグルショップ。オープンラン必須！"
     },
     {
       "id": "5",
-      "name": "プレミアム K-BBQ ダイニング",
-      "city": "ソウル",
-      "province": "ソウル",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "restaurant",
-      "description": "外国人も気軽に楽しめるモダンな韓国焼肉",
       "imageUrl": "/images/11.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "韓国料理"
+        "Culture"
       ],
       "groupSizes": [
-        "2-3人",
-        "4-5人"
-      ]
+        "4-5 People"
+      ],
+      "name": "ボーン＆ブレッド",
+      "description": "ミシュランガイドに掲載されたプレミアム韓牛（韓国牛）ダイニング体験。"
+    },
+    {
+      "id": "6",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/20.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "ソウルスカイ ロッテワールドタワー",
+      "description": "世界で5番目に高いビルからソウルの息をのむようなパノラマビューをお楽しみください。"
+    },
+    {
+      "id": "7",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "K-Culture"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "HYBE INSIGHT",
+      "description": "トップK-POPアーティストの音楽と文化を体験できるダイナミックな展示空間。"
+    },
+    {
+      "id": "8",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/images/33.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "南山ソウルタワー",
+      "description": "自然と美しい遊歩道に囲まれたソウルの中心部にあるロマンチックなスポット。"
+    },
+    {
+      "id": "9",
+      "city": "Busan",
+      "province": "Busan",
+      "type": "concert",
+      "imageUrl": "/page_images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "海雲台ブルーラインパーク",
+      "description": "釜山の見事な海岸線に沿って走るロマンチックなビーチトレインに乗ってみましょう。"
+    },
+    {
+      "id": "10",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "広蔵市場",
+      "description": "韓国の屋台料理の究極の目的地。有名な緑豆チヂミをお試しください！"
+    },
+    {
+      "id": "11",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/39.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "スターフィールド図書館 COEX",
+      "description": "巨大なCOEXモール内にある壮大なオープンライブラリ。"
+    },
+    {
+      "id": "12",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "バスキンロビンス ブラウン清潭",
+      "description": "バスキンロビンスの豪華な100フレーバーアイスクリームコンセプトストア。"
     }
   ],
   "CN": [
     {
-      "id": "1783639486287",
-      "name": "自动化AI秘密咖啡馆",
-      "city": "首尔",
-      "province": "首尔",
+      "id": "1",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "cafe",
-      "description": "[AI自动收集] 今天在当地论坛上最火的隐藏咖啡馆。由AI过滤广告并验证。",
       "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "AI推荐",
-        "热门趋势"
+        "Trending",
+        "AI Pick"
       ],
       "groupSizes": [
-        "单人",
-        "2-3人"
-      ]
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Nudake 圣水",
+      "description": "以独特的火山抹茶蛋糕闻名的时尚艺术甜品咖啡馆。"
     },
     {
-      "id": "1",
-      "name": "圣水洞 快闪店",
-      "city": "首尔",
-      "province": "首尔",
+      "id": "2",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "popup",
-      "description": "独特空间设计的限量展览",
       "imageUrl": "/images/39.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
-      "schedule": {
-        "startDate": "2026-07-15",
-        "endDate": "2026-08-15"
-      },
       "tags": [
-        "快闪店",
-        "K-文化"
+        "Popup Store",
+        "Trending"
       ],
       "groupSizes": [
-        "单人",
-        "2-3人",
-        "4-5人"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "三清洞 韩屋咖啡馆",
-      "city": "首尔",
-      "province": "首尔",
-      "type": "cafe",
-      "description": "在传统韩屋中享受宁静的下午茶",
-      "imageUrl": "/images/29.jpg",
-      "links": {
-        "instagram": "https://www.instagram.com/p/BsOGulcndj-/",
-        "blog": "https://blog.naver.com"
-      },
-      "tags": [
-        "放松",
-        "文化体验"
+        "Solo"
       ],
-      "groupSizes": [
-        "单人",
-        "2-3人"
-      ]
+      "name": "Tamburins 旗舰店",
+      "description": "结合标志性香水和装置艺术的沉浸式美妆快闪店。"
     },
     {
       "id": "3",
-      "name": "K-POP 大师演唱会",
-      "city": "釜山",
-      "province": "釜山",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "concert",
-      "description": "顶级K-POP艺人云集的海滩演唱会",
-      "imageUrl": "/images/33.jpg",
-      "schedule": {
-        "startDate": "2026-08-20",
-        "endDate": "2026-08-21",
-        "time": "18:00"
+      "imageUrl": "/page_images/10.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "演唱会",
-        "K-文化"
+        "Culture",
+        "Healing/Relax"
       ],
       "groupSizes": [
-        "2-3人",
-        "4-5人"
-      ]
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "景福宫韩服游",
+      "description": "租借美丽的韩服，在历史悠久的景福宫拍照留念。"
+    },
+    {
+      "id": "4",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Trending"
+      ],
+      "groupSizes": [
+        "2-3 People"
+      ],
+      "name": "伦敦贝果博物馆 岛山",
+      "description": "目前韩国最受欢迎的贝果店。必须早起排队！"
     },
     {
       "id": "5",
-      "name": "高级 K-BBQ 烤肉",
-      "city": "首尔",
-      "province": "首尔",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "restaurant",
-      "description": "外国人也能轻松享受的现代韩国烤肉",
       "imageUrl": "/images/11.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "韩国美食"
+        "Culture"
       ],
       "groupSizes": [
-        "2-3人",
-        "4-5人"
-      ]
+        "4-5 People"
+      ],
+      "name": "Born & Bred",
+      "description": "米其林指南推荐的优质韩牛（韩国牛肉）高级餐厅体验。"
+    },
+    {
+      "id": "6",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/20.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "首尔天空 乐天世界塔",
+      "description": "在世界第5高楼欣赏令人惊叹的首尔全景。"
+    },
+    {
+      "id": "7",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "K-Culture"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "HYBE INSIGHT",
+      "description": "一个动态的展览空间，您可以体验顶级 K-Pop 艺术家的音乐和文化。"
+    },
+    {
+      "id": "8",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/images/33.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "南山首尔塔",
+      "description": "被自然和美丽的步道环绕的首尔市中心浪漫景点。"
+    },
+    {
+      "id": "9",
+      "city": "Busan",
+      "province": "Busan",
+      "type": "concert",
+      "imageUrl": "/page_images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "海云台蓝线公园",
+      "description": "乘坐浪漫的海滩列车沿着釜山迷人的海岸线行驶。"
+    },
+    {
+      "id": "10",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "广藏市场",
+      "description": "韩国街头小吃的终极目的地。一定要尝尝著名的绿豆煎饼！"
+    },
+    {
+      "id": "11",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/39.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "星空图书馆 COEX",
+      "description": "位于巨大的 COEX 购物中心内的宏伟开放式图书馆。"
+    },
+    {
+      "id": "12",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "芭斯罗缤 Brown 清潭",
+      "description": "芭斯罗缤推出的豪华 100 种口味冰淇淋概念店。"
     }
   ],
   "VN": [
     {
-      "id": "1783639486287",
-      "name": "Quán cà phê bí mật AI tự động",
+      "id": "1",
       "city": "Seoul",
       "province": "Seoul",
       "type": "cafe",
-      "description": "[AI tự động] Một quán cà phê ẩn mới được phát hiện đang thịnh hành trên các diễn đàn địa phương hôm nay. Đã được AI xác minh.",
       "imageUrl": "/images/29.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "AI Chọn",
-        "Xu hướng"
+        "Trending",
+        "AI Pick"
       ],
       "groupSizes": [
-        "Cá nhân",
-        "2-3 Người"
-      ]
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Nudake Seongsu",
+      "description": "Một quán cà phê tráng miệng nghệ thuật sành điệu nổi tiếng với bánh matcha núi lửa độc đáo."
     },
     {
-      "id": "1",
-      "name": "Cửa Hàng Pop-up Seongsu",
+      "id": "2",
       "city": "Seoul",
       "province": "Seoul",
       "type": "popup",
-      "description": "Triển lãm phiên bản giới hạn với thiết kế không gian độc đáo.",
       "imageUrl": "/images/39.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
-      "schedule": {
-        "startDate": "2026-07-15",
-        "endDate": "2026-08-15"
-      },
       "tags": [
-        "Cửa hàng Pop-up",
-        "Văn hóa K"
+        "Popup Store",
+        "Trending"
       ],
       "groupSizes": [
-        "Cá nhân",
-        "2-3 Người",
-        "4-5 Người"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Quán Cà Phê Hanok Samcheong-dong",
-      "city": "Seoul",
-      "province": "Seoul",
-      "type": "cafe",
-      "description": "Tận hưởng thời gian uống trà thư giãn trong một ngôi nhà Hanok truyền thống.",
-      "imageUrl": "/images/29.jpg",
-      "links": {
-        "instagram": "https://www.instagram.com/p/BsOGulcndj-/",
-        "blog": "https://blog.naver.com"
-      },
-      "tags": [
-        "Chữa lành",
-        "Văn hóa"
+        "Solo"
       ],
-      "groupSizes": [
-        "Cá nhân",
-        "2-3 Người"
-      ]
+      "name": "Cửa hàng Tamburins Flagship",
+      "description": "Cửa hàng mỹ phẩm pop-up đắm chìm trưng bày các mùi hương đặc trưng và tác phẩm nghệ thuật sắp đặt."
     },
     {
       "id": "3",
-      "name": "Concert K-POP Master",
-      "city": "Busan",
-      "province": "Busan",
+      "city": "Seoul",
+      "province": "Seoul",
       "type": "concert",
-      "description": "Buổi hòa nhạc trên bãi biển hoành tráng với các nghệ sĩ K-POP hàng đầu.",
-      "imageUrl": "/images/33.jpg",
-      "schedule": {
-        "startDate": "2026-08-20",
-        "endDate": "2026-08-21",
-        "time": "18:00"
+      "imageUrl": "/page_images/10.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "Concert",
-        "Văn hóa K"
+        "Culture",
+        "Healing/Relax"
       ],
       "groupSizes": [
-        "2-3 Người",
-        "4-5 Người"
-      ]
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Tour Hanbok Gyeongbokgung",
+      "description": "Thuê Hanbok tuyệt đẹp và chụp ảnh tại Cung điện Gyeongbokgung lịch sử."
+    },
+    {
+      "id": "4",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Trending"
+      ],
+      "groupSizes": [
+        "2-3 People"
+      ],
+      "name": "London Bagel Museum Dosan",
+      "description": "Cửa hàng bánh bagel nổi tiếng nhất Hàn Quốc. Chuẩn bị xếp hàng nhé!"
     },
     {
       "id": "5",
-      "name": "Nhà hàng K-BBQ Cao Cấp",
       "city": "Seoul",
       "province": "Seoul",
       "type": "restaurant",
-      "description": "BBQ Hàn Quốc hiện đại mà người nước ngoài có thể dễ dàng thưởng thức.",
       "imageUrl": "/images/11.jpg",
       "links": {
         "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
       },
       "tags": [
-        "Ẩm thực K"
+        "Culture"
       ],
       "groupSizes": [
-        "2-3 Người",
-        "4-5 Người"
-      ]
+        "4-5 People"
+      ],
+      "name": "Born & Bred",
+      "description": "Trải nghiệm ẩm thực Hanwoo (Thịt bò Hàn Quốc) cao cấp được giới thiệu trong cẩm nang Michelin."
+    },
+    {
+      "id": "6",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/20.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Seoul Sky Lotte World Tower",
+      "description": "Thưởng thức toàn cảnh ngoạn mục của Seoul từ tòa nhà cao thứ 5 trên thế giới."
+    },
+    {
+      "id": "7",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "K-Culture"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "HYBE INSIGHT",
+      "description": "Không gian triển lãm năng động, nơi bạn có thể trải nghiệm âm nhạc và văn hóa của các nghệ sĩ K-Pop hàng đầu."
+    },
+    {
+      "id": "8",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "concert",
+      "imageUrl": "/images/33.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Tháp Namsan Seoul",
+      "description": "Một địa điểm lãng mạn ở trung tâm Seoul được bao quanh bởi thiên nhiên và những con đường mòn tuyệt đẹp."
+    },
+    {
+      "id": "9",
+      "city": "Busan",
+      "province": "Busan",
+      "type": "concert",
+      "imageUrl": "/page_images/11.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Nature",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People",
+        "4-5 People"
+      ],
+      "name": "Công viên Haeundae Blue Line",
+      "description": "Đi chuyến tàu bãi biển lãng mạn dọc theo bờ biển tuyệt đẹp của Busan."
+    },
+    {
+      "id": "10",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "restaurant",
+      "imageUrl": "/page_images/34.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Chợ Gwangjang",
+      "description": "Điểm đến cuối cùng của ẩm thực đường phố Hàn Quốc. Hãy thử món bánh xèo đậu xanh nổi tiếng!"
+    },
+    {
+      "id": "11",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/39.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Culture",
+        "Healing/Relax"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Thư viện Starfield COEX",
+      "description": "Một thư viện mở tráng lệ nằm bên trong trung tâm mua sắm COEX khổng lồ."
+    },
+    {
+      "id": "12",
+      "city": "Seoul",
+      "province": "Seoul",
+      "type": "cafe",
+      "imageUrl": "/images/29.jpg",
+      "links": {
+        "instagram": "https://www.instagram.com/p/BsOGulcndj-/"
+      },
+      "tags": [
+        "Healing/Relax",
+        "Trending"
+      ],
+      "groupSizes": [
+        "Solo",
+        "2-3 People"
+      ],
+      "name": "Baskin Robbins Brown Cheongdam",
+      "description": "Cửa hàng concept kem 100 hương vị sang trọng của Baskin Robbins."
     }
   ]
 }

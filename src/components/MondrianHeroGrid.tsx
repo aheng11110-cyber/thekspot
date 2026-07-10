@@ -109,7 +109,7 @@ export function MondrianHeroGrid() {
               }}
               className={`relative overflow-hidden rounded-xl bg-white/5 ${slotClass}`}
             >
-              <div className="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-500" />
+              {/* Removed dark overlay to improve image quality as requested */}
               <img 
                 src={src} 
                 alt={`Hero Lookbook ${index}`} 

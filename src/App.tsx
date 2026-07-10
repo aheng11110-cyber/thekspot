@@ -182,18 +182,7 @@ export default function App() {
       </section>
 
       {/* ════════════════ SECTION 3: METRICS ════════════════ */}
-      <section className="snap-start snap-always relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video background */}
-        {VIDEO_URLS.metrics && (
-          <video
-            src={VIDEO_URLS.metrics}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        )}
+      <section className="snap-start snap-always relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
 
         <div className="relative z-20 pt-32 pb-32 px-6 max-w-6xl mx-auto w-full">
           <motion.p
@@ -231,18 +220,7 @@ export default function App() {
       </section>
 
       {/* ════════════════ SECTION 4: TECHNOLOGY ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden">
-        {/* Video background */}
-        {VIDEO_URLS.technology && (
-          <video
-            src={VIDEO_URLS.technology}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        )}
+      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden bg-black">
 
         <div className="relative z-20 flex flex-col flex-1 px-8 sm:px-12 md:px-16 py-12 sm:py-16">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">

@@ -77,6 +77,25 @@ const UI_TEXT = {
   }
 };
 
+const REGION_MAP: Record<string, Record<string, string>> = {
+  KO: { 'Seoul': '서울', 'Busan': '부산', 'Jeju': '제주', 'Gyeongsang': '경상', 'Jeolla': '전라', 'Incheon': '인천', 'Gangwon': '강원', 'Gyeonggi': '경기', 'Daejeon': '대전', 'Daegu': '대구', 'Gwangju': '광주', 'Ulsan': '울산', 'Chungbuk': '충북', 'Chungnam': '충남', 'Jeonnam': '전남', 'Gyeongnam': '경남' },
+  JP: { 'Seoul': 'ソウル', 'Busan': '釜山', 'Jeju': '済州', 'Gyeongsang': '慶尚', 'Jeolla': '全羅', 'Incheon': '仁川', 'Gangwon': '江原', 'Gyeonggi': '京畿', 'Daejeon': '大田', 'Daegu': '大邱', 'Gwangju': '光州', 'Ulsan': '蔚山', 'Chungbuk': '忠北', 'Chungnam': '忠南', 'Jeonnam': '全南', 'Gyeongnam': '慶南' },
+  CN: { 'Seoul': '首尔', 'Busan': '釜山', 'Jeju': '济州', 'Gyeongsang': '庆尚', 'Jeolla': '全罗', 'Incheon': '仁川', 'Gangwon': '江原', 'Gyeonggi': '京畿', 'Daejeon': '大田', 'Daegu': '大邱', 'Gwangju': '光州', 'Ulsan': '蔚山', 'Chungbuk': '忠北', 'Chungnam': '忠南', 'Jeonnam': '全南', 'Gyeongnam': '庆南' },
+  VN: { 'Seoul': 'Seoul', 'Busan': 'Busan', 'Jeju': 'Jeju', 'Gyeongsang': 'Gyeongsang', 'Jeolla': 'Jeolla', 'Incheon': 'Incheon', 'Gangwon': 'Gangwon', 'Gyeonggi': 'Gyeonggi', 'Daejeon': 'Daejeon', 'Daegu': 'Daegu', 'Gwangju': 'Gwangju', 'Ulsan': 'Ulsan', 'Chungbuk': 'Chungbuk', 'Chungnam': 'Chungnam', 'Jeonnam': 'Jeonnam', 'Gyeongnam': 'Gyeongnam' }
+};
+
+const TAG_MAP: Record<string, Record<string, string>> = {
+  KO: { 'Solo': '1인', '2-3 People': '2~3인', '4-5 People': '4~5인', 'Trending': '트렌딩', 'AI Pick': 'AI 픽', 'Popup Store': '팝업스토어', 'Culture': '문화', 'Healing/Relax': '힐링/휴식', 'K-Culture': 'K-컬처', 'Nature': '자연', 'K-Food': 'K-푸드' },
+  JP: { 'Solo': '1人', '2-3 People': '2-3人', '4-5 People': '4-5人', 'Trending': 'トレンド', 'AI Pick': 'AIピック', 'Popup Store': 'ポップアップ', 'Culture': '文化', 'Healing/Relax': '癒し/リラックス', 'K-Culture': 'K-カルチャー', 'Nature': '自然', 'K-Food': 'K-フード' },
+  CN: { 'Solo': '单人', '2-3 People': '2-3人', '4-5 People': '4-5人', 'Trending': '热门', 'AI Pick': 'AI精选', 'Popup Store': '快闪店', 'Culture': '文化', 'Healing/Relax': '治愈/放松', 'K-Culture': 'K-文化', 'Nature': '自然', 'K-Food': 'K-美食' },
+  VN: { 'Solo': '1 Người', '2-3 People': '2-3 Người', '4-5 People': '4-5 Người', 'Trending': 'Xu hướng', 'AI Pick': 'AI Chọn', 'Popup Store': 'Cửa hàng Pop-up', 'Culture': 'Văn hóa', 'Healing/Relax': 'Thư giãn', 'K-Culture': 'Văn hóa Hàn', 'Nature': 'Thiên nhiên', 'K-Food': 'Món ăn Hàn' }
+};
+
+const translateWord = (word: string, lang: string, map: Record<string, Record<string, string>>) => {
+  if (lang === 'EN') return word;
+  return map[lang]?.[word] || word;
+};
+
 export function CurationSection() {
   const { lang } = useLanguage();
   const text = UI_TEXT[lang];
@@ -200,7 +219,7 @@ export function CurationSection() {
                     : 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
                 }`}
               >
-                {size}
+                {translateWord(size, lang, TAG_MAP)}
               </button>
             ))}
           </div>
@@ -222,7 +241,7 @@ export function CurationSection() {
                       : 'bg-white/5 text-white/50 border-white/10 hover:border-white/30'
                   }`}
                 >
-                  {interest}
+                  {translateWord(interest, lang, TAG_MAP)}
                 </button>
               );
             })}
@@ -238,7 +257,9 @@ export function CurationSection() {
             className="w-full bg-black border border-white/20 text-white text-sm rounded-lg px-4 py-3 focus:outline-none focus:border-white/50"
           >
             {regions.map(region => (
-              <option key={region} value={region}>{region}</option>
+              <option key={region} value={region}>
+                {region === text.allRegion ? region : translateWord(region, lang, REGION_MAP)}
+              </option>
             ))}
           </select>
         </div>

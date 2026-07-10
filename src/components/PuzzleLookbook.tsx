@@ -41,16 +41,16 @@ const IMAGES = [
 // 4x4 Grid layout slots (16 cells total)
 // 1 big center, with surrounding different sized blocks
 const SLOTS = [
-  "col-start-1 row-start-1 col-span-1 row-span-1", // 1 Small
-  "col-start-2 row-start-1 col-span-1 row-span-1", // 2 Small
-  "col-start-3 row-start-2 col-span-2 row-span-1", // 3 Wide
-  "col-start-1 row-start-2 col-span-1 row-span-2", // 4 Tall
-  "col-start-2 row-start-2 col-span-2 row-span-2", // 5 BIG (Center)
-  "col-start-4 row-start-2 col-span-1 row-span-1", // 6 Small
-  "col-start-4 row-start-3 col-span-1 row-span-1", // 7 Small
-  "col-start-1 row-start-4 col-span-1 row-span-1", // 8 Small
-  "col-start-2 row-start-4 col-span-2 row-span-1", // 9 Wide
-  "col-start-4 row-start-4 col-span-1 row-span-1", // 10 Small
+  "col-start-1 row-start-1 col-span-1 row-span-1", // 1 (1,1)
+  "col-start-2 row-start-1 col-span-2 row-span-1", // 2 Wide (2,1 & 3,1)
+  "col-start-4 row-start-1 col-span-1 row-span-2", // 3 Tall (4,1 & 4,2)
+  "col-start-1 row-start-2 col-span-1 row-span-2", // 4 Tall (1,2 & 1,3)
+  "col-start-2 row-start-2 col-span-2 row-span-2", // 5 BIG (2,2 & 3,2 & 2,3 & 3,3)
+  "col-start-4 row-start-3 col-span-1 row-span-1", // 6 (4,3)
+  "col-start-1 row-start-4 col-span-1 row-span-1", // 7 (1,4)
+  "col-start-2 row-start-4 col-span-1 row-span-1", // 8 (2,4)
+  "col-start-3 row-start-4 col-span-1 row-span-1", // 9 (3,4)
+  "col-start-4 row-start-4 col-span-1 row-span-1", // 10 (4,4)
 ];
 
 function shuffleArray(array: string[]) {

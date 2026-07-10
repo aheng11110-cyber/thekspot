@@ -23,19 +23,8 @@ const PayPalWrapper = ({ children }: { children: React.ReactNode }) => {
     currency: PAYPAL_CONFIG.currency,
     intent: PAYPAL_CONFIG.intent,
     locale: localeMap[lang] || 'en_US',
+    'buyer-country': 'US' // Force US layout to ensure text is ALWAYS shown instead of icon-only
   };
-
-  const countryMap: Record<string, string> = {
-    EN: 'US',
-    KO: 'KR',
-    JP: 'JP',
-    CN: 'CN',
-    VN: 'VN'
-  };
-
-  if (countryMap[lang]) {
-    paypalOptions['buyer-country'] = countryMap[lang];
-  }
 
   // key={lang} ensures the script reloads when language changes
   return (

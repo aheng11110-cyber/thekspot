@@ -2,6 +2,8 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LocationData, MOCK_LOCATIONS } from '../data/mockCurationData';
 import CURATION_DB from '../data/curationDB.json';
+import { GOOGLE_SHEET_CSV_URL } from '../data/googleSheetConfig';
+import { fetchGoogleSheetData } from '../utils/sheetParser';
 import { MapDisplay } from './curation/MapDisplay';
 import { ScheduleAndLinks } from './curation/ScheduleAndLinks';
 import { PuzzleLookbook } from './PuzzleLookbook';
@@ -78,8 +80,29 @@ const UI_TEXT = {
 export function CurationSection() {
   const { lang } = useLanguage();
   const text = UI_TEXT[lang];
-  // DB에 해당 언어 데이터가 있으면 가져오고, 없으면 기본 MOCK_LOCATIONS 사용 (안전 장치)
-  const locations = (CURATION_DB as Record<string, LocationData[]>)[lang] || MOCK_LOCATIONS[lang];
+  
+  // 기본 DB 데이터로 초기화
+  const initialLocations = (CURATION_DB as Record<string, LocationData[]>)[lang] || MOCK_LOCATIONS[lang];
+  const [locations, setLocations] = useState<LocationData[]>(initialLocations);
+
+  // 구글 시트 데이터 실시간 연동
+  useEffect(() => {
+    async function loadSheetData() {
+      if (!GOOGLE_SHEET_CSV_URL) return;
+      const data = await fetchGoogleSheetData(GOOGLE_SHEET_CSV_URL);
+      if (data && data.length > 0) {
+        setLocations(data);
+      }
+    }
+    loadSheetData();
+  }, []);
+
+  // 언어가 변경될 때 로컬 DB 언어로 리셋 (현재 구글시트는 1개 언어만 덮어씌움)
+  useEffect(() => {
+    if (!GOOGLE_SHEET_CSV_URL) {
+      setLocations((CURATION_DB as Record<string, LocationData[]>)[lang] || MOCK_LOCATIONS[lang]);
+    }
+  }, [lang]);
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);

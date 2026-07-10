@@ -84,9 +84,12 @@ const PayPalCheckoutButton: React.FC<PayPalCheckoutButtonProps> = ({
     onError?.(err);
   };
 
+  const { lang } = useLanguage();
+
   return (
     <div className="w-full max-w-md mx-auto">
       <PayPalButtons
+        forceReRender={[lang]}
         style={{
           layout: 'vertical',
           color: 'gold',

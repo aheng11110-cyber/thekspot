@@ -10,7 +10,20 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>('EN');
+  const [lang, setLangState] = useState<Language>(() => {
+    const saved = localStorage.getItem('site_lang');
+    if (saved && ['EN', 'KO', 'JP', 'CN', 'VN'].includes(saved)) {
+      return saved as Language;
+    }
+    return 'EN';
+  });
+
+  const setLang = (newLang: Language) => {
+    if (newLang !== lang) {
+      localStorage.setItem('site_lang', newLang);
+      window.location.reload();
+    }
+  };
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>

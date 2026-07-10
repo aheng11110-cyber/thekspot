@@ -69,7 +69,10 @@ async function scrapeAndFilterData() {
     응답은 반드시 마크다운 블록(예: \`\`\`json) 없이 순수 JSON 형태만 반환하세요.
   `;
 
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ 
+    model: "gemini-1.5-flash",
+    generationConfig: { responseMimeType: "application/json" }
+  });
   
   const result = await model.generateContent(prompt);
   const responseText = result.response.text().trim();

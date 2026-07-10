@@ -63,6 +63,13 @@ export const SITE_CONTENT = {
       enterprise: 'Enterprise',
       mostPopular: 'Most Popular',
       contactSales: 'Contact Sales',
+      oneTime: '/one-time',
+      basicDesc: 'Weekly Seongsu popup route map & Naver-filtered clean food lists.',
+      basicFeatures: ['Weekly updated popup maps', 'Naver-filtered clean food list', 'Basic K-slang/meme glossary'],
+      proDesc: 'Real-time custom maps, K-slang guides & private Discord channel feed.',
+      proFeatures: ['Everything in Basic', 'All Naver-filtered clean food maps', 'Premium weekly K-slang guides', 'Priority Q&A & translation support'],
+      enterpriseDesc: 'Custom corporate tour guides & retail popup placement analysis.',
+      enterpriseFeatures: ['Everything in Pro', 'B2B brand popup placement support', 'Custom local SEO & marketing consulting', 'Dedicated English guide support'],
     }
   },
   KO: {
@@ -122,6 +129,13 @@ export const SITE_CONTENT = {
       enterprise: '엔터프라이즈',
       mostPopular: '가장 인기있는',
       contactSales: '도입 문의',
+      oneTime: '/1회 결제',
+      basicDesc: '주간 성수 팝업 루트 맵과 네이버 필터링 클린 맛집 리스트를 제공합니다.',
+      basicFeatures: ['매주 업데이트되는 팝업 지도', '네이버 필터링 클린 맛집 리스트', '기본 K-밈 용어집'],
+      proDesc: '실시간 커스텀 맵, K-슬랭 가이드 및 프라이빗 디스코드 채널 피드가 제공됩니다.',
+      proFeatures: ['베이직 플랜의 모든 기능', '전체 네이버 필터링 맛집 지도', '프리미엄 주간 K-슬랭 가이드', '우선 Q&A 및 번역 지원'],
+      enterpriseDesc: '맞춤형 기업 투어 가이드 및 리테일 팝업 배치 분석 서비스를 제공합니다.',
+      enterpriseFeatures: ['프로 플랜의 모든 기능', 'B2B 브랜드 팝업 배치 지원', '맞춤형 로컬 SEO 및 마케팅 컨설팅', '전담 영어 가이드 지원'],
     }
   },
   JP: {
@@ -181,6 +195,13 @@ export const SITE_CONTENT = {
       enterprise: 'エンタープライズ',
       mostPopular: '一番人気',
       contactSales: 'お問い合わせ',
+      oneTime: '/1回買い切り',
+      basicDesc: '週刊・聖水ポップアップルートマップとネイバーフィルタリング済みクリーンルメリスト。',
+      basicFeatures: ['毎週更新のポップアップマップ', 'フィルタリング済みローカルグルメリスト', '基本的なK-ミーム用語集'],
+      proDesc: 'リアルタイムのカスタムマップ、K-スラングガイド、プライベートDiscordチャンネル。',
+      proFeatures: ['ベーシックの全機能', '全てのクリーンローカルグルメマップ', 'プレミアム週刊K-スラングガイド', '優先Q&Aと翻訳サポート'],
+      enterpriseDesc: 'カスタマイズされた企業ツアーガイドとリテールポップアップ配置分析。',
+      enterpriseFeatures: ['プロの全機能', 'B2Bブランドのポップアップ配置サポート', 'カスタムローカルSEOとマーケティングコンサルティング', '専任の英語ガイドサポート'],
     }
   },
   CN: {
@@ -240,6 +261,13 @@ export const SITE_CONTENT = {
       enterprise: '企业版',
       mostPopular: '最受欢迎',
       contactSales: '联系销售',
+      oneTime: '/一次性买断',
+      basicDesc: '每周圣水洞快闪店路线图和经过Naver过滤的纯净美食列表。',
+      basicFeatures: ['每周更新的快闪店地图', '纯净本地美食列表', '基本韩国网络用语/热梗词汇表'],
+      proDesc: '实时自定义地图、韩国流行语指南以及专属Discord频道推送。',
+      proFeatures: ['包含基础版的所有功能', '所有纯净美食地图', '高级每周韩国流行语指南', '优先问答与翻译支持'],
+      enterpriseDesc: '定制企业导游及零售快闪店选址分析。',
+      enterpriseFeatures: ['包含专业版的所有功能', 'B2B品牌快闪店选址支持', '定制本地SEO与营销咨询', '专属英语导游支持'],
     }
   },
   VN: {
@@ -299,6 +327,13 @@ export const SITE_CONTENT = {
       enterprise: 'Doanh Nghiệp',
       mostPopular: 'Phổ Biến Nhất',
       contactSales: 'Liên Hệ Bán Hàng',
+      oneTime: '/mua 1 lần',
+      basicDesc: 'Bản đồ lộ trình pop-up Seongsu hàng tuần & danh sách nhà hàng sạch đã lọc từ Naver.',
+      basicFeatures: ['Bản đồ pop-up cập nhật hàng tuần', 'Danh sách nhà hàng sạch đã lọc từ Naver', 'Bảng chú giải từ lóng/meme cơ bản'],
+      proDesc: 'Bản đồ tùy chỉnh thời gian thực, hướng dẫn từ lóng K và nguồn cấp dữ liệu Discord riêng tư.',
+      proFeatures: ['Tất cả tính năng của Gói Cơ Bản', 'Tất cả bản đồ nhà hàng sạch đã lọc', 'Hướng dẫn từ lóng cao cấp hàng tuần', 'Hỗ trợ Q&A và dịch thuật ưu tiên'],
+      enterpriseDesc: 'Hướng dẫn viên doanh nghiệp tùy chỉnh & phân tích vị trí pop-up bán lẻ.',
+      enterpriseFeatures: ['Tất cả tính năng của Gói Pro', 'Hỗ trợ vị trí pop-up thương hiệu B2B', 'Tư vấn marketing & SEO địa phương tùy chỉnh', 'Hỗ trợ hướng dẫn viên tiếng Anh chuyên dụng'],
     }
   },
 };

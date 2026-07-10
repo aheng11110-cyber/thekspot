@@ -1,5 +1,29 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
+
+const UI_TEXT = {
+  EN: {
+    title: "Dynamic\nLookbook",
+    desc: "Hundreds of curated style combinations. Discover the perfect fashion and spaces to inspire you through an ever-changing random puzzle layout."
+  },
+  KO: {
+    title: "Dynamic\nLookbook",
+    desc: "수백 가지의 엄선된 스타일 조합. 매 순간 새롭게 변하는 랜덤 퍼즐 레이아웃으로, 당신에게 영감을 줄 최적의 패션 스타일과 공간을 발견해보세요."
+  },
+  JP: {
+    title: "Dynamic\nLookbook",
+    desc: "何百もの厳選されたスタイルの組み合わせ。常に変化するランダムなパズルレイアウトで、インスピレーションを与える最適なファッションと空間を見つけてください。"
+  },
+  CN: {
+    title: "Dynamic\nLookbook",
+    desc: "数百种精心挑选的风格组合。通过不断变化的随机拼图布局，发现能激发您灵感的最佳时尚与空间。"
+  },
+  VN: {
+    title: "Dynamic\nLookbook",
+    desc: "Hàng trăm kết hợp phong cách được tuyển chọn. Khám phá thời trang và không gian hoàn hảo để truyền cảm hứng cho bạn thông qua bố cục câu đố ngẫu nhiên luôn thay đổi."
+  }
+};
 
 const IMAGES = [
   '/images/11.jpg',
@@ -19,7 +43,7 @@ const IMAGES = [
 const SLOTS = [
   "col-start-1 row-start-1 col-span-1 row-span-1", // 1 Small
   "col-start-2 row-start-1 col-span-1 row-span-1", // 2 Small
-  "col-start-3 row-start-1 col-span-2 row-span-1", // 3 Wide
+  "col-start-3 row-start-2 col-span-2 row-span-1", // 3 Wide
   "col-start-1 row-start-2 col-span-1 row-span-2", // 4 Tall
   "col-start-2 row-start-2 col-span-2 row-span-2", // 5 BIG (Center)
   "col-start-4 row-start-2 col-span-1 row-span-1", // 6 Small
@@ -39,6 +63,8 @@ function shuffleArray(array: string[]) {
 }
 
 export function PuzzleLookbook() {
+  const { lang } = useLanguage();
+  const text = UI_TEXT[lang];
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -97,13 +123,11 @@ export function PuzzleLookbook() {
         
         {/* Left Side: Text */}
         <div className="w-full lg:w-1/3 text-left">
-          <h2 className="text-white font-light tracking-tight leading-[1.1] mb-6" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
-            Dynamic<br />Lookbook
+          <h2 className="text-white font-light tracking-tight leading-[1.1] mb-6 whitespace-pre-line" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
+            {text.title}
           </h2>
           <p className="text-white/50 text-[14px] sm:text-[16px] leading-relaxed max-w-md">
-            수백 가지의 엄선된 스타일 조합. 
-            매 순간 새롭게 변하는 랜덤 퍼즐 레이아웃으로, 
-            당신에게 영감을 줄 최적의 패션 스타일과 공간을 발견해보세요.
+            {text.desc}
           </p>
         </div>
 

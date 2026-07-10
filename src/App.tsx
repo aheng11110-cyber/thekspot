@@ -382,21 +382,17 @@ export default function App() {
               <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.basic}</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tight">$29.99</span>
-                <span className="text-white/30 text-[14px]">/one-time</span>
+                <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-8">
-                Weekly Seongsu popup route map & Naver-filtered clean food lists.
+                {pricing.basicDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Weekly updated popup maps
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Naver-filtered clean food list
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Basic K-slang/meme glossary
-                </li>
+                {pricing.basicFeatures.map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                    <span className="text-white/30">✓</span> {feature}
+                  </li>
+                ))}
               </ul>
               <div className="flex flex-col gap-3">
                 <PayPalCheckoutButton
@@ -423,24 +419,17 @@ export default function App() {
               <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.pro}</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tight">$29.99</span>
-                <span className="text-white/30 text-[14px]">/one-time</span>
+                <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-8">
-                Real-time custom maps, K-slang guides & private Discord channel feed.
+                {pricing.proDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Everything in Basic
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> All Naver-filtered clean food maps
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Premium weekly K-slang guides
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Priority Q&A & translation support
-                </li>
+                {pricing.proFeatures.map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                    <span className="text-white/30">✓</span> {feature}
+                  </li>
+                ))}
               </ul>
               <div className="flex flex-col gap-3">
                 <PayPalCheckoutButton
@@ -464,21 +453,14 @@ export default function App() {
                 <span className="text-white text-[42px] font-light tracking-tight">Custom</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-8">
-                Custom corporate tour guides & retail popup placement analysis.
+                {pricing.enterpriseDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-10 flex-1">
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Everything in Pro
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> B2B brand popup placement support
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Custom local SEO & marketing consulting
-                </li>
-                <li className="flex items-center gap-3 text-white/60 text-[13px]">
-                  <span className="text-white/30">✓</span> Dedicated English guide support
-                </li>
+                {pricing.enterpriseFeatures.map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                    <span className="text-white/30">✓</span> {feature}
+                  </li>
+                ))}
               </ul>
               <div className="flex flex-col gap-3">
                 <a

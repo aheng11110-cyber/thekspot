@@ -26,7 +26,7 @@ const UI_TEXT = {
 };
 
 const IMAGES = [
-  '/images/11.jpg',
+  'https://i.postimg.cc/G9z42JDQ/1.jpg',
   '/images/5.jpg',
   '/images/6.jpg',
   '/images/9.jpg',

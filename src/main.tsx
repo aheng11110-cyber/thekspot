@@ -13,7 +13,7 @@ const PayPalWrapper = ({ children }: { children: React.ReactNode }) => {
   const localeMap: Record<string, string> = {
     EN: 'en_US',
     KO: 'ko_KR',
-    JP: 'ja_JP',
+    JP: 'ja',
     CN: 'zh_CN',
     VN: 'vi_VN'
   };

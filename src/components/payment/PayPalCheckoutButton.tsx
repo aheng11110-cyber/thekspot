@@ -15,7 +15,8 @@
 import React from 'react';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import type { PayPalProduct } from '../../lib/paypal';
-import { BRAND_NAME } from '../../config/content';
+import { BRAND_NAME, SITE_CONTENT } from '../../config/content';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface PayPalCheckoutButtonProps {
   product: PayPalProduct;
@@ -30,67 +31,94 @@ const PayPalCheckoutButton: React.FC<PayPalCheckoutButtonProps> = ({
   onError,
   onCancel,
 }) => {
+  const { lang } = useLanguage();
+  const t = SITE_CONTENT[lang].pricing;
+
+  const createOrderParams = (_data: any, actions: any) => {
+    return actions.order.create({
+      intent: 'CAPTURE',
+      purchase_units: [
+        {
+          description: product.description,
+          custom_id: product.id,
+          amount: {
+            currency_code: product.currency,
+            value: product.price,
+            breakdown: {
+              item_total: {
+                currency_code: product.currency,
+                value: product.price,
+              },
+            },
+          },
+          items: [
+            {
+              name: product.name,
+              unit_amount: {
+                currency_code: product.currency,
+                value: product.price,
+              },
+              quantity: '1',
+              category: 'DIGITAL_GOODS' as const,
+            },
+          ],
+        },
+      ],
+      application_context: {
+        brand_name: BRAND_NAME,
+        shipping_preference: 'NO_SHIPPING' as const,
+        user_action: 'PAY_NOW' as const,
+      },
+    });
+  };
+
+  const onApproveHandler = async (_data: any, actions: any) => {
+    if (actions.order) {
+      const details = await actions.order.capture();
+      onSuccess(details);
+    }
+  };
+
+  const onErrorHandler = (err: any) => {
+    console.error('[PayPal] Error:', err);
+    onError?.(err);
+  };
+
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto flex flex-col gap-1">
       <PayPalButtons
+        fundingSource="paypal"
         style={{
           layout: 'vertical',
           color: 'gold',
           shape: 'rect',
           label: 'paypal',
-          height: 50,
+          height: 48,
           tagline: false,
         }}
-        createOrder={(_data, actions) => {
-          return actions.order.create({
-            intent: 'CAPTURE',
-            purchase_units: [
-              {
-                description: product.description,
-                custom_id: product.id,
-                amount: {
-                  currency_code: product.currency,
-                  value: product.price,
-                  breakdown: {
-                    item_total: {
-                      currency_code: product.currency,
-                      value: product.price,
-                    },
-                  },
-                },
-                items: [
-                  {
-                    name: product.name,
-                    unit_amount: {
-                      currency_code: product.currency,
-                      value: product.price,
-                    },
-                    quantity: '1',
-                    category: 'DIGITAL_GOODS' as const,
-                  },
-                ],
-              },
-            ],
-            application_context: {
-              brand_name: BRAND_NAME,
-              shipping_preference: 'NO_SHIPPING' as const,
-              user_action: 'PAY_NOW' as const,
-            },
-          });
+        createOrder={createOrderParams}
+        onApprove={onApproveHandler}
+        onError={onErrorHandler}
+        onCancel={() => onCancel?.()}
+      />
+      
+      <div className="text-center text-[12px] text-white/50 mb-0.5 mt-0.5">
+        ▼ {t.debitOrCreditCard}
+      </div>
+
+      <PayPalButtons
+        fundingSource="card"
+        style={{
+          layout: 'vertical',
+          color: 'black',
+          shape: 'rect',
+          height: 48,
+          tagline: false,
         }}
-        onApprove={async (_data, actions) => {
-          if (actions.order) {
-            const details = await actions.order.capture();
-            onSuccess(details);
-          }
-        }}
-        onError={(err) => {
-          console.error('[PayPal] Error:', err);
-          onError?.(err);
-        }}
-        onCancel={() => {
-          onCancel?.();
-        }}
+        createOrder={createOrderParams}
+        onApprove={onApproveHandler}
+        onError={onErrorHandler}
+        onCancel={() => onCancel?.()}
       />
     </div>
   );

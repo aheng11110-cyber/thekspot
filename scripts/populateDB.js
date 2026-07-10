@@ -346,25 +346,46 @@ const baseLocations = [
   }
 ];
 
+const translateProvince = {
+  EN: { "Seoul": "Seoul", "Jeju": "Jeju", "Gyeongsang": "Gyeongsang", "Jeolla": "Jeolla", "Incheon": "Incheon", "Gangwon": "Gangwon", "Gyeonggi": "Gyeonggi", "Daejeon": "Daejeon", "Daegu": "Daegu", "Gwangju": "Gwangju", "Ulsan": "Ulsan", "Chungbuk": "Chungbuk", "Chungnam": "Chungnam", "Jeonnam": "Jeonnam", "Gyeongnam": "Gyeongnam", "Busan": "Busan" },
+  KO: { "Seoul": "서울", "Jeju": "제주", "Gyeongsang": "경상", "Jeolla": "전라", "Incheon": "인천", "Gangwon": "강원", "Gyeonggi": "경기", "Daejeon": "대전", "Daegu": "대구", "Gwangju": "광주", "Ulsan": "울산", "Chungbuk": "충북", "Chungnam": "충남", "Jeonnam": "전남", "Gyeongnam": "경남", "Busan": "부산" },
+  JP: { "Seoul": "ソウル", "Jeju": "済州", "Gyeongsang": "慶尚", "Jeolla": "全羅", "Incheon": "仁川", "Gangwon": "江原", "Gyeonggi": "京畿", "Daejeon": "大田", "Daegu": "大邱", "Gwangju": "光州", "Ulsan": "蔚山", "Chungbuk": "忠北", "Chungnam": "忠南", "Jeonnam": "全南", "Gyeongnam": "慶南", "Busan": "釜山" },
+  CN: { "Seoul": "首尔", "Jeju": "济州", "Gyeongsang": "庆尚", "Jeolla": "全罗", "Incheon": "仁川", "Gangwon": "江原", "Gyeonggi": "京畿", "Daejeon": "大田", "Daegu": "大邱", "Gwangju": "光州", "Ulsan": "蔚山", "Chungbuk": "忠北", "Chungnam": "忠南", "Jeonnam": "全南", "Gyeongnam": "庆南", "Busan": "釜山" },
+  VN: { "Seoul": "Seoul", "Jeju": "Jeju", "Gyeongsang": "Gyeongsang", "Jeolla": "Jeolla", "Incheon": "Incheon", "Gangwon": "Gangwon", "Gyeonggi": "Gyeonggi", "Daejeon": "Daejeon", "Daegu": "Daegu", "Gwangju": "Gwangju", "Ulsan": "Ulsan", "Chungbuk": "Chungbuk", "Chungnam": "Chungnam", "Jeonnam": "Jeonnam", "Gyeongnam": "Gyeongnam", "Busan": "Busan" }
+};
+
+const translateTag = {
+  EN: { "Trending": "Trending", "AI Pick": "AI Pick", "Popup Store": "Popup Store", "Culture": "Culture", "Healing/Relax": "Healing/Relax", "K-Culture": "K-Culture", "Nature": "Nature", "K-Food": "K-Food" },
+  KO: { "Trending": "트렌딩", "AI Pick": "AI 추천", "Popup Store": "팝업스토어", "Culture": "문화체험", "Healing/Relax": "힐링/여유", "K-Culture": "K-컬쳐", "Nature": "자연", "K-Food": "K-푸드" },
+  JP: { "Trending": "トレンド", "AI Pick": "AIおすすめ", "Popup Store": "ポップアップ", "Culture": "文化体験", "Healing/Relax": "ヒーリング", "K-Culture": "K-カルチャー", "Nature": "自然", "K-Food": "K-フード" },
+  CN: { "Trending": "热门趋势", "AI Pick": "AI推荐", "Popup Store": "快闪店", "Culture": "文化体验", "Healing/Relax": "治愈/放松", "K-Culture": "K-文化", "Nature": "自然", "K-Food": "K-美食" },
+  VN: { "Trending": "Thịnh hành", "AI Pick": "AI Chọn", "Popup Store": "Cửa hàng Pop-up", "Culture": "Văn hóa", "Healing/Relax": "Thư giãn", "K-Culture": "Văn hóa K", "Nature": "Thiên nhiên", "K-Food": "Ẩm thực K" }
+};
+
+const translateGroupSize = {
+  EN: { "Solo": "Solo", "2-3 People": "2-3 People", "4-5 People": "4-5 People" },
+  KO: { "Solo": "혼자", "2-3 People": "2-3명", "4-5 People": "4-5명" },
+  JP: { "Solo": "1人", "2-3 People": "2-3人", "4-5 People": "4-5人" },
+  CN: { "Solo": "独自", "2-3 People": "2-3人", "4-5 People": "4-5人" },
+  VN: { "Solo": "Một mình", "2-3 People": "2-3 Người", "4-5 People": "4-5 Người" }
+};
+
 const curationDB = { EN: [], KO: [], JP: [], CN: [], VN: [] };
 
 baseLocations.forEach(loc => {
   const base = {
     id: loc.id,
     city: loc.city,
-    province: loc.province,
     type: loc.type,
     imageUrl: loc.imageUrl,
-    links: loc.links,
-    tags: loc.tags,
-    groupSizes: loc.groupSizes
+    links: loc.links
   };
 
-  curationDB.EN.push({ ...base, name: loc.en.name, description: loc.en.desc });
-  curationDB.KO.push({ ...base, name: loc.ko.name, description: loc.ko.desc });
-  curationDB.JP.push({ ...base, name: loc.jp.name, description: loc.jp.desc });
-  curationDB.CN.push({ ...base, name: loc.cn.name, description: loc.cn.desc });
-  curationDB.VN.push({ ...base, name: loc.vn.name, description: loc.vn.desc });
+  curationDB.EN.push({ ...base, province: loc.province, tags: loc.tags, groupSizes: loc.groupSizes, name: loc.en.name, description: loc.en.desc });
+  curationDB.KO.push({ ...base, province: translateProvince.KO[loc.province] || loc.province, tags: loc.tags.map(t => translateTag.KO[t] || t), groupSizes: loc.groupSizes.map(g => translateGroupSize.KO[g] || g), name: loc.ko.name, description: loc.ko.desc });
+  curationDB.JP.push({ ...base, province: translateProvince.JP[loc.province] || loc.province, tags: loc.tags.map(t => translateTag.JP[t] || t), groupSizes: loc.groupSizes.map(g => translateGroupSize.JP[g] || g), name: loc.jp.name, description: loc.jp.desc });
+  curationDB.CN.push({ ...base, province: translateProvince.CN[loc.province] || loc.province, tags: loc.tags.map(t => translateTag.CN[t] || t), groupSizes: loc.groupSizes.map(g => translateGroupSize.CN[g] || g), name: loc.cn.name, description: loc.cn.desc });
+  curationDB.VN.push({ ...base, province: translateProvince.VN[loc.province] || loc.province, tags: loc.tags.map(t => translateTag.VN[t] || t), groupSizes: loc.groupSizes.map(g => translateGroupSize.VN[g] || g), name: loc.vn.name, description: loc.vn.desc });
 });
 
 const dbPath = path.join(__dirname, '../src/data/curationDB.json');

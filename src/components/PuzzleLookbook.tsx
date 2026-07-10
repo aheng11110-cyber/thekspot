@@ -8,19 +8,19 @@ const UI_TEXT = {
     desc: "Hundreds of curated style combinations. Discover the perfect fashion and spaces to inspire you through an ever-changing random puzzle layout."
   },
   KO: {
-    title: "Dynamic\nLookbook",
+    title: "다이내믹\n룩북",
     desc: "수백 가지의 엄선된 스타일 조합. 매 순간 새롭게 변하는 랜덤 퍼즐 레이아웃으로, 당신에게 영감을 줄 최적의 패션 스타일과 공간을 발견해보세요."
   },
   JP: {
-    title: "Dynamic\nLookbook",
+    title: "ダイナミック\nルックブック",
     desc: "何百もの厳選されたスタイルの組み合わせ。常に変化するランダムなパズルレイアウトで、インスピレーションを与える最適なファッションと空間を見つけてください。"
   },
   CN: {
-    title: "Dynamic\nLookbook",
+    title: "动态\n造型册",
     desc: "数百种精心挑选的风格组合。通过不断变化的随机拼图布局，发现能激发您灵感的最佳时尚与空间。"
   },
   VN: {
-    title: "Dynamic\nLookbook",
+    title: "Lookbook\nNăng động",
     desc: "Hàng trăm kết hợp phong cách được tuyển chọn. Khám phá thời trang và không gian hoàn hảo để truyền cảm hứng cho bạn thông qua bố cục câu đố ngẫu nhiên luôn thay đổi."
   }
 };

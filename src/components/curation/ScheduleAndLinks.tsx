@@ -28,13 +28,6 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
       transition={{ delay: index * 0.1 }}
       className="flex flex-col sm:flex-row gap-4 p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
     >
-      {/* 이미지 */}
-      <div className="w-full sm:w-32 h-32 shrink-0 rounded-lg overflow-hidden bg-black/50 relative">
-        <img src={loc.imageUrl} alt={loc.name} className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/70 backdrop-blur-md rounded text-[10px] text-white uppercase tracking-wider">
-          {loc.type}
-        </div>
-      </div>
 
       {/* 정보 */}
       <div className="flex flex-col flex-1 justify-center relative">

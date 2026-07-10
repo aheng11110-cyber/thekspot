@@ -24,7 +24,7 @@ const UI_TEXT = {
     savedItinerary: 'Saved!'
   },
   KO: {
-    title: 'Curate Your\nJourney',
+    title: '나만의 여정\n만들기',
     desc: '원하는 여행 스타일을 선택해 보세요.',
     groupSize: '인원',
     interests: '관심사',
@@ -37,7 +37,7 @@ const UI_TEXT = {
     savedItinerary: '저장 완료!'
   },
   JP: {
-    title: 'Curate Your\nJourney',
+    title: 'あなただけの\n旅を',
     desc: 'ご希望の旅行スタイルを選択してください。',
     groupSize: '人数',
     interests: '興味・関心',
@@ -50,7 +50,7 @@ const UI_TEXT = {
     savedItinerary: '保存しました!'
   },
   CN: {
-    title: 'Curate Your\nJourney',
+    title: '定制您的\n旅程',
     desc: '请选择您偏好的旅行风格。',
     groupSize: '人数',
     interests: '兴趣',
@@ -63,7 +63,7 @@ const UI_TEXT = {
     savedItinerary: '已保存!'
   },
   VN: {
-    title: 'Curate Your\nJourney',
+    title: 'Tạo hành trình\ncủa bạn',
     desc: 'Chọn phong cách du lịch ưa thích của bạn.',
     groupSize: 'Số người',
     interests: 'Sở thích',

@@ -144,19 +144,8 @@ export default function App() {
       {/* ════════════════ SECTION 2: CINEMATIC TEXT ════════════════ */}
       <section
         ref={section2Ref}
-        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden"
+        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
       >
-        {/* Video background */}
-        {VIDEO_URLS.section2 && (
-          <video
-            src={VIDEO_URLS.section2}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        )}
 
         {/* Top gradient overlay */}
         <div

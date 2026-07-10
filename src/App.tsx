@@ -445,20 +445,8 @@ export default function App() {
       {/* ════════════════ FOOTER ════════════════ */}
       <footer className="snap-start snap-always bg-black overflow-hidden flex flex-col justify-end">
         <div className="flex flex-col md:flex-row min-h-[400px]">
-          {/* Left: Video */}
-          <div className="md:w-1/2 h-[300px] md:h-auto relative">
-            {VIDEO_URLS.footer ? (
-              <video
-                src={VIDEO_URLS.footer}
-                className="absolute inset-0 w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            ) : (
-              <div className="absolute inset-0 bg-white/5" />
-            )}
+          {/* Left: Empty Space or Fallback */}
+          <div className="md:w-1/2 h-[300px] md:h-auto relative bg-black">
           </div>
 
           {/* Right: Content */}

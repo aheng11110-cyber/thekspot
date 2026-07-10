@@ -13,7 +13,7 @@ const PayPalWrapper = ({ children }: { children: React.ReactNode }) => {
   const localeMap: Record<string, string> = {
     EN: 'en_US',
     KO: 'ko_KR',
-    JP: 'ja',
+    JP: 'ja_JP',
     CN: 'zh_CN',
     VN: 'vi_VN'
   };
@@ -23,7 +23,6 @@ const PayPalWrapper = ({ children }: { children: React.ReactNode }) => {
     currency: PAYPAL_CONFIG.currency,
     intent: PAYPAL_CONFIG.intent,
     locale: localeMap[lang] || 'en_US',
-    'buyer-country': 'US' // Force US layout to ensure text is ALWAYS shown instead of icon-only
   };
 
   // key={lang} ensures the script reloads when language changes

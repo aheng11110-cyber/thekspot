@@ -121,7 +121,7 @@ export function CurationSection() {
   // 동적 필터 카테고리 추출 (현재 언어의 데이터 기준)
   const groupSizes = useMemo(() => Array.from(new Set(locations.flatMap(l => l.groupSizes))), [locations]);
   const interests = useMemo(() => Array.from(new Set(locations.flatMap(l => l.tags))), [locations]);
-  const regions = useMemo(() => [text.allRegion, ...Array.from(new Set(locations.map(l => l.city)))], [locations, text.allRegion]);
+  const regions = useMemo(() => [text.allRegion, ...Array.from(new Set(locations.map(l => l.province)))], [locations, text.allRegion]);
 
   const hasActiveFilters = selectedSize !== null || selectedInterests.length > 0 || selectedRegion !== text.allRegion;
 
@@ -169,7 +169,7 @@ export function CurationSection() {
         const hasMatchingInterest = selectedInterests.some(interest => loc.tags.includes(interest));
         if (!hasMatchingInterest) return false;
       }
-      if (selectedRegion !== text.allRegion && loc.city !== selectedRegion && loc.province !== selectedRegion) {
+      if (selectedRegion !== text.allRegion && loc.province !== selectedRegion) {
         return false;
       }
       return true;

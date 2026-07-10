@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
@@ -10,10 +10,8 @@ const __dirname = path.dirname(__filename);
 
 const DB_PATH = path.join(__dirname, '../src/data/curationDB.json');
 
-// GitHub Secrets에 등록된 OPENAI_API_KEY를 가져옵니다.
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || '',
-});
+// GitHub Secrets에 등록된 GEMINI_API_KEY를 가져옵니다.
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 async function crawlNaverSearch() {
   console.log("📡 네이버에서 '성수동 핫플' 인기글 검색 중...");
@@ -33,10 +31,10 @@ async function crawlNaverSearch() {
 }
 
 async function scrapeAndFilterData() {
-  console.log("🚀 100% 무인 AI 자동화 수집 봇 시작...");
+  console.log("🚀 100% 무인 AI 자동화 수집 봇 시작 (Gemini 모드)...");
   
-  if (!process.env.OPENAI_API_KEY) {
-    console.error("❌ 오류: OPENAI_API_KEY가 설정되지 않았습니다.");
+  if (!process.env.GEMINI_API_KEY) {
+    console.error("❌ 오류: GEMINI_API_KEY가 설정되지 않았습니다.");
     console.error("GitHub [Settings] -> [Secrets and variables] -> [Actions] 에 키를 추가해주세요.");
     process.exit(1);
   }
@@ -44,7 +42,7 @@ async function scrapeAndFilterData() {
   // 1. 최신 트렌드 크롤링
   const trendData = await crawlNaverSearch();
 
-  console.log("🧠 OpenAI(ChatGPT) 가동: 데이터 분석 및 다국어 큐레이션 작성 중...");
+  console.log("🧠 Google Gemini 가동: 데이터 분석 및 다국어 큐레이션 작성 중...");
 
   const prompt = `
     당신은 전 세계 외국인들에게 한국의 '진짜' 핫플레이스를 추천해주는 AI 큐레이터입니다.
@@ -55,36 +53,36 @@ async function scrapeAndFilterData() {
     - id: 고유한 숫자 (현재 타임스탬프)
     - type: cafe, restaurant, popup, concert, bar 중 하나
     - imageUrl: "/images/29.jpg" (고정값 사용)
-    - links: { instagram: "https://www.instagram.com/p/BsOGulcndj-/" } (고정값 사용 - 임베드 오류 방지용)
+    - links: { "instagram": "https://www.instagram.com/p/BsOGulcndj-/" } (고정값 사용 - 임베드 오류 방지용)
     - tags: 2개의 태그 (예: ["AI 추천", "트렌드"])
     - groupSizes: ["혼자", "2-3명"] 등
     
     결과는 EN, KO, JP, CN, VN 5개 언어로 번역되어야 하며, 각 언어 객체가 name, city, province, description을 해당 언어로 가져야 합니다.
     형식 예시:
     {
-      "EN": { "id": "123", "name": "...", "city": "Seoul", "province": "Seoul", "description": "...", "type": "cafe", "imageUrl": "...", "links": {...}, "tags": [...], "groupSizes": [...] },
+      "EN": { "id": "123", "name": "...", "city": "Seoul", "province": "Seoul", "description": "...", "type": "cafe", "imageUrl": "...", "links": {"instagram": "https://www.instagram.com/p/BsOGulcndj-/"}, "tags": [...], "groupSizes": [...] },
       "KO": { ... },
       "JP": { ... },
       "CN": { ... },
       "VN": { ... }
     }
-    응답은 반드시 마크다운 블록 없이 순수 JSON 형태만 반환하세요.
+    응답은 반드시 마크다운 블록(예: \`\`\`json) 없이 순수 JSON 형태만 반환하세요.
   `;
 
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: prompt }],
-    temperature: 0.7,
-  });
-
-  const responseText = response.choices[0].message.content.trim();
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   
+  const result = await model.generateContent(prompt);
+  const responseText = result.response.text().trim();
+  
+  // 만약 마크다운 블록이 섞여있다면 제거
+  const cleanJsonText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
+
   try {
-    const aiGeneratedData = JSON.parse(responseText);
+    const aiGeneratedData = JSON.parse(cleanJsonText);
     console.log("✅ AI 큐레이션 완료:", aiGeneratedData.KO.name);
     return aiGeneratedData;
   } catch (err) {
-    console.error("❌ JSON 파싱 오류. AI 응답:", responseText);
+    console.error("❌ JSON 파싱 오류. AI 응답:", cleanJsonText);
     throw err;
   }
 }

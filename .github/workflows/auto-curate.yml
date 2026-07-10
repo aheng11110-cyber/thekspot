@@ -28,7 +28,7 @@ jobs:
 
       - name: Run the auto-curator script
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NODE_ENV: production
         run: node scripts/autoCurator.js
 

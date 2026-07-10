@@ -148,12 +148,6 @@ export function PuzzleLookbook() {
                 className={`relative overflow-hidden rounded-xl md:rounded-2xl bg-white/5 border border-white/10 ${slotClass}`}
               >
                 <div className="absolute inset-0 bg-black/20 z-10 hover:bg-transparent transition-colors duration-500" />
-                <img 
-                  src={src} 
-                  alt={`Lookbook ${index}`} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                  style={{ imageRendering: 'high-quality' }}
-                />
               </motion.div>
             );
           })}

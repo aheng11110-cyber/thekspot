@@ -85,33 +85,13 @@ const PayPalCheckoutButton: React.FC<PayPalCheckoutButtonProps> = ({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto flex flex-col gap-1">
+    <div className="w-full max-w-md mx-auto">
       <PayPalButtons
-        fundingSource="paypal"
         style={{
           layout: 'vertical',
           color: 'gold',
           shape: 'rect',
           label: 'paypal',
-          height: 48,
-          tagline: false,
-        }}
-        createOrder={createOrderParams}
-        onApprove={onApproveHandler}
-        onError={onErrorHandler}
-        onCancel={() => onCancel?.()}
-      />
-      
-      <div className="text-center text-[12px] text-white/50 mb-0.5 mt-0.5">
-        ▼ {t.debitOrCreditCard}
-      </div>
-
-      <PayPalButtons
-        fundingSource="card"
-        style={{
-          layout: 'vertical',
-          color: 'black',
-          shape: 'rect',
           height: 48,
           tagline: false,
         }}

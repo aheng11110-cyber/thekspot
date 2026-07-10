@@ -25,9 +25,9 @@ const PayPalWrapper = ({ children }: { children: React.ReactNode }) => {
     locale: localeMap[lang] || 'en_US',
   };
 
-  // key={lang} ensures the script reloads when language changes
+  // Let PayPalScriptProvider handle options changes internally to prevent script crashes
   return (
-    <PayPalScriptProvider options={paypalOptions} key={lang}>
+    <PayPalScriptProvider options={paypalOptions}>
       {children}
     </PayPalScriptProvider>
   );

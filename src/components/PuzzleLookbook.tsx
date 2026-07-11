@@ -26,16 +26,16 @@ const UI_TEXT = {
 };
 
 const IMAGES = [
-  '/hero/1.jpeg',
-  '/hero/2.jpg',
-  '/hero/3.jpeg',
-  '/hero/4.jpeg',
-  '/hero/5.jpeg',
-  '/hero/6.jpeg',
-  '/hero/7.jpeg',
-  '/hero/8.jpg',
-  '/hero/9.jpeg',
-  '/hero/10.jpeg',
+  'https://i.postimg.cc/WdqzXBH3/19.jpg',
+  'https://i.postimg.cc/hfjf7z8L/2.jpg',
+  'https://i.postimg.cc/mP1k8v5F/20.jpg',
+  'https://i.postimg.cc/jDn2ZpFf/21.jpg',
+  'https://i.postimg.cc/G4TtqW5Y/22.jpg',
+  'https://i.postimg.cc/NK2Fp3zR/23.jpg',
+  'https://i.postimg.cc/VJ0vDxV9/24.jpg',
+  'https://i.postimg.cc/RWJhXkD7/25.jpg',
+  'https://i.postimg.cc/4YHyBDSb/26.jpg',
+  'https://i.postimg.cc/LJg5NcbQ/27.jpg',
 ];
 
 // 4x4 Grid layout slots (16 cells total)

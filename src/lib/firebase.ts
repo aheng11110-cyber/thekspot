@@ -14,7 +14,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCyvSOOXNpncoIl64eOlURToeYfXJFegzk",
+  apiKey: "AIzaSyCyvSO0XNpncoIl64eOlURToeVfXJFegzk",
   authDomain: "the-k-spot.firebaseapp.com",
   projectId: "the-k-spot",
   storageBucket: "the-k-spot.firebasestorage.app",

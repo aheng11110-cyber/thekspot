@@ -95,42 +95,50 @@ export default function App() {
           animate={{ opacity: entranceComplete ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="flex flex-col gap-6 md:gap-12">
-            <h1
-              className="text-white font-light leading-[1.05] tracking-[-0.03em] text-left"
-              style={{ fontSize: 'clamp(32px, 4.5vw, 60px)' }}
-            >
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-block"
-              >
-                {hero.titleLeft[0]} {hero.titleLeft[1]}
-              </motion.span>
-              <br />
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="inline-block text-white/60"
-              >
-                {hero.titleRight[0]} {hero.titleRight[1]}
-              </motion.span>
-            </h1>
+          <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center">
+            {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
+            <svg viewBox="0 0 800 450" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+              <foreignObject width="100%" height="100%">
+                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
+                  <h1
+                    className="text-white font-light leading-[1.1] tracking-[-0.03em] text-left"
+                    style={{ fontSize: '64px' }}
+                  >
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      className="inline-block"
+                    >
+                      {hero.titleLeft.join(' ')}
+                    </motion.span>
+                    <br />
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                      className="inline-block text-white/60"
+                    >
+                      {hero.titleRight.join(' ')}
+                    </motion.span>
+                  </h1>
 
-            <motion.p
-              className="max-w-md text-[14px] sm:text-[16px] text-white/80 leading-relaxed font-normal"
-              initial={{ opacity: 0, y: 25 }}
-              animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.9,
-                ease: [0.215, 0.61, 0.355, 1.0],
-                delay: 0.6,
-              }}
-            >
-              {hero.description}
-            </motion.p>
+                  <motion.p
+                    className="max-w-[500px] text-white/80 leading-[1.6] font-normal"
+                    style={{ fontSize: '20px' }}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      duration: 0.9,
+                      ease: [0.215, 0.61, 0.355, 1.0],
+                      delay: 0.6,
+                    }}
+                  >
+                    {hero.description}
+                  </motion.p>
+                </div>
+              </foreignObject>
+            </svg>
           </div>
         </motion.div>
 

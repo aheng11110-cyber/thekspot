@@ -1,29 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { LocationData } from '../../data/mockCurationData';
-import { MapPin } from 'lucide-react';
+import { MapPin, MousePointerClick } from 'lucide-react';
 
 interface MapDisplayProps {
   locations: LocationData[];
 }
 
 export function MapDisplay({ locations }: MapDisplayProps) {
+  const [isActive, setIsActive] = useState(false);
   const mapRef = useRef<HTMLDivElement>(null);
-
-  // Prevent page scroll when hovering over the map
-  useEffect(() => {
-    const el = mapRef.current;
-    if (!el) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      // This stops the page from scrolling/snapping when the user 
-      // scrolls the mouse wheel over the map without holding Ctrl.
-      e.preventDefault();
-    };
-
-    // Must be { passive: false } to use e.preventDefault()
-    el.addEventListener('wheel', handleWheel, { passive: false });
-    return () => el.removeEventListener('wheel', handleWheel);
-  }, []);
 
   if (locations.length === 0) {
     return (
@@ -34,42 +19,56 @@ export function MapDisplay({ locations }: MapDisplayProps) {
     );
   }
 
-  // 지도를 보여줄 메인 장소 (첫 번째 장소 기준)
   const mainLoc = locations[0];
-  // 구글 맵 검색 쿼리 (정확한 핀을 위해 주소 중심으로 검색)
   const query = encodeURIComponent(`${mainLoc.name} ${mainLoc.province}`);
 
   return (
     <div 
       ref={mapRef}
+      onMouseLeave={() => setIsActive(false)}
       className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group"
     >
       
       {/* 
-        구글 맵 iframe (무료 버전) 
-        CSS filter를 사용하여 다크모드 스타일로 반전시킴 
+        구글 맵 iframe
+        isActive 상태가 아닐 때는 iframe의 마우스 이벤트를 비활성화하여
+        사용자가 휠을 돌릴 때 페이지 전체 스크롤(스냅)이 정상적으로 작동하게 합니다.
       */}
       <iframe
         width="100%"
         height="100%"
         style={{ 
           border: 0, 
-          filter: 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%)' 
+          filter: 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%)',
+          pointerEvents: isActive ? 'auto' : 'none'
         }}
         src={`https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed`}
         title={`Map of ${mainLoc.name}`}
       />
 
+      {/* 클릭해서 활성화하는 오버레이 */}
+      {!isActive && (
+        <div 
+          onClick={() => setIsActive(true)}
+          className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors cursor-pointer"
+        >
+          <div className="px-6 py-3 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-3 shadow-2xl transform hover:scale-105 transition-transform">
+            <MousePointerClick size={18} className="text-white" />
+            <span className="text-white font-medium text-sm">Click to interact with Map</span>
+          </div>
+        </div>
+      )}
+
       {/* 장소 이름 오버레이 */}
-      <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-xl flex items-center gap-2">
+      <div className="absolute top-4 left-4 z-10 bg-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-xl flex items-center gap-2 pointer-events-none">
         <MapPin size={14} className="text-white" />
         <p className="text-white text-sm font-medium">{mainLoc.name}</p>
       </div>
 
       {locations.length > 1 && (
-        <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl">
+        <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-none">
           <p className="text-white/70 text-xs mb-1">Other locations in your filter:</p>
-          <div className="flex gap-2 overflow-x-auto custom-scrollbar pb-1">
+          <div className="flex gap-2 overflow-x-hidden pb-1">
             {locations.slice(1).map(loc => (
               <span key={loc.id} className="whitespace-nowrap px-2 py-1 bg-white/10 rounded text-[10px] text-white">
                 {loc.name}

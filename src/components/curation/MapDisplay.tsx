@@ -10,6 +10,23 @@ export function MapDisplay({ locations }: MapDisplayProps) {
   const [isActive, setIsActive] = useState(false);
   const mapRef = useRef<HTMLDivElement>(null);
 
+  // 지도가 활성화되었을 때(클릭됨) 마우스 휠을 돌려도 
+  // 페이지 전체가 아래로 스냅되어 넘어가는 현상을 완전히 방지합니다.
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '15px'; // 스크롤바 사라짐으로 인한 화면 떨림 방지
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [isActive]);
+
   if (locations.length === 0) {
     return (
       <div className="relative w-full aspect-square md:aspect-[4/3] bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col items-center justify-center">

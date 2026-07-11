@@ -52,7 +52,8 @@ export function MapDisplay({ locations }: MapDisplayProps) {
   }
 
   const mainLoc = locations[0];
-  const query = encodeURIComponent(`${mainLoc.name} ${mainLoc.province}`);
+  // 구글 맵에서 정확한 핀을 표시하기 위해 검색어를 더 구체적으로 변경 (이름, 도시, 한국)
+  const query = encodeURIComponent(`${mainLoc.name}, ${mainLoc.city}, South Korea`);
 
   return (
     <div 

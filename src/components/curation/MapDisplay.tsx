@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { LocationData } from '../../data/mockCurationData';
 import { MapPin, MousePointerClick } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { SITE_CONTENT } from '../../config/content';
 
 interface MapDisplayProps {
   locations: LocationData[];
@@ -9,6 +11,8 @@ interface MapDisplayProps {
 export function MapDisplay({ locations }: MapDisplayProps) {
   const [isActive, setIsActive] = useState(false);
   const mapRef = useRef<HTMLDivElement>(null);
+  const { lang } = useLanguage();
+  const text = SITE_CONTENT[lang].curation;
 
   // 지도가 활성화되었을 때(클릭됨) 마우스 휠을 돌려도 
   // 페이지 전체가 아래로 스냅되어 넘어가는 현상을 완전히 방지합니다.
@@ -71,7 +75,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         >
           <div className="px-6 py-3 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-3 shadow-2xl transform hover:scale-105 transition-transform">
             <MousePointerClick size={18} className="text-white" />
-            <span className="text-white font-medium text-sm">Click to interact with Map</span>
+            <span className="text-white font-medium text-sm">{text.mapInteract}</span>
           </div>
         </div>
       )}

@@ -71,6 +71,9 @@ export const SITE_CONTENT = {
       proFeatures: ['Everything in Basic', 'All Naver-filtered clean food maps', 'Premium weekly K-slang guides', 'Priority Q&A & translation support'],
       enterpriseDesc: 'Custom corporate tour guides & retail popup placement analysis.',
       enterpriseFeatures: ['Everything in Pro', 'B2B brand popup placement support', 'Custom local SEO & marketing consulting', 'Dedicated English guide support'],
+    },
+    curation: {
+      mapInteract: 'Click to interact with Map',
     }
   },
   KO: {
@@ -138,6 +141,9 @@ export const SITE_CONTENT = {
       proFeatures: ['베이직 플랜의 모든 기능', '전체 네이버 필터링 맛집 지도', '프리미엄 주간 K-슬랭 가이드', '우선 Q&A 및 번역 지원'],
       enterpriseDesc: '맞춤형 기업 투어 가이드 및 리테일 팝업 배치 분석 서비스를 제공합니다.',
       enterpriseFeatures: ['프로 플랜의 모든 기능', 'B2B 브랜드 팝업 배치 지원', '맞춤형 로컬 SEO 및 마케팅 컨설팅', '전담 영어 가이드 지원'],
+    },
+    curation: {
+      mapInteract: '지도를 조작하려면 클릭하세요',
     }
   },
   JP: {
@@ -205,6 +211,9 @@ export const SITE_CONTENT = {
       proFeatures: ['ベーシックの全機能', '全てのクリーンローカルグルメマップ', 'プレミアム週刊K-スラングガイド', '優先Q&Aと翻訳サポート'],
       enterpriseDesc: 'カスタマイズされた企業ツアーガイドとリテールポップアップ配置分析。',
       enterpriseFeatures: ['プロの全機能', 'B2Bブランドのポップアップ配置サポート', 'カスタムローカルSEOとマーケティングコンサルティング', '専任の英語ガイドサポート'],
+    },
+    curation: {
+      mapInteract: 'マップを操作するにはクリック',
     }
   },
   CN: {
@@ -272,6 +281,9 @@ export const SITE_CONTENT = {
       proFeatures: ['包含基础版的所有功能', '所有纯净美食地图', '高级每周韩国流行语指南', '优先问答与翻译支持'],
       enterpriseDesc: '定制企业导游及零售快闪店选址分析。',
       enterpriseFeatures: ['包含专业版的所有功能', 'B2B品牌快闪店选址支持', '定制本地SEO与营销咨询', '专属英语导游支持'],
+    },
+    curation: {
+      mapInteract: '点击以互动地图',
     }
   },
   VN: {
@@ -339,6 +351,9 @@ export const SITE_CONTENT = {
       proFeatures: ['Tất cả tính năng của Gói Cơ Bản', 'Tất cả bản đồ nhà hàng sạch đã lọc', 'Hướng dẫn từ lóng cao cấp hàng tuần', 'Hỗ trợ Q&A và dịch thuật ưu tiên'],
       enterpriseDesc: 'Hướng dẫn viên doanh nghiệp tùy chỉnh & phân tích vị trí pop-up bán lẻ.',
       enterpriseFeatures: ['Tất cả tính năng của Gói Pro', 'Hỗ trợ vị trí pop-up thương hiệu B2B', 'Tư vấn marketing & SEO địa phương tùy chỉnh', 'Hỗ trợ hướng dẫn viên tiếng Anh chuyên dụng'],
+    },
+    curation: {
+      mapInteract: 'Nhấp để tương tác với Bản đồ',
     }
   },
 };

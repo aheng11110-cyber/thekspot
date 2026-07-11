@@ -82,11 +82,11 @@ export function MapDisplay({ locations }: MapDisplayProps) {
       {!isActive && (
         <div 
           onClick={() => setIsActive(true)}
-          className="absolute inset-0 z-20 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors cursor-pointer"
+          className="absolute inset-0 z-20 bg-black/20 hover:bg-black/40 transition-colors cursor-pointer"
         >
-          <div className="px-6 py-3 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-3 shadow-2xl transform hover:scale-105 transition-transform">
-            <MousePointerClick size={18} className="text-white" />
-            <span className="text-white font-medium text-sm">{text.mapInteract}</span>
+          <div className="absolute top-4 right-4 px-4 py-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2 shadow-2xl transform hover:scale-105 transition-transform">
+            <MousePointerClick size={16} className="text-white" />
+            <span className="text-white font-medium text-xs">{text.mapInteract}</span>
           </div>
         </div>
       )}

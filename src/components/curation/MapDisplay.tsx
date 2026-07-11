@@ -78,16 +78,14 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         title={`Map of ${mainLoc.name}`}
       />
 
-      {/* 클릭해서 활성화하는 오버레이 */}
+      {/* 클릭해서 활성화하는 오버레이 버튼 */}
       {!isActive && (
         <div 
           onClick={() => setIsActive(true)}
-          className="absolute inset-0 z-20 bg-black/20 hover:bg-black/40 transition-colors cursor-pointer"
+          className="absolute top-4 right-4 z-20 px-4 py-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2 shadow-2xl transform hover:scale-105 transition-transform cursor-pointer"
         >
-          <div className="absolute top-4 right-4 px-4 py-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2 shadow-2xl transform hover:scale-105 transition-transform">
-            <MousePointerClick size={16} className="text-white" />
-            <span className="text-white font-medium text-xs">{text.mapInteract}</span>
-          </div>
+          <MousePointerClick size={16} className="text-white" />
+          <span className="text-white font-medium text-xs">{text.mapInteract}</span>
         </div>
       )}
 

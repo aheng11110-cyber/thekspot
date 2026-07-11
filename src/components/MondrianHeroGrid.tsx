@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const IMAGES = [
-  'https://i.postimg.cc/G9z42JDQ/1.jpg',
-  'https://i.postimg.cc/tYTYVZtG/10.jpg',
-  'https://i.postimg.cc/HVxV7c4m/11.jpg',
-  'https://i.postimg.cc/VdV59f4V/12.jpg',
-  'https://i.postimg.cc/SJvjLSDk/13.jpg',
-  'https://i.postimg.cc/bsBd0y3z/14.jpg',
-  'https://i.postimg.cc/mt5h3L8R/15.jpg',
-  'https://i.postimg.cc/F7B1brDR/16.jpg',
-  'https://i.postimg.cc/3dcWj8nk/17.jpg',
-  'https://i.postimg.cc/hf5h8DpQ/18.jpg',
+  '/hero/1.jpeg',
+  '/hero/2.jpg',
+  '/hero/3.jpeg',
+  '/hero/4.jpeg',
+  '/hero/5.jpeg',
+  '/hero/6.jpeg',
+  '/hero/7.jpeg',
+  '/hero/8.jpg',
+  '/hero/9.jpeg',
+  '/hero/10.jpeg',
 ];
 
 // 두번째 페이지(Puzzle Lookbook)와 완전히 동일한 4x4 퍼즐 레이아웃 (총 10칸)

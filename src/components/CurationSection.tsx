@@ -331,7 +331,7 @@ export function CurationSection() {
                   </div>
                   
                   {/* 리스트 스크롤 영역 */}
-                  <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[400px]">
+                  <div className="flex-1 overflow-y-auto overscroll-contain custom-scrollbar pr-2 min-h-[400px]">
                     <AnimatePresence>
                       <ScheduleAndLinks 
                         locations={filteredLocations} 

@@ -196,7 +196,7 @@ export function CurationSection() {
   }, [locations, selectedSize, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
 
   return (
-    <section className="w-full min-h-screen bg-[#050505] border-b border-white/10 relative overflow-hidden flex flex-col md:flex-row">
+    <section className="snap-start snap-always w-full min-h-screen bg-[#050505] border-b border-white/10 relative overflow-hidden flex flex-col md:flex-row">
       
       {/* ──────────────── 왼쪽 사이드바 (필터 영역) ──────────────── */}
       <div className="w-full md:w-[320px] lg:w-[400px] shrink-0 border-b md:border-b-0 md:border-r border-white/10 p-8 pt-20 flex flex-col bg-black/50 z-20 overflow-y-auto">

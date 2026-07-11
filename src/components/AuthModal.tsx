@@ -98,8 +98,8 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
             </h2>
             <p className="text-white/40 text-[14px] mb-8">
               {mode === 'login'
-                ? 'Join the STYLE OVER 40MEN community.'
-                : 'Upgrade your dad style today.'}
+                ? 'Join THE K-SPOT community.'
+                : 'Curate your perfect journey today.'}
             </p>
 
             {/* Error */}

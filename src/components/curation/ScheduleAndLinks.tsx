@@ -5,10 +5,11 @@ import { Calendar, Instagram, Link2, MapPin, X, ExternalLink } from 'lucide-reac
 
 interface ScheduleAndLinksProps {
   locations: LocationData[];
-  onExclude?: (id: number) => void;
+  onExclude?: (id: string) => void;
+  onHover?: (id: string) => void;
 }
 
-export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps) {
+export function ScheduleAndLinks({ locations, onExclude, onHover }: ScheduleAndLinksProps) {
   const [selectedInstaUrl, setSelectedInstaUrl] = useState<string | null>(null);
   const [showAllModal, setShowAllModal] = useState(false);
 
@@ -26,7 +27,8 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="flex flex-col sm:flex-row gap-4 p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+      onMouseEnter={() => onHover && onHover(loc.id)}
+      className="flex flex-col sm:flex-row gap-4 p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.08] hover:border-white/20 transition-all cursor-pointer"
     >
 
       {/* 정보 */}
@@ -34,8 +36,11 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
         {/* Exclude Button */}
         {onExclude && !isModal && (
           <button
-            onClick={() => onExclude(loc.id)}
-            className="absolute -top-2 -right-2 p-1.5 bg-black/50 hover:bg-red-500/80 text-white/50 hover:text-white rounded-full transition-colors backdrop-blur-md"
+            onClick={(e) => {
+              e.stopPropagation();
+              onExclude(loc.id);
+            }}
+            className="absolute -top-2 -right-2 p-1.5 bg-black/50 hover:bg-red-500/80 text-white/50 hover:text-white rounded-full transition-colors backdrop-blur-md z-10"
             title="제외하기"
           >
             <X size={14} />
@@ -66,11 +71,11 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
 
         {/* 링크 버튼들 */}
         {loc.links && (
-          <div className="flex items-center gap-3 mt-auto">
+          <div className="flex items-center gap-3 mt-auto relative z-10">
             {loc.links.instagram && (
               <button 
                 onClick={(e) => {
-                  e.preventDefault();
+                  e.stopPropagation();
                   setSelectedInstaUrl(loc.links!.instagram!);
                 }}
                 className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
@@ -80,7 +85,13 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
               </button>
             )}
             {loc.links.blog && (
-              <a href={loc.links.blog} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full">
+              <a 
+                href={loc.links.blog} 
+                target="_blank" 
+                rel="noreferrer" 
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
+              >
                 <Link2 size={14} />
                 Blog Review
               </a>
@@ -89,7 +100,7 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
         )}
         
         {/* 해시태그 */}
-        <div className="flex flex-wrap gap-2 mt-3">
+        <div className="flex flex-wrap gap-2 mt-3 relative z-10">
           {loc.tags.map((tag, j) => (
             <span key={j} className="text-[10px] px-2 py-1 bg-white/5 rounded-md text-white/50 border border-white/5">
               #{tag}
@@ -100,13 +111,12 @@ export function ScheduleAndLinks({ locations, onExclude }: ScheduleAndLinksProps
     </motion.div>
   );
 
-  const displayLocations = locations.slice(0, 2);
   const hasMore = locations.length > 2;
 
   return (
     <>
       <div className="flex flex-col gap-6 w-full pr-2">
-        {displayLocations.map((loc, i) => renderCard(loc, i))}
+        {locations.map((loc, i) => renderCard(loc, i))}
         
         {hasMore && (
           <button

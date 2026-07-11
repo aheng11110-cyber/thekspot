@@ -126,8 +126,9 @@ export function CurationSection() {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<string>(text.allRegion);
-  const [excludedIds, setExcludedIds] = useState<number[]>([]);
+  const [excludedIds, setExcludedIds] = useState<string[]>([]);
   const [isSaved, setIsSaved] = useState(false);
+  const [hoveredLocationId, setHoveredLocationId] = useState<string | null>(null);
 
   // 언어가 바뀌면 선택된 필터를 초기화
   useEffect(() => {
@@ -159,7 +160,7 @@ export function CurationSection() {
     setExcludedIds([]);
   };
 
-  const handleExclude = (id: number) => {
+  const handleExclude = (id: string) => {
     setExcludedIds(prev => [...prev, id]);
   };
 
@@ -297,40 +298,47 @@ export function CurationSection() {
               transition={{ duration: 0.5 }}
               className="absolute inset-0 overflow-y-auto p-6 md:p-12 pt-20 md:pt-20 flex flex-col xl:flex-row gap-8"
             >
-              {/* 왼쪽: 리스트 */}
-              <div className="w-full xl:w-1/2 flex flex-col">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <h3 className="text-white text-xl font-light mb-1">{text.resultsTitle}</h3>
-                    <span className="text-white/40 text-sm">{text.resultsCount(filteredLocations.length)}</span>
+                {/* 왼쪽: 리스트 */}
+                <div className="w-full xl:w-1/2 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-6 shrink-0">
+                    <div>
+                      <h3 className="text-white text-xl font-light mb-1">{text.resultsTitle}</h3>
+                      <span className="text-white/40 text-sm">{text.resultsCount(filteredLocations.length)}</span>
+                    </div>
+                    
+                    {/* 저장 버튼 */}
+                    <button
+                      onClick={handleSaveItinerary}
+                      disabled={isSaved || filteredLocations.length === 0}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                        isSaved 
+                          ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                          : 'bg-white text-black hover:bg-white/90 border border-white'
+                      } disabled:opacity-50 disabled:cursor-not-allowed`}
+                    >
+                      <i className={isSaved ? "bi bi-check2" : "bi bi-bookmark-plus"}></i>
+                      {isSaved ? text.savedItinerary : text.saveItinerary}
+                    </button>
                   </div>
                   
-                  {/* 저장 버튼 */}
-                  <button
-                    onClick={handleSaveItinerary}
-                    disabled={isSaved || filteredLocations.length === 0}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
-                      isSaved 
-                        ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                        : 'bg-white text-black hover:bg-white/90 border border-white'
-                    } disabled:opacity-50 disabled:cursor-not-allowed`}
-                  >
-                    <i className={isSaved ? "bi bi-check2" : "bi bi-bookmark-plus"}></i>
-                    {isSaved ? text.savedItinerary : text.saveItinerary}
-                  </button>
+                  {/* 리스트 스크롤 영역 */}
+                  <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 min-h-[400px]">
+                    <AnimatePresence>
+                      <ScheduleAndLinks 
+                        locations={filteredLocations} 
+                        onExclude={handleExclude} 
+                        onHover={setHoveredLocationId}
+                      />
+                    </AnimatePresence>
+                  </div>
                 </div>
-                
-                <AnimatePresence>
-                  <ScheduleAndLinks locations={filteredLocations} onExclude={handleExclude} />
-                </AnimatePresence>
-              </div>
 
-              {/* 오른쪽: 지도 */}
-              <div className="w-full xl:w-1/2 flex flex-col">
-                <div className="sticky top-12">
-                  <MapDisplay locations={filteredLocations} />
+                {/* 오른쪽: 지도 */}
+                <div className="w-full xl:w-1/2 flex flex-col">
+                  <div className="sticky top-12">
+                    <MapDisplay locations={mapLocations} />
+                  </div>
                 </div>
-              </div>
             </motion.div>
           )}
         </AnimatePresence>

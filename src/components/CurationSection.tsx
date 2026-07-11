@@ -196,6 +196,15 @@ export function CurationSection() {
     });
   }, [locations, selectedSize, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
 
+  // 지도를 위해: hoveredLocationId가 있으면 그 장소가 첫 번째가 되도록 배열 재정렬
+  // 빈 배열일 경우 그대로 전달 (MapDisplay에서 처리)
+  const mapLocations = filteredLocations.length === 0 ? [] : (hoveredLocationId 
+    ? [
+        filteredLocations.find(l => l.id === hoveredLocationId) || filteredLocations[0],
+        ...filteredLocations.filter(l => l.id !== hoveredLocationId)
+      ].filter(Boolean) as LocationData[]
+    : filteredLocations);
+
   return (
     <section className="snap-start snap-always w-full min-h-screen bg-[#050505] border-b border-white/10 relative overflow-hidden flex flex-col md:flex-row">
       

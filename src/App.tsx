@@ -18,9 +18,14 @@ import { PRODUCTS } from './lib/paypal';
 import { VIDEO_URLS } from './config/videos';
 import { SITE_CONTENT, BRAND_NAME, COPYRIGHT } from './config/content';
 import { useLanguage } from './contexts/LanguageContext';
-
+import { AdminNews } from './pages/AdminNews';
 
 export default function App() {
+  const isAdminRoute = window.location.search.includes('admin=true');
+  if (isAdminRoute) {
+    return <AdminNews />;
+  }
+
   const [entranceComplete, setEntranceComplete] = useState(false);
   const { user } = useAuth();
   const { lang } = useLanguage();

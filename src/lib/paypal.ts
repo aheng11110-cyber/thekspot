@@ -3,7 +3,7 @@
 // ============================================================
 
 export const PAYPAL_CONFIG = {
-  clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID || 'test',
+  clientId: 'AR82VgyaF0vceAFaR6ssMB6DfhSII0TNnAmo3Mg0-IVbfUrkl6yFbljUbxwn9bOlzMS2UYVxegaT0D8N',
   currency: 'USD',
   intent: 'capture' as const,
 };

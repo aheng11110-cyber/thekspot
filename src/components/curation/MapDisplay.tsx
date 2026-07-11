@@ -17,11 +17,15 @@ export function MapDisplay({ locations }: MapDisplayProps) {
 
   // 지도를 보여줄 메인 장소 (첫 번째 장소 기준)
   const mainLoc = locations[0];
-  // 구글 맵 검색 쿼리
-  const query = encodeURIComponent(`${mainLoc.name} ${mainLoc.city} South Korea`);
+  // 구글 맵 검색 쿼리 (정확한 핀을 위해 주소 중심으로 검색)
+  const query = encodeURIComponent(`${mainLoc.name} ${mainLoc.province}`);
 
   return (
-    <div className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group">
+    <div 
+      className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group"
+      onWheel={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+    >
       
       {/* 
         구글 맵 iframe (무료 버전) 
@@ -34,7 +38,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
           border: 0, 
           filter: 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%)' 
         }}
-        src={`https://maps.google.com/maps?q=${query}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
+        src={`https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed`}
         title={`Map of ${mainLoc.name}`}
       />
 

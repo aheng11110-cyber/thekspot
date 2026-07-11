@@ -114,7 +114,6 @@ export function MondrianHeroGrid() {
                 src={src} 
                 alt={`Hero Lookbook ${index}`} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
-                style={{ imageRendering: 'high-quality' }}
               />
             </motion.div>
           );

@@ -20,7 +20,6 @@
 html {
   background: #000;
   color: #fff;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 

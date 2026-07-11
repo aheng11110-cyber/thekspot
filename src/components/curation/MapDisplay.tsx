@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { LocationData } from '../../data/mockCurationData';
 import { MapPin } from 'lucide-react';
 
@@ -6,6 +7,24 @@ interface MapDisplayProps {
 }
 
 export function MapDisplay({ locations }: MapDisplayProps) {
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  // Prevent page scroll when hovering over the map
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // This stops the page from scrolling/snapping when the user 
+      // scrolls the mouse wheel over the map without holding Ctrl.
+      e.preventDefault();
+    };
+
+    // Must be { passive: false } to use e.preventDefault()
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, []);
+
   if (locations.length === 0) {
     return (
       <div className="relative w-full aspect-square md:aspect-[4/3] bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col items-center justify-center">
@@ -22,9 +41,8 @@ export function MapDisplay({ locations }: MapDisplayProps) {
 
   return (
     <div 
+      ref={mapRef}
       className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group"
-      onWheel={(e) => e.stopPropagation()}
-      onTouchMove={(e) => e.stopPropagation()}
     >
       
       {/* 

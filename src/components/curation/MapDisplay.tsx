@@ -19,7 +19,8 @@ export function MapDisplay({ locations }: MapDisplayProps) {
       case 'KO': return 'ko';
       case 'JP': return 'ja';
       case 'CN': return 'zh-CN';
-      case 'VN': return 'vi';
+      // 베트남어(vi)의 경우 구글 무료 임베드에서 연결을 거부(리다이렉션 차단)하는 
+      // 구글 자체 버그가 있어 안전하게 영어(en)로 폴백합니다.
       default: return 'en';
     }
   };

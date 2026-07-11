@@ -5,6 +5,7 @@ import {
   useTransform,
   useSpring,
   useMotionTemplate,
+  AnimatePresence,
 } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { ConnectAILabLogo } from './components/ConnectAILabLogo';
@@ -27,7 +28,10 @@ export default function App() {
   if (isAdminRoute) {
     return <AdminNews />;
   }
+  return <MainApp />;
+}
 
+function MainApp() {
   const [entranceComplete, setEntranceComplete] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const { user } = useAuth();

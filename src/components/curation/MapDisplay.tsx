@@ -14,6 +14,16 @@ export function MapDisplay({ locations }: MapDisplayProps) {
   const { lang } = useLanguage();
   const text = SITE_CONTENT[lang].curation;
 
+  const getGoogleMapsLang = (l: string) => {
+    switch (l) {
+      case 'KO': return 'ko';
+      case 'JP': return 'ja';
+      case 'CN': return 'zh-CN';
+      case 'VN': return 'vi';
+      default: return 'en';
+    }
+  };
+
   // 지도가 활성화되었을 때(클릭됨) 마우스 휠을 돌려도 
   // 페이지 전체가 아래로 스냅되어 넘어가는 현상을 완전히 방지합니다.
   useEffect(() => {
@@ -35,7 +45,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
     return (
       <div className="relative w-full aspect-square md:aspect-[4/3] bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col items-center justify-center">
         <MapPin size={48} className="text-white/20 mb-4" />
-        <p className="text-white/40 text-sm">No locations to display</p>
+        <p className="text-white/40 text-sm">{text.noLocations}</p>
       </div>
     );
   }
@@ -63,7 +73,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
           filter: 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%)',
           pointerEvents: isActive ? 'auto' : 'none'
         }}
-        src={`https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed`}
+        src={`https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&hl=${getGoogleMapsLang(lang)}`}
         title={`Map of ${mainLoc.name}`}
       />
 
@@ -88,7 +98,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
 
       {locations.length > 1 && (
         <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-none">
-          <p className="text-white/70 text-xs mb-1">Other locations in your filter:</p>
+          <p className="text-white/70 text-xs mb-1">{text.otherLocations}</p>
           <div className="flex gap-2 overflow-x-hidden pb-1">
             {locations.slice(1).map(loc => (
               <span key={loc.id} className="whitespace-nowrap px-2 py-1 bg-white/10 rounded text-[10px] text-white">

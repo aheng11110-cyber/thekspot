@@ -74,6 +74,8 @@ export const SITE_CONTENT = {
     },
     curation: {
       mapInteract: 'Click to interact with Map',
+      otherLocations: 'Other locations in your filter:',
+      noLocations: 'No locations to display',
     }
   },
   KO: {
@@ -144,6 +146,8 @@ export const SITE_CONTENT = {
     },
     curation: {
       mapInteract: '지도를 조작하려면 클릭하세요',
+      otherLocations: '선택하신 필터의 다른 장소들:',
+      noLocations: '표시할 장소가 없습니다',
     }
   },
   JP: {
@@ -214,6 +218,8 @@ export const SITE_CONTENT = {
     },
     curation: {
       mapInteract: 'マップを操作するにはクリック',
+      otherLocations: 'フィルター内の他の場所:',
+      noLocations: '表示する場所がありません',
     }
   },
   CN: {
@@ -284,6 +290,8 @@ export const SITE_CONTENT = {
     },
     curation: {
       mapInteract: '点击以互动地图',
+      otherLocations: '筛选条件下的其他地点:',
+      noLocations: '没有可显示的地点',
     }
   },
   VN: {
@@ -354,6 +362,8 @@ export const SITE_CONTENT = {
     },
     curation: {
       mapInteract: 'Nhấp để tương tác với Bản đồ',
+      otherLocations: 'Các địa điểm khác trong bộ lọc của bạn:',
+      noLocations: 'Không có địa điểm để hiển thị',
     }
   },
 };

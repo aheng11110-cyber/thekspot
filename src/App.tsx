@@ -164,7 +164,7 @@ function MainApp() {
       {/* ════════════════ SECTION 2: CINEMATIC TEXT & ARCHITECTURE ════════════════ */}
       <section
         ref={section2Ref}
-        className="snap-start snap-always relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a0a0a] py-32 gap-32"
+        className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col items-center justify-between overflow-hidden bg-[#0a0a0a] pt-24 pb-12"
       >
 
         {/* Top gradient overlay */}
@@ -176,10 +176,10 @@ function MainApp() {
           }}
         />
 
-        {/* 3D text content */}
-        <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
+        {/* 3D text content (Top Half) */}
+        <div className="relative z-20 w-full max-w-5xl mx-auto flex-1 flex items-center justify-center px-6" style={{ perspective: 400 }}>
           <motion.p
-            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
+            className="font-sans font-normal text-[18px] sm:text-[24px] md:text-[28px] lg:text-[32px] text-white leading-[1.35] tracking-[-0.02em] select-none text-center"
             style={{
               transform: transform3D,
               opacity: textOpacity,
@@ -189,44 +189,41 @@ function MainApp() {
           </motion.p>
         </div>
 
-        {/* Architecture Content (Moved from Section 5) */}
-        <div className="relative z-20 max-w-3xl mx-auto px-6 text-center">
+        {/* Architecture Content (Bottom Half) */}
+        <div className="relative z-20 w-full max-w-3xl mx-auto px-6 text-center flex flex-col items-center justify-end">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
-              {architecture.subtitle}
-            </p>
             <h2
-              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-10"
-              style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
+              className="text-white font-light leading-[1.1] tracking-[-0.02em] mb-3"
+              style={{ fontSize: 'clamp(24px, 4vw, 36px)' }}
             >
               {architecture.heading}
             </h2>
-            <p className="text-white/45 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+            <p className="text-white/45 text-[13px] sm:text-[14px] leading-relaxed max-w-lg mx-auto mb-6">
               {architecture.description}
             </p>
           </motion.div>
 
           <motion.div
-            className="mt-20 flex flex-col items-center gap-4"
+            className="w-full flex flex-col items-center gap-2.5"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {architecture.layers.map((l) => (
               <div
                 key={l.num}
-                className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6"
+                className="w-full max-w-[320px] sm:max-w-md h-[46px] border border-white/10 rounded-lg flex items-center justify-between px-5 bg-black/50"
               >
-                <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
+                <span className="text-white/30 text-[11px] tracking-[0.1em] uppercase">
                   Layer {l.num}
                 </span>
-                <span className="text-white text-[16px] sm:text-[18px] font-light">
+                <span className="text-white text-[14px] font-light">
                   {l.name}
                 </span>
               </div>
@@ -234,17 +231,17 @@ function MainApp() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.6 }}
-            viewport={{ once: true, amount: 0.4 }}
-            className="mt-16 flex justify-center"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="mt-8 flex justify-center"
           >
             <button
               onClick={() => setShowCalendar(true)}
-              className="group relative flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-medium text-[15px] hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+              className="group relative flex items-center gap-2 px-6 py-3.5 bg-white text-black rounded-full font-medium text-[13px] sm:text-[14px] hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)]"
             >
-              <CalendarIcon size={18} />
+              <CalendarIcon size={16} />
               View Real-time Popup Store Calendar
               <div className="absolute inset-0 rounded-full border border-white/20 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
             </button>

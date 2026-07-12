@@ -218,7 +218,7 @@ function MainApp() {
               className="group relative flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-medium text-[15px] hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
             >
               <CalendarIcon size={18} />
-              View Real-time Popup Store Calendar
+              {architecture.calendarButton}
               <div className="absolute inset-0 rounded-full border border-white/20 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
             </button>
           </motion.div>

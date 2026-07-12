@@ -43,6 +43,7 @@ export const SITE_CONTENT = {
         { num: 2, name: 'Live Seongsu Popup Tour' },
         { num: 3, name: 'Weekly K-Slang PDF Digest' },
       ],
+      calendarButton: 'View Real-time Popup Store Calendar',
     },
     footer: {
       tagline: "Don't visit Korea like an outsider. Experience the real vibe with zero effort.",
@@ -115,6 +116,7 @@ export const SITE_CONTENT = {
         { num: 2, name: '성수동 라이브 팝업 투어' },
         { num: 3, name: '주간 K-슬랭 요약본' },
       ],
+      calendarButton: '실시간 팝업스토어 캘린더 보기',
     },
     footer: {
       tagline: "이방인처럼 여행하지 마세요. 한국인의 진짜 바이브를 손쉽게 경험하세요.",
@@ -187,6 +189,7 @@ export const SITE_CONTENT = {
         { num: 2, name: '聖水(ソンス)ポップアップツアー' },
         { num: 3, name: '週間K-スラングPDF要約' },
       ],
+      calendarButton: 'リアルタイムポップアップストアのカレンダーを見る',
     },
     footer: {
       tagline: "よそ者のように旅行しないでください。本当の韓国のバイブスを手軽に体験しましょう。",
@@ -259,6 +262,7 @@ export const SITE_CONTENT = {
         { num: 2, name: '实时圣水洞快闪店之旅' },
         { num: 3, name: '每周韩国流行语摘要' },
       ],
+      calendarButton: '查看实时快闪店日历',
     },
     footer: {
       tagline: "不要像局外人一样来韩国旅游。轻松体验最真实的韩国氛围。",
@@ -331,6 +335,7 @@ export const SITE_CONTENT = {
         { num: 2, name: 'Tour Pop-up Seongsu Trực Tiếp' },
         { num: 3, name: 'Bản Tóm Tắt Từ Lóng Hàn Hàng Tuần' },
       ],
+      calendarButton: 'Xem Lịch Pop-up Trực Tiếp',
     },
     footer: {
       tagline: "Đừng du lịch Hàn Quốc như một người ngoài. Hãy trải nghiệm không khí thực sự một cách dễ dàng.",

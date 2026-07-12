@@ -161,32 +161,67 @@ function MainApp() {
       {/* ════════════════ SECTION 1.5: CURATION SECTION ════════════════ */}
       <CurationSection />
 
-      {/* ════════════════ SECTION 2: CINEMATIC TEXT (Page 3) ════════════════ */}
-      <section
-        ref={section2Ref}
-        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
-      >
-
-        {/* Top gradient overlay */}
-        <div
-          className="absolute top-0 left-0 right-0 z-10"
-          style={{
-            height: 180,
-            background: 'linear-gradient(to bottom, #010103, transparent)',
-          }}
-        />
-
-        {/* 3D text content */}
-        <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
-          <motion.p
-            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
-            style={{
-              transform: transform3D,
-              opacity: textOpacity,
-            }}
+      {/* ════════════════ SECTION 5: ARCHITECTURE (Moved to Page 3) ════════════════ */}
+      <section className="snap-start snap-always min-h-screen flex items-center justify-center bg-black">
+        <div className="max-w-3xl mx-auto px-6 py-32 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0 }}
+            viewport={{ once: true, amount: 0.4 }}
           >
-            {cinematic.text}
-          </motion.p>
+            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
+              {architecture.subtitle}
+            </p>
+            <h2
+              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-10"
+              style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
+            >
+              {architecture.heading}
+            </h2>
+            <p className="text-white/45 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
+              {architecture.description}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="mt-20 flex flex-col items-center gap-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            {architecture.layers.map((l) => (
+              <div
+                key={l.num}
+                className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6"
+              >
+                <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
+                  Layer {l.num}
+                </span>
+                <span className="text-white text-[16px] sm:text-[18px] font-light">
+                  {l.name}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.6 }}
+            viewport={{ once: true, amount: 0.4 }}
+            className="mt-16 flex justify-center"
+          >
+            <button
+              onClick={() => setShowCalendar(true)}
+              className="group relative flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-medium text-[15px] hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+            >
+              <CalendarIcon size={18} />
+              View Real-time Popup Store Calendar
+              <div className="absolute inset-0 rounded-full border border-white/20 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
+            </button>
+          </motion.div>
         </div>
       </section>
 
@@ -288,67 +323,32 @@ function MainApp() {
         </div>
       </section>
 
-      {/* ════════════════ SECTION 5: ARCHITECTURE (Page 4) ════════════════ */}
-      <section className="snap-start snap-always min-h-screen flex items-center justify-center bg-black">
-        <div className="max-w-3xl mx-auto px-6 py-32 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0 }}
-            viewport={{ once: true, amount: 0.4 }}
-          >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
-              {architecture.subtitle}
-            </p>
-            <h2
-              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-10"
-              style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
-            >
-              {architecture.heading}
-            </h2>
-            <p className="text-white/45 text-[15px] sm:text-[17px] leading-relaxed max-w-xl mx-auto">
-              {architecture.description}
-            </p>
-          </motion.div>
+      {/* ════════════════ SECTION 2: CINEMATIC TEXT (Moved to Page 5) ════════════════ */}
+      <section
+        ref={section2Ref}
+        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      >
 
-          <motion.div
-            className="mt-20 flex flex-col items-center gap-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.4 }}
-            viewport={{ once: true, amount: 0.4 }}
-          >
-            {architecture.layers.map((l) => (
-              <div
-                key={l.num}
-                className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6"
-              >
-                <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
-                  Layer {l.num}
-                </span>
-                <span className="text-white text-[16px] sm:text-[18px] font-light">
-                  {l.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
+        {/* Top gradient overlay */}
+        <div
+          className="absolute top-0 left-0 right-0 z-10"
+          style={{
+            height: 180,
+            background: 'linear-gradient(to bottom, #010103, transparent)',
+          }}
+        />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.6 }}
-            viewport={{ once: true, amount: 0.4 }}
-            className="mt-16 flex justify-center"
+        {/* 3D text content */}
+        <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
+          <motion.p
+            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
+            style={{
+              transform: transform3D,
+              opacity: textOpacity,
+            }}
           >
-            <button
-              onClick={() => setShowCalendar(true)}
-              className="group relative flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-medium text-[15px] hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
-            >
-              <CalendarIcon size={18} />
-              View Real-time Popup Store Calendar
-              <div className="absolute inset-0 rounded-full border border-white/20 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300" />
-            </button>
-          </motion.div>
+            {cinematic.text}
+          </motion.p>
         </div>
       </section>
 

@@ -296,7 +296,7 @@ function MainApp() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0 }}
           >
             <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
               {pricing.subtitle}
@@ -319,7 +319,7 @@ function MainApp() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-[#111] border border-white/20 text-white/80 text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -354,7 +354,7 @@ function MainApp() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-white text-black text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -391,7 +391,7 @@ function MainApp() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0 }}
             >
               <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.enterprise}</p>
               <div className="flex items-baseline gap-1 mb-2">

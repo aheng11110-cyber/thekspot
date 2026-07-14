@@ -285,7 +285,7 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
-      <section className="snap-start snap-always min-h-screen bg-black py-32 px-6 flex items-center justify-center">
+      <section id="pricing-section" className="snap-start snap-always min-h-screen bg-black py-32 px-6 flex items-center justify-center">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center mb-20"
@@ -309,35 +309,38 @@ function MainApp() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* ── Basic ── */}
+            {/* ── Free ── */}
             <motion.div
-              className="border border-white/10 rounded-2xl p-8 flex flex-col"
+              className="border border-white/10 rounded-2xl p-8 flex flex-col relative"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.basic}</p>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <span className="bg-[#111] border border-white/20 text-white/80 text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
+                  Newsletter
+                </span>
+              </div>
+              <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.free}</p>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-white text-[42px] font-light tracking-tight">$29.99</span>
-                <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
+                <span className="text-white text-[42px] font-light tracking-tight">$0</span>
+                <span className="text-white/30 text-[14px]">/free</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-8">
-                {pricing.basicDesc}
+                {pricing.freeDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-10 flex-1">
-                {pricing.basicFeatures.map((feature: string, idx: number) => (
+                {pricing.freeFeatures.map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
                     <span className="text-white/30">✓</span> {feature}
                   </li>
                 ))}
               </ul>
               <div className="flex flex-col gap-3">
-                <PayPalCheckoutButton
-                  product={PRODUCTS[0]}
-                  onSuccess={(details) => handlePayPalSuccess(details, PRODUCTS[0].id, PRODUCTS[0].name, PRODUCTS[0].price)}
-                  onError={(err) => console.error('PayPal error:', err)}
-                />
+                 <button onClick={() => window.scrollTo({top:0, behavior:'smooth'})} className="w-full h-[50px] rounded-lg font-medium text-[15px] flex items-center justify-center gap-2 border border-[#39FF14]/50 text-[#39FF14] bg-[#39FF14]/5 hover:bg-[#39FF14]/10 transition-colors">
+                    Free Subscribe
+                 </button>
               </div>
             </motion.div>
 

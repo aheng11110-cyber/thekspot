@@ -284,132 +284,6 @@ function MainApp() {
 
 
 
-      {/* ════════════════ SECTION 3: METRICS ════════════════ */}
-      <section className="snap-start snap-always relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
-
-        <div className="relative z-20 pt-32 pb-32 px-6 max-w-6xl mx-auto w-full">
-          <motion.p
-            className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-20 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {metrics.subtitle}
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center">
-            {metrics.items.map((m, i) => (
-              <motion.div
-                key={m.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <div
-                  className="text-white font-light tracking-[-0.04em] leading-none"
-                  style={{ fontSize: 'clamp(48px, 10vw, 96px)' }}
-                >
-                  {m.value}
-                </div>
-                <div className="text-white/40 text-[13px] sm:text-[15px] mt-4 tracking-wide">
-                  {m.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════ SECTION 4: TECHNOLOGY ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden bg-black">
-
-        <div className="relative z-20 flex flex-col flex-1 px-8 sm:px-12 md:px-16 py-12 sm:py-16">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
-            <motion.h2
-              className="text-white font-light leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: 'clamp(36px, 8vw, 72px)' }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {technology.title[0]}
-              <br />
-              {technology.title[1]}
-            </motion.h2>
-
-            <motion.p
-              className="text-white/50 text-[13px] sm:text-[15px] leading-relaxed max-w-xs md:text-right md:pt-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {technology.description}
-            </motion.p>
-          </div>
-
-          <div className="flex-1" />
-
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.0, delay: 0.3 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {technology.features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                viewport={{ once: true, amount: 0.3 }}
-              >
-                <h3 className="text-white text-[14px] sm:text-[16px] font-normal mb-2">
-                  {f.title}
-                </h3>
-                <p className="text-white/40 text-[12px] sm:text-[14px] leading-relaxed">
-                  {f.desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ════════════════ SECTION 2: CINEMATIC TEXT (Moved to Page 5) ════════════════ */}
-      <section
-        ref={section2Ref}
-        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
-      >
-
-        {/* Top gradient overlay */}
-        <div
-          className="absolute top-0 left-0 right-0 z-10"
-          style={{
-            height: 180,
-            background: 'linear-gradient(to bottom, #010103, transparent)',
-          }}
-        />
-
-        {/* 3D text content */}
-        <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
-          <motion.p
-            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
-            style={{
-              transform: transform3D,
-              opacity: textOpacity,
-            }}
-          >
-            {cinematic.text}
-          </motion.p>
-        </div>
-      </section>
-
-
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
       <section className="snap-start snap-always min-h-screen bg-black py-32 px-6 flex items-center justify-center">
         <div className="max-w-6xl mx-auto w-full">
@@ -536,6 +410,134 @@ function MainApp() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+
+
+
+      {/* ════════════════ SECTION 3: METRICS ════════════════ */}
+      <section className="snap-start snap-always relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
+
+        <div className="relative z-20 pt-32 pb-32 px-6 max-w-6xl mx-auto w-full">
+          <motion.p
+            className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-20 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {metrics.subtitle}
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center">
+            {metrics.items.map((m, i) => (
+              <motion.div
+                key={m.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.15 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div
+                  className="text-white font-light tracking-[-0.04em] leading-none"
+                  style={{ fontSize: 'clamp(48px, 10vw, 96px)' }}
+                >
+                  {m.value}
+                </div>
+                <div className="text-white/40 text-[13px] sm:text-[15px] mt-4 tracking-wide">
+                  {m.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════ SECTION 4: TECHNOLOGY ════════════════ */}
+      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden bg-black">
+
+        <div className="relative z-20 flex flex-col flex-1 px-8 sm:px-12 md:px-16 py-12 sm:py-16">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
+            <motion.h2
+              className="text-white font-light leading-[0.95] tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(36px, 8vw, 72px)' }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {technology.title[0]}
+              <br />
+              {technology.title[1]}
+            </motion.h2>
+
+            <motion.p
+              className="text-white/50 text-[13px] sm:text-[15px] leading-relaxed max-w-xs md:text-right md:pt-2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {technology.description}
+            </motion.p>
+          </div>
+
+          <div className="flex-1" />
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.0, delay: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {technology.features.map((f, i) => (
+              <motion.div
+                key={f.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <h3 className="text-white text-[14px] sm:text-[16px] font-normal mb-2">
+                  {f.title}
+                </h3>
+                <p className="text-white/40 text-[12px] sm:text-[14px] leading-relaxed">
+                  {f.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ════════════════ SECTION 2: CINEMATIC TEXT (Moved to Page 5) ════════════════ */}
+      <section
+        ref={section2Ref}
+        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      >
+
+        {/* Top gradient overlay */}
+        <div
+          className="absolute top-0 left-0 right-0 z-10"
+          style={{
+            height: 180,
+            background: 'linear-gradient(to bottom, #010103, transparent)',
+          }}
+        />
+
+        {/* 3D text content */}
+        <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
+          <motion.p
+            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
+            style={{
+              transform: transform3D,
+              opacity: textOpacity,
+            }}
+          >
+            {cinematic.text}
+          </motion.p>
         </div>
       </section>
 

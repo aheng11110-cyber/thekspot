@@ -21,6 +21,7 @@ import { SITE_CONTENT, BRAND_NAME, COPYRIGHT } from './config/content';
 import { useLanguage } from './contexts/LanguageContext';
 import { AdminNews } from './pages/AdminNews';
 import { PopupCalendar } from './components/PopupCalendar';
+import { HashtagSearchModal } from './components/HashtagSearchModal';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
 function MainApp() {
   const [entranceComplete, setEntranceComplete] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [showHashtagModal, setShowHashtagModal] = useState(false);
   const { user } = useAuth();
   const { lang } = useLanguage();
 
@@ -191,19 +193,25 @@ function MainApp() {
             transition={{ duration: 1.2, delay: 0.4 }}
             viewport={{ once: true, amount: 0.4 }}
           >
-            {architecture.layers.map((l) => (
-              <div
-                key={l.num}
-                className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6"
-              >
-                <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
-                  Layer {l.num}
-                </span>
-                <span className="text-white text-[16px] sm:text-[18px] font-light">
-                  {l.name}
-                </span>
-              </div>
-            ))}
+            {architecture.layers.map((l: any) => {
+              const isLayer4 = l.num === 4;
+              return (
+                <div
+                  key={l.num}
+                  onClick={() => { if (isLayer4) setShowHashtagModal(true); }}
+                  className={`w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 ${
+                    isLayer4 ? 'cursor-pointer hover:bg-white/5 hover:border-white/30 transition-colors group' : ''
+                  }`}
+                >
+                  <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
+                    Layer {l.num}
+                  </span>
+                  <span className={`text-white text-[16px] sm:text-[18px] font-light ${isLayer4 ? 'group-hover:text-blue-300 transition-colors' : ''}`}>
+                    {l.name}
+                  </span>
+                </div>
+              );
+            })}
           </motion.div>
 
           <motion.div
@@ -513,6 +521,11 @@ function MainApp() {
       {/* ──────────────── POPUP STORE CALENDAR MODAL ──────────────── */}
       <AnimatePresence>
         {showCalendar && <PopupCalendar onClose={() => setShowCalendar(false)} />}
+      </AnimatePresence>
+
+      {/* ──────────────── HASHTAG SEARCH MODAL ──────────────── */}
+      <AnimatePresence>
+        {showHashtagModal && <HashtagSearchModal onClose={() => setShowHashtagModal(false)} />}
       </AnimatePresence>
     </div>
   );

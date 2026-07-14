@@ -42,6 +42,7 @@ export const SITE_CONTENT = {
         { num: 1, name: 'Naver-Filtered Food Map' },
         { num: 2, name: 'Live Seongsu Popup Tour' },
         { num: 3, name: 'Weekly K-Slang PDF Digest' },
+        { num: 4, name: 'Useful Hashtag Lookup' },
       ],
       calendarButton: 'View Real-time Popup Store Calendar',
     },
@@ -77,6 +78,22 @@ export const SITE_CONTENT = {
       mapInteract: 'Click to interact with Map',
       otherLocations: 'Other locations in your filter:',
       noLocations: 'No locations to display',
+    },
+    hashtag: {
+      title: 'Useful K-Hashtag Lookup',
+      placeholder: 'Search for tags (e.g. cafe, popup)',
+      categories: ['All', 'Popup', 'Cafe', 'Food', 'Culture'],
+      tags: [
+        { cat: 'Popup', tag: '#성수팝업' },
+        { cat: 'Popup', tag: '#팝업스토어' },
+        { cat: 'Popup', tag: '#더현대서울' },
+        { cat: 'Cafe', tag: '#성수동카페' },
+        { cat: 'Cafe', tag: '#홍대카페' },
+        { cat: 'Food', tag: '#성수맛집' },
+        { cat: 'Food', tag: '#홍대맛집' },
+        { cat: 'Culture', tag: '#전시회추천' },
+        { cat: 'Culture', tag: '#서울데이트' },
+      ]
     }
   },
   KO: {
@@ -115,6 +132,7 @@ export const SITE_CONTENT = {
         { num: 1, name: '네이버 필터링 클린 맛집' },
         { num: 2, name: '성수동 라이브 팝업 투어' },
         { num: 3, name: '주간 K-슬랭 요약본' },
+        { num: 4, name: '유용한 해시태그 조회' },
       ],
       calendarButton: '실시간 팝업스토어 캘린더 보기',
     },
@@ -150,6 +168,22 @@ export const SITE_CONTENT = {
       mapInteract: '지도를 조작하려면 클릭하세요',
       otherLocations: '선택하신 필터의 다른 장소들:',
       noLocations: '표시할 장소가 없습니다',
+    },
+    hashtag: {
+      title: '유용한 해시태그 조회',
+      placeholder: '태그 검색 (예: 카페, 팝업)',
+      categories: ['전체', '팝업', '카페', '맛집', '문화'],
+      tags: [
+        { cat: '팝업', tag: '#성수팝업' },
+        { cat: '팝업', tag: '#팝업스토어' },
+        { cat: '팝업', tag: '#더현대서울' },
+        { cat: '카페', tag: '#성수동카페' },
+        { cat: '카페', tag: '#홍대카페' },
+        { cat: '맛집', tag: '#성수맛집' },
+        { cat: '맛집', tag: '#홍대맛집' },
+        { cat: '문화', tag: '#전시회추천' },
+        { cat: '문화', tag: '#서울데이트' },
+      ]
     }
   },
   JP: {
@@ -188,6 +222,7 @@ export const SITE_CONTENT = {
         { num: 1, name: '厳選クリーンローカルグルメ' },
         { num: 2, name: '聖水(ソンス)ポップアップツアー' },
         { num: 3, name: '週間K-スラングPDF要約' },
+        { num: 4, name: '便利なハッシュタグ検索' },
       ],
       calendarButton: 'リアルタイムポップアップストアのカレンダーを見る',
     },
@@ -223,6 +258,22 @@ export const SITE_CONTENT = {
       mapInteract: 'マップを操作するにはクリック',
       otherLocations: 'フィルター内の他の場所:',
       noLocations: '表示する場所がありません',
+    },
+    hashtag: {
+      title: '便利なハッシュタグ検索',
+      placeholder: 'タグを検索 (例: カフェ, ポップアップ)',
+      categories: ['すべて', 'ポップアップ', 'カフェ', 'グルメ', '文化'],
+      tags: [
+        { cat: 'ポップアップ', tag: '#성수팝업' },
+        { cat: 'ポップアップ', tag: '#팝업스토어' },
+        { cat: 'ポップアップ', tag: '#더현대서울' },
+        { cat: 'カフェ', tag: '#성수동카페' },
+        { cat: 'カフェ', tag: '#홍대카페' },
+        { cat: 'グルメ', tag: '#성수맛집' },
+        { cat: 'グルメ', tag: '#홍대맛집' },
+        { cat: '文化', tag: '#전시회추천' },
+        { cat: '文化', tag: '#서울데이트' },
+      ]
     }
   },
   CN: {
@@ -261,6 +312,7 @@ export const SITE_CONTENT = {
         { num: 1, name: '严格筛选的纯净美食地图' },
         { num: 2, name: '实时圣水洞快闪店之旅' },
         { num: 3, name: '每周韩国流行语摘要' },
+        { num: 4, name: '实用标签查询' },
       ],
       calendarButton: '查看实时快闪店日历',
     },
@@ -296,6 +348,22 @@ export const SITE_CONTENT = {
       mapInteract: '点击以互动地图',
       otherLocations: '筛选条件下的其他地点:',
       noLocations: '没有可显示的地点',
+    },
+    hashtag: {
+      title: '实用K-标签查询',
+      placeholder: '搜索标签 (例如：咖啡店, 快闪店)',
+      categories: ['全部', '快闪店', '咖啡店', '美食', '文化'],
+      tags: [
+        { cat: '快闪店', tag: '#성수팝업' },
+        { cat: '快闪店', tag: '#팝업스토어' },
+        { cat: '快闪店', tag: '#더현대서울' },
+        { cat: '咖啡店', tag: '#성수동카페' },
+        { cat: '咖啡店', tag: '#홍대카페' },
+        { cat: '美食', tag: '#성수맛집' },
+        { cat: '美食', tag: '#홍대맛집' },
+        { cat: '文化', tag: '#전시회추천' },
+        { cat: '文化', tag: '#서울데이트' },
+      ]
     }
   },
   VN: {
@@ -334,6 +402,7 @@ export const SITE_CONTENT = {
         { num: 1, name: 'Bản Đồ Ẩm Thực Được Chọn Lọc' },
         { num: 2, name: 'Tour Pop-up Seongsu Trực Tiếp' },
         { num: 3, name: 'Bản Tóm Tắt Từ Lóng Hàn Hàng Tuần' },
+        { num: 4, name: 'Tra cứu hashtag hữu ích' },
       ],
       calendarButton: 'Xem Lịch Pop-up Trực Tiếp',
     },
@@ -369,6 +438,22 @@ export const SITE_CONTENT = {
       mapInteract: 'Nhấp để tương tác với Bản đồ',
       otherLocations: 'Các địa điểm khác trong bộ lọc của bạn:',
       noLocations: 'Không có địa điểm để hiển thị',
+    },
+    hashtag: {
+      title: 'Tra cứu Hashtag K-Hữu ích',
+      placeholder: 'Tìm kiếm thẻ (VD: cafe, popup)',
+      categories: ['Tất cả', 'Pop-up', 'Cafe', 'Ẩm thực', 'Văn hóa'],
+      tags: [
+        { cat: 'Pop-up', tag: '#성수팝업' },
+        { cat: 'Pop-up', tag: '#팝업스토어' },
+        { cat: 'Pop-up', tag: '#더현대서울' },
+        { cat: 'Cafe', tag: '#성수동카페' },
+        { cat: 'Cafe', tag: '#홍대카페' },
+        { cat: 'Ẩm thực', tag: '#성수맛집' },
+        { cat: 'Ẩm thực', tag: '#홍대맛집' },
+        { cat: 'Văn hóa', tag: '#전시회추천' },
+        { cat: 'Văn hóa', tag: '#서울데이트' },
+      ]
     }
   },
 };

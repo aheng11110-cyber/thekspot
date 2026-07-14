@@ -71,7 +71,7 @@ export const SITE_CONTENT = {
       description: "No ads, no outdated info. We curate the hottest pop-up stores, restaurants, cafes, and travel spots in Korea in real-time. Meet Korea's today, faster than anyone.",
     },
     cinematic: {
-      text: "Korean trends move at lightning speed. The typical travel guide shows you places that closed six months ago. THE K-SPOT tracks live community forums, maps active popup store schedules, and filters Naver Map ratings to deliver the raw, authentic vibe of Korea with zero marketing noise.",
+      text: "Korean trends move at lightning speed. The typical travel guide shows you places that closed six months ago. THE K-SPOT tracks live community forums, maps active popup store schedules, and filters local map ratings to deliver the raw, authentic vibe of Korea with zero marketing noise.",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -83,9 +83,9 @@ export const SITE_CONTENT = {
     },
     technology: {
       title: ['The Real', 'Korea Vibe'],
-      description: "We don't do sponsored content. We crawl online communities and filter Naver Place databases to bring you the exact maps, files, and cultural guides you need to experience Korea like a local.",
+      description: "We don't do sponsored content. We crawl online communities and filter local map databases to bring you the exact maps, files, and cultural guides you need to experience Korea like a local.",
       features: [
-        { title: 'Ad-Free Matzip Map', desc: "Curated local maps filtering out fake Naver reviews and sponsored posts." },
+        { title: 'Ad-Free Matzip Map', desc: "Curated local maps filtering out fake tourist reviews and sponsored posts." },
         { title: 'Live Popup Calendar', desc: "Weekly updated schedules and routes for popups in Seongsu and Hongdae." },
         { title: 'Weekly Slang & Memes', desc: "No boring textbook language. Learn the exact words Koreans are typing on Reddit and DC Inside." },
         { title: '1-Click Google Maps', desc: "Instantly import custom routes to your phone with zero manual effort." },
@@ -96,7 +96,7 @@ export const SITE_CONTENT = {
       heading: 'One Click. Live Korea.',
       description: "No more planning fatigue. We provide direct Google Map imports for the best local spots and weekly newsletter digests.",
       layers: [
-        { num: 1, name: 'Naver-Filtered Food Map' },
+        { num: 1, name: 'Local-Verified Food Map' },
         { num: 2, name: 'Live Seongsu Popup Tour' },
         { num: 3, name: 'Weekly K-Slang PDF Digest' },
         { num: 4, name: 'Useful Hashtag Lookup' },
@@ -124,10 +124,10 @@ export const SITE_CONTENT = {
       contactSales: 'Contact Sales',
       debitOrCreditCard: 'Debit or Credit Card',
       oneTime: '/one-time',
-      basicDesc: 'Weekly Seongsu popup route map & Naver-filtered clean food lists.',
-      basicFeatures: ['Weekly updated popup maps', 'Naver-filtered clean food list', 'Basic K-slang/meme glossary'],
+      basicDesc: 'Weekly Seongsu popup route map & Local-verified clean food lists.',
+      basicFeatures: ['Weekly updated popup maps', 'Local-verified clean food list', 'Basic K-slang/meme glossary'],
       proDesc: 'Real-time custom maps, K-slang guides & private Discord channel feed.',
-      proFeatures: ['Everything in Basic', 'All Naver-filtered clean food maps', 'Premium weekly K-slang guides', 'Priority Q&A & translation support'],
+      proFeatures: ['Everything in Basic', 'All Local-verified clean food maps', 'Premium weekly K-slang guides', 'Priority Q&A & translation support'],
       enterpriseDesc: 'Custom corporate tour guides & retail popup placement analysis.',
       enterpriseFeatures: ['Everything in Pro', 'B2B brand popup placement support', 'Custom local SEO & marketing consulting', 'Dedicated English guide support'],
     },
@@ -339,7 +339,7 @@ export const SITE_CONTENT = {
       description: '広告や古い情報は省き、今韓国で最も熱いポップアップストア、グルメ、カフェ、旅行先をリアルタイムでキュレーションします。韓国の「今日」を誰よりも早く体験してください。',
     },
     cinematic: {
-      text: "韓国のトレンドは光の速さで変化します。一般的な旅行ガイドには、半年前に閉店した場所が載っていたりします。THE K-SPOTは、リアルタイムのコミュニティフォーラムを追跡し、アクティブなポップアップストアのスケジュールをマッピングし、Naverマップの評価をフィルタリングして、マーケティングノイズのない、リアルな韓国の雰囲気をお届けします。",
+      text: "韓国のトレンドは光の速さで変化します。一般的な旅行ガイドには、半年前に閉店した場所が載っていたりします。THE K-SPOTは、リアルタイムのコミュニティフォーラムを追跡し、アクティブなポップアップストアのスケジュールをマッピングし、現地のマップ評価を厳選し、マーケティングノイズのない、リアルな韓国の雰囲気をお届けします。",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -482,7 +482,7 @@ export const SITE_CONTENT = {
       contactSales: '联系销售',
       debitOrCreditCard: '借记卡或信用卡',
       oneTime: '/一次性买断',
-      basicDesc: '每周圣水洞快闪店路线图和经过Naver过滤的纯净美食列表。',
+      basicDesc: '每周圣水洞快闪店路线图和经过本地人验证的纯净美食列表。',
       basicFeatures: ['每周更新的快闪店地图', '纯净本地美食列表', '基本韩国网络用语/热梗词汇表'],
       proDesc: '实时自定义地图、韩国流行语指南以及专属Discord频道推送。',
       proFeatures: ['包含基础版的所有功能', '所有纯净美食地图', '高级每周韩国流行语指南', '优先问答与翻译支持'],
@@ -572,8 +572,8 @@ export const SITE_CONTENT = {
       contactSales: 'Liên Hệ Bán Hàng',
       debitOrCreditCard: 'Thẻ Ghi Nợ hoặc Thẻ Tín Dụng',
       oneTime: '/mua 1 lần',
-      basicDesc: 'Bản đồ lộ trình pop-up Seongsu hàng tuần & danh sách nhà hàng sạch đã lọc từ Naver.',
-      basicFeatures: ['Bản đồ pop-up cập nhật hàng tuần', 'Danh sách nhà hàng sạch đã lọc từ Naver', 'Bảng chú giải từ lóng/meme cơ bản'],
+      basicDesc: 'Bản đồ lộ trình pop-up Seongsu hàng tuần & danh sách nhà hàng sạch được người bản địa xác thực.',
+      basicFeatures: ['Bản đồ pop-up cập nhật hàng tuần', 'Danh sách nhà hàng sạch được người bản địa xác thực', 'Bảng chú giải từ lóng/meme cơ bản'],
       proDesc: 'Bản đồ tùy chỉnh thời gian thực, hướng dẫn từ lóng K và nguồn cấp dữ liệu Discord riêng tư.',
       proFeatures: ['Tất cả tính năng của Gói Cơ Bản', 'Tất cả bản đồ nhà hàng sạch đã lọc', 'Hướng dẫn từ lóng cao cấp hàng tuần', 'Hỗ trợ Q&A và dịch thuật ưu tiên'],
       enterpriseDesc: 'Hướng dẫn viên doanh nghiệp tùy chỉnh & phân tích vị trí pop-up bán lẻ.',

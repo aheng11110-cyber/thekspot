@@ -57,6 +57,10 @@ function MainApp() {
       });
       setNewsletterStatus('success');
       setNewsletterEmail('');
+      setTimeout(() => {
+        const el = document.getElementById('pricing-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
     } catch (error) {
       console.error('Subscription error:', error);
       setNewsletterStatus('error');

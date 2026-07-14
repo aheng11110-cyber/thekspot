@@ -142,44 +142,48 @@ function MainApp() {
           transition={{ duration: 1 }}
         >
           <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center">
-          <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center gap-8 lg:gap-12 pb-12">
-            <h1
-              className="text-white font-light leading-[1.1] tracking-[-0.03em] text-left"
-              style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
-            >
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-block"
-              >
-                {hero.titleLeft.join(' ')}
-              </motion.span>
-              <br />
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="inline-block text-white/60"
-              >
-                {hero.titleRight.join(' ')}
-              </motion.span>
-            </h1>
+            <svg viewBox="0 0 800 650" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+              <foreignObject width="100%" height="100%">
+                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-start">
+                  <h1
+                    className="text-white font-light leading-[1.1] tracking-[-0.03em] text-left"
+                    style={{ fontSize: '64px' }}
+                  >
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      className="inline-block"
+                    >
+                      {hero.titleLeft.join(' ')}
+                    </motion.span>
+                    <br />
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                      className="inline-block text-white/60"
+                    >
+                      {hero.titleRight.join(' ')}
+                    </motion.span>
+                  </h1>
 
-            <motion.p
-              className="max-w-[500px] text-white/80 leading-[1.6] font-normal"
-              style={{ fontSize: 'clamp(15px, 2vw, 20px)' }}
-              initial={{ opacity: 0, y: 25 }}
-              animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.9,
-                ease: [0.215, 0.61, 0.355, 1.0],
-                delay: 0.6,
-              }}
-            >
-              {hero.description}
-            </motion.p>
-          </div>
+                  <motion.p
+                    className="max-w-[500px] text-white/80 leading-[1.6] font-normal"
+                    style={{ fontSize: '20px' }}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      duration: 0.9,
+                      ease: [0.215, 0.61, 0.355, 1.0],
+                      delay: 0.6,
+                    }}
+                  >
+                    {hero.description}
+                  </motion.p>
+                </div>
+              </foreignObject>
+            </svg>
           </div>
 
           {/* Newsletter Form Aligned to the Bottom */}
@@ -223,7 +227,7 @@ function MainApp() {
       <CurationSection />
 
       {/* ════════════════ SECTION 5: ARCHITECTURE (Moved to Page 3) ════════════════ */}
-      <section className="snap-start snap-always min-h-screen flex items-center justify-center bg-black">
+      <section className="snap-start min-h-screen flex items-center justify-center bg-black py-16">
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -284,7 +288,7 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
-      <section id="pricing-section" className="snap-start snap-always min-h-screen bg-black py-16 md:py-20 px-4 md:px-6 flex items-center justify-center">
+      <section id="pricing-section" className="snap-start min-h-screen bg-black py-16 px-4 md:px-6 flex items-center justify-center">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center mb-20"
@@ -308,7 +312,7 @@ function MainApp() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* ── Free ── */}
             <motion.div
-              className="border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col relative"
+              className="border border-white/10 rounded-2xl p-5 flex flex-col relative"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -341,7 +345,7 @@ function MainApp() {
 
             {/* ── Pro (Featured) ── */}
             <motion.div
-              className="border border-white/25 rounded-2xl p-6 lg:p-8 flex flex-col relative bg-white/[0.03]"
+              className="border border-white/25 rounded-2xl p-5 flex flex-col relative bg-white/[0.03]"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -376,7 +380,7 @@ function MainApp() {
 
             {/* ── Enterprise ── */}
             <motion.div
-              className="border border-white/10 rounded-2xl p-6 lg:p-8 flex flex-col"
+              className="border border-white/10 rounded-2xl p-5 flex flex-col"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >

@@ -517,17 +517,14 @@ function MainApp() {
         className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
       >
 
-        {/* News Sidebar (Gradient Overlay) */}
-        <div className="hidden xl:block fixed right-0 top-0 bottom-0 w-[400px] pointer-events-none z-50">
-          {/* Top gradient overlay */}
-          <div
-            className="absolute top-0 left-0 right-0 z-10"
-            style={{
-              height: 180,
-              background: 'linear-gradient(to bottom, #010103, transparent)',
-            }}
-          />
-        </div>
+        {/* Top gradient overlay */}
+        <div
+          className="absolute top-0 left-0 right-0 z-10"
+          style={{
+            height: 180,
+            background: 'linear-gradient(to bottom, #010103, transparent)',
+          }}
+        />
 
         {/* 3D text content */}
         <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>

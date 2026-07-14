@@ -236,7 +236,7 @@ function MainApp() {
             transition={{ duration: 1.0 }}
             viewport={{ once: true, amount: 0.4 }}
           >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
+            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-3">
               {architecture.subtitle}
             </p>
             <h2
@@ -292,7 +292,7 @@ function MainApp() {
       <section id="pricing-section" className="snap-start snap-always h-[100dvh] bg-black py-8 md:py-12 2xl:py-32 px-4 md:px-6 flex items-center justify-center overflow-y-auto">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
-            className="text-center mb-10 md:mb-16"
+            className="text-center mb-6 md:mb-8"
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -300,7 +300,7 @@ function MainApp() {
               {pricing.subtitle}
             </p>
             <h2
-              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-6"
+              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-3"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
             >
               {pricing.title}
@@ -327,10 +327,10 @@ function MainApp() {
                 <span className="text-white text-[42px] font-light tracking-tight">$0</span>
                 <span className="text-white/30 text-[14px]">/free</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-8">
+              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
                 {pricing.freeDesc}
               </p>
-              <ul className="flex flex-col gap-3 mb-10 flex-1">
+              <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.freeFeatures.map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
                     <span className="text-white/30">✓</span> {feature}
@@ -360,10 +360,10 @@ function MainApp() {
                 <span className="text-white text-[42px] font-light tracking-tight">$29.99</span>
                 <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-8">
+              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
                 {pricing.proDesc}
               </p>
-              <ul className="flex flex-col gap-3 mb-10 flex-1">
+              <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.proFeatures.map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
                     <span className="text-white/30">✓</span> {feature}
@@ -389,10 +389,10 @@ function MainApp() {
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tight">Custom</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-8">
+              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
                 {pricing.enterpriseDesc}
               </p>
-              <ul className="flex flex-col gap-3 mb-10 flex-1">
+              <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.enterpriseFeatures.map((feature: string, idx: number) => (
                   <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
                     <span className="text-white/30">✓</span> {feature}

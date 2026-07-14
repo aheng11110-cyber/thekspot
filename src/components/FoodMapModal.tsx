@@ -190,15 +190,27 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
                   />
                 </div>
 
-                <a 
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedRes.name + ' ' + selectedRes.address)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 w-full bg-white text-black font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-white/90 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-                >
-                  <Star size={18} className="fill-black" />
-                  {lang === 'KO' ? '리뷰 보기 (Google Maps)' : 'Read Reviews (Google Maps)'}
-                </a>
+                <div className="grid grid-cols-2 gap-2 mt-2">
+                  <a 
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedRes.name + ' ' + selectedRes.address)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-white text-black font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-white/90 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.2)] text-[13px]"
+                  >
+                    <Star size={16} className="fill-black" />
+                    Google Maps
+                  </a>
+                  
+                  <a 
+                    href={`https://map.naver.com/p/search/${encodeURIComponent(selectedRes.name)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-[#03C75A] text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:bg-[#02b350] transition-colors shadow-[0_0_15px_rgba(3,199,90,0.2)] text-[13px]"
+                  >
+                    <Star size={16} className="fill-white" />
+                    Naver Maps
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

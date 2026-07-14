@@ -48,33 +48,8 @@ function MainApp() {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newsletterEmail) return;
-
-    setNewsletterStatus('loading');
-    try {
-      // 1. Send to webhook (existing newsletter logic)
-      await fetch('https://hook.us2.make.com/vxh0xtei54rpvmombfmg61dbvanvcbrs', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: newsletterEmail, source: 'TheKSpot Footer', timestamp: new Date().toISOString() }),
-      });
-      
-      // 2. Automatically register user in Firebase Auth
-      try {
-        await createUserWithEmailAndPassword(auth, newsletterEmail, 'Kspot1234!');
-      } catch (authErr: any) {
-        // Ignore if user already exists
-        if (authErr.code !== 'auth/email-already-in-use') {
-          console.error('Auto-signup error:', authErr);
-        }
-      }
-
-      setNewsletterStatus('success');
-      setNewsletterEmail('');
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setNewsletterStatus('error');
-    }
+    // 구독 버튼 누르면 바로 회원가입(로그인) 모달 띄우기
+    window.dispatchEvent(new Event('openAuthModal'));
   };
 
   const { user } = useAuth();

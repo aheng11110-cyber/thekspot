@@ -8,6 +8,7 @@ import { MySpaceModal } from './MySpaceModal';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage, Language } from '../contexts/LanguageContext';
 import { SITE_CONTENT, BRAND_NAME } from '../config/content';
+import { useEffect } from 'react';
 
 interface NavbarProps {
   entranceComplete: boolean;
@@ -22,6 +23,12 @@ export function Navbar({ entranceComplete }: NavbarProps) {
   const [mySpaceOpen, setMySpaceOpen] = useState(false);
   const { user, signOut } = useAuth();
   const { lang, setLang } = useLanguage();
+
+  useEffect(() => {
+    const handleOpenAuth = () => setAuthOpen(true);
+    window.addEventListener('openAuthModal', handleOpenAuth);
+    return () => window.removeEventListener('openAuthModal', handleOpenAuth);
+  }, []);
 
   const scrollTo = (y: number) => {
     window.scrollTo({ top: y, behavior: 'smooth' });

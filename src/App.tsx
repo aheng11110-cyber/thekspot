@@ -143,12 +143,12 @@ function MainApp() {
         >
           <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center">
             {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
-            <svg viewBox="0 0 800 500" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+            <svg viewBox="0 0 850 550" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
               <foreignObject width="100%" height="100%">
                 <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
                   <h1
                     className="text-white font-light leading-[1.1] tracking-[-0.03em] text-left"
-                    style={{ fontSize: '64px' }}
+                    style={{ fontSize: '72px' }}
                   >
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
@@ -170,8 +170,8 @@ function MainApp() {
                   </h1>
 
                   <motion.p
-                    className="max-w-[500px] text-white/80 leading-[1.6] font-normal"
-                    style={{ fontSize: '20px' }}
+                    className="max-w-[600px] text-white/80 leading-[1.6] font-normal"
+                    style={{ fontSize: '26px' }}
                     initial={{ opacity: 0, y: 25 }}
                     animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
                     transition={{

@@ -189,12 +189,12 @@ function MainApp() {
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   required
-                  className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all shadow-inner"
+                  className="flex-1 bg-transparent border border-white/20 rounded-lg px-4 py-3 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-white/50 transition-all"
                 />
                 <button 
                   type="submit" 
                   disabled={newsletterStatus === 'loading'}
-                  className="bg-white text-black px-6 py-3 rounded-lg text-[15px] font-semibold hover:bg-white/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50 disabled:hover:scale-100"
+                  className="bg-transparent border border-white/20 text-white px-6 py-3 rounded-lg text-[15px] font-medium hover:bg-white/10 transition-all disabled:opacity-50"
                 >
                   {newsletterStatus === 'loading' ? 'Sending...' : 'Subscribe'}
                 </button>

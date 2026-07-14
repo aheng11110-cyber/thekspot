@@ -177,6 +177,36 @@ function MainApp() {
                   >
                     {hero.description}
                   </motion.p>
+
+                  {/* Newsletter Form Moved to Hero for Higher Conversion */}
+                  <motion.form 
+                    onSubmit={handleSubscribe} 
+                    className="max-w-[450px] mt-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  >
+                    <p className="text-white/70 text-[13px] mb-3 uppercase tracking-wider font-medium">Join our Newsletter</p>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        value={newsletterEmail}
+                        onChange={(e) => setNewsletterEmail(e.target.value)}
+                        required
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all shadow-inner"
+                      />
+                      <button 
+                        type="submit" 
+                        disabled={newsletterStatus === 'loading'}
+                        className="bg-white text-black px-6 py-3 rounded-lg text-[15px] font-semibold hover:bg-white/90 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50 disabled:hover:scale-100"
+                      >
+                        {newsletterStatus === 'loading' ? 'Sending...' : 'Subscribe'}
+                      </button>
+                    </div>
+                    {newsletterStatus === 'success' && <p className="text-[#39FF14] text-[13px] mt-3 font-medium">Successfully subscribed! Welcome aboard.</p>}
+                    {newsletterStatus === 'error' && <p className="text-red-400 text-[13px] mt-3 font-medium">Failed to subscribe. Please try again.</p>}
+                  </motion.form>
                 </div>
               </foreignObject>
             </svg>
@@ -541,29 +571,7 @@ function MainApp() {
                 {footer.tagline}
               </p>
 
-              {/* Newsletter Form */}
-              <form onSubmit={handleSubscribe} className="max-w-sm">
-                <p className="text-white/60 text-[13px] mb-3 uppercase tracking-wider font-medium">Join our Newsletter</p>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    required
-                    className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-[14px] text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors"
-                  />
-                  <button 
-                    type="submit" 
-                    disabled={newsletterStatus === 'loading'}
-                    className="bg-white text-black px-6 py-3 rounded-lg text-[14px] font-medium hover:bg-white/90 transition-colors disabled:opacity-50"
-                  >
-                    {newsletterStatus === 'loading' ? 'Sending...' : 'Subscribe'}
-                  </button>
-                </div>
-                {newsletterStatus === 'success' && <p className="text-[#39FF14] text-[12px] mt-2">Successfully subscribed! Welcome aboard.</p>}
-                {newsletterStatus === 'error' && <p className="text-red-400 text-[12px] mt-2">Failed to subscribe. Please try again.</p>}
-              </form>
+              {/* Newsletter Form was moved to the Hero section */}
             </div>
 
             <p className="text-white/25 text-[12px] mt-12">

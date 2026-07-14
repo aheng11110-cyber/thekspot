@@ -189,6 +189,16 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
                     src={`https://maps.google.com/maps?q=${encodeURIComponent(selectedRes.name + ' ' + selectedRes.address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
                   />
                 </div>
+
+                <a 
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedRes.name + ' ' + selectedRes.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 w-full bg-white text-black font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-white/90 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                >
+                  <Star size={18} className="fill-black" />
+                  {lang === 'KO' ? '리뷰 보기 (Google Maps)' : 'Read Reviews (Google Maps)'}
+                </a>
               </div>
             </motion.div>
           </div>

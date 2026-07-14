@@ -14,6 +14,31 @@ interface NewsItem {
   createdAt?: Timestamp;
 }
 
+const MOCK_NEWS = {
+  EN: [
+    { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN', url: 'https://koreajoongangdaily.heraldcorp.com/' },
+    { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN', url: 'https://koreajoongangdaily.heraldcorp.com/' },
+    { id: 'm3', title: 'Seoul opens new night market in Myeongdong', summary: 'A massive new night market featuring over 100 food stalls has opened.', lang: 'EN' }
+  ],
+  KO: [
+    { id: 'm1', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO', url: 'https://n.news.naver.com/' },
+    { id: 'm2', title: '넷플릭스 2026 K-콘텐츠 라인업 발표', summary: '오징어게임 시즌3를 포함한 역대급 라인업이 공개되었습니다.', lang: 'KO', url: 'https://n.news.naver.com/' },
+    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO' }
+  ],
+  JP: [
+    { id: 'm1', title: 'ATEEZ、ビルボード200で1位を獲得', summary: '韓国のボーイズグループATEEZが最新アルバムでビルボード200のトップに立ちました。', lang: 'JP' },
+    { id: 'm2', title: '明洞に新しいナイトマーケットがオープン', summary: '100以上の屋台が集まる巨大なナイトマーケットが明洞にオープンしました。', lang: 'JP' }
+  ],
+  CN: [
+    { id: 'm1', title: 'ATEEZ登顶公告牌二百强专辑榜', summary: '韩国男子组合ATEEZ凭借新专辑首次登顶公告牌二百强专辑榜。', lang: 'CN' },
+    { id: 'm2', title: '首尔明洞开设全新夜市', summary: '明洞开设了一个拥有100多个小吃摊的大型新夜市。', lang: 'CN' }
+  ],
+  VN: [
+    { id: 'm1', title: 'ATEEZ đứng đầu Billboard 200', summary: 'Nhóm nhạc nam K-pop ATEEZ đã giành được vị trí số 1 đầu tiên trên bảng xếp hạng album Billboard 200.', lang: 'VN' },
+    { id: 'm2', title: 'Chợ đêm mới mở tại Myeongdong', summary: 'Một chợ đêm mới khổng lồ với hơn 100 quầy thức ăn đã được mở.', lang: 'VN' }
+  ]
+};
+
 export function NewsSidebar() {
   const { lang } = useLanguage();
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
@@ -41,6 +66,8 @@ export function NewsSidebar() {
 
     return () => unsubscribe();
   }, [lang]);
+
+  const displayNews = newsList.length > 0 ? newsList : MOCK_NEWS[lang as keyof typeof MOCK_NEWS] || MOCK_NEWS['EN'];
 
   const handleNewsClick = (news: NewsItem) => {
     if (news.url) {
@@ -73,13 +100,13 @@ export function NewsSidebar() {
         
         {/* 뉴스 리스트 영역 */}
         <div className="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-5 pr-2">
-          {newsList.length === 0 ? (
+          {displayNews.length === 0 ? (
             <p className="text-white/40 text-sm mt-10 text-center font-light leading-relaxed">
               No recent news for {lang}.<br/>
               Check back later!
             </p>
           ) : (
-            newsList.map((news, i) => (
+            displayNews.map((news, i) => (
               <motion.div 
                 key={news.id + lang} // 언어 바뀔 때마다 애니메이션 트리거
                 initial={{ opacity: 0, x: 20 }}

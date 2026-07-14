@@ -14,7 +14,7 @@ export const SITE_CONTENT = {
       description: "No ads, no outdated info. We curate the hottest pop-up stores, restaurants, cafes, and travel spots in Korea in real-time. Meet Korea's today, faster than anyone.",
     },
     cinematic: {
-      text: "Korean trends move at lightning speed. The typical travel guide shows you places that closed six months ago. THE K-SPOT tracks live community forums, maps active popup store schedules, and filters Naver Map ratings to deliver the raw, authentic vibe of Seoul with zero marketing noise.",
+      text: "Korean trends move at lightning speed. The typical travel guide shows you places that closed six months ago. THE K-SPOT tracks live community forums, maps active popup store schedules, and filters Naver Map ratings to deliver the raw, authentic vibe of Korea with zero marketing noise.",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -36,7 +36,7 @@ export const SITE_CONTENT = {
     },
     architecture: {
       subtitle: 'Our Curated Layers',
-      heading: 'One Click. Live Seoul.',
+      heading: 'One Click. Live Korea.',
       description: "No more planning fatigue. We provide direct Google Map imports for the best local spots and weekly newsletter digests.",
       layers: [
         { num: 1, name: 'Naver-Filtered Food Map' },
@@ -194,7 +194,7 @@ export const SITE_CONTENT = {
       description: '広告や古い情報は省き、今韓国で最も熱いポップアップストア、グルメ、カフェ、旅行先をリアルタイムでキュレーションします。韓国の「今日」を誰よりも早く体験してください。',
     },
     cinematic: {
-      text: "韓国のトレンドは光の速さで変化します。普通のガイドブックは半年前に閉店した場所を紹介しています。THE K-SPOTは、リアルタイムのコミュニティやポップアップのスケジュールを追跡し、マーケティングノイズのない「本物」のソウルの雰囲気をお届けします。",
+      text: "韓国のトレンドは光の速さで変化します。一般的な旅行ガイドには、半年前に閉店した場所が載っていたりします。THE K-SPOTは、リアルタイムのコミュニティフォーラムを追跡し、アクティブなポップアップストアのスケジュールをマッピングし、Naverマップの評価をフィルタリングして、マーケティングノイズのない、リアルな韓国の雰囲気をお届けします。",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -216,7 +216,7 @@ export const SITE_CONTENT = {
     },
     architecture: {
       subtitle: 'キュレーションレイヤー',
-      heading: 'ワンクリックで、リアルなソウル',
+      heading: 'ワンクリックで、リアルな韓国',
       description: "計画を立てる疲れにさようなら。最高のローカルスポットを直接Googleマップに追加し、週間ニュースレターでお届けします。",
       layers: [
         { num: 1, name: '厳選クリーンローカルグルメ' },
@@ -374,7 +374,7 @@ export const SITE_CONTENT = {
       description: 'Không có quảng cáo và thông tin lỗi thời. Chúng tôi tuyển chọn các cửa hàng pop-up, nhà hàng, quán cà phê và điểm du lịch hot nhất Hàn Quốc theo thời gian thực. Khám phá Hàn Quốc của ngày hôm nay một cách nhanh nhất.',
     },
     cinematic: {
-      text: "Xu hướng ở Hàn Quốc thay đổi với tốc độ ánh sáng. Những cẩm nang du lịch thông thường chỉ cho bạn những nơi đã đóng cửa từ 6 tháng trước. THE K-SPOT theo dõi các diễn đàn trực tiếp, cập nhật lịch trình pop-up và lọc các đánh giá để mang đến cho bạn cảm nhận chân thực nhất về Seoul mà không có bất kỳ tiếng ồn marketing nào.",
+      text: "Xu hướng ở Hàn Quốc thay đổi với tốc độ ánh sáng. Những cẩm nang du lịch thông thường chỉ cho bạn những nơi đã đóng cửa từ 6 tháng trước. THE K-SPOT theo dõi các diễn đàn trực tiếp, cập nhật lịch trình pop-up và lọc các đánh giá để mang đến cho bạn cảm nhận chân thực nhất về Hàn Quốc mà không có bất kỳ tiếng ồn marketing nào.",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -396,7 +396,7 @@ export const SITE_CONTENT = {
     },
     architecture: {
       subtitle: 'Các Lớp Tuyển Chọn',
-      heading: 'Chỉ 1 Click. Seoul Sống Động.',
+      heading: 'Chỉ 1 Click. Hàn Quốc Sống Động.',
       description: "Không còn mệt mỏi vì lên kế hoạch. Chúng tôi cung cấp các liên kết nhập Google Map trực tiếp cho các địa điểm tuyệt nhất và bản tin tóm tắt hàng tuần.",
       layers: [
         { num: 1, name: 'Bản Đồ Ẩm Thực Được Chọn Lọc' },

@@ -16,8 +16,9 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
   const [activeCategory, setActiveCategory] = useState(content.categories[0]);
   const [copiedTag, setCopiedTag] = useState<string | null>(null);
 
-  const handleCopy = (tag: string) => {
-    navigator.clipboard.writeText(tag);
+  const handleCopy = (tag: string, meaning?: string) => {
+    const textToCopy = meaning ? `${tag} ${meaning}` : tag;
+    navigator.clipboard.writeText(textToCopy);
     setCopiedTag(tag);
     setTimeout(() => setCopiedTag(null), 2000);
   };
@@ -98,15 +99,16 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
               {filteredTags.map((t, idx) => {
                 const isCopied = copiedTag === t.tag;
                 return (
-                  <div 
-                    key={idx} 
-                    className="group bg-white/5 border border-white/10 p-4 rounded-xl flex items-center justify-between hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
-                    onClick={() => handleCopy(t.tag)}
-                  >
-                    <div className="flex flex-col gap-1">
-                      <span className="text-white font-medium tracking-wide">{t.tag}</span>
-                      <span className="text-white/30 text-xs uppercase tracking-widest">{t.cat}</span>
-                    </div>
+                    <div 
+                      key={idx} 
+                      className="group bg-white/5 border border-white/10 p-4 rounded-xl flex items-center justify-between hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
+                      onClick={() => handleCopy(t.tag, (t as any).meaning)}
+                    >
+                      <div className="flex flex-col gap-1">
+                        <span className="text-white font-medium tracking-wide">{t.tag}</span>
+                        {(t as any).meaning && <span className="text-white/60 text-sm tracking-wide font-light">{(t as any).meaning}</span>}
+                        <span className="text-white/30 text-xs uppercase tracking-widest mt-1">{t.cat}</span>
+                      </div>
                     <button 
                       className={`p-2 rounded-lg transition-colors ${
                         isCopied ? 'bg-green-500/20 text-green-400' : 'bg-black/30 text-white/40 group-hover:bg-white/10 group-hover:text-white'

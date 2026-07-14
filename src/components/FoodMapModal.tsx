@@ -42,7 +42,7 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
         </button>
 
         <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20">
-          <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight flex items-center gap-3 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3 mb-2">
             <Map className="text-orange-400/80" />
             {title}
           </h2>
@@ -71,7 +71,7 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
           <div className="mt-8 p-6 border border-dashed border-orange-500/30 rounded-xl flex flex-col items-center justify-center text-center gap-3 bg-orange-500/5 hover:bg-orange-500/10 transition-colors">
             <Map size={32} className="text-orange-400/50 mb-2" />
             <h4 className="text-white font-medium flex items-center justify-center gap-2">
-              <span className="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">Pro Feature</span>
+              <span className="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-normal">Pro Feature</span>
               {lang === 'KO' ? '원클릭 네비게이션 연동 (오픈 예정)' : '1-Click Navigation Sync'}
             </h4>
             <p className="text-white/40 text-sm max-w-md">

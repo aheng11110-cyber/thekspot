@@ -73,7 +73,7 @@ export function MySpaceModal({ isOpen, onClose }: MySpaceModalProps) {
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0">
-              <h2 className="text-xl font-light tracking-tight text-white flex items-center gap-2">
+              <h2 className="text-xl font-light tracking-tighter text-white flex items-center gap-2">
                 <i className="bi bi-bookmark-star"></i>
                 {lang === 'KO' ? '내 일정' : 
                  lang === 'JP' ? 'マイトリップ' :

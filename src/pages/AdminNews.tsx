@@ -90,7 +90,7 @@ export function AdminNews() {
         {tab === 'news' && (
           <form onSubmit={handleNewsSubmit} className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Language</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Language</label>
               <select value={lang} onChange={(e) => setLang(e.target.value)} className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50">
                 <option value="EN">English (EN)</option>
                 <option value="KO">Korean (KO)</option>
@@ -100,15 +100,15 @@ export function AdminNews() {
               </select>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Title</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Title</label>
               <input type="text" required value={title} onChange={(e) => setTitle(e.target.value)} placeholder="E.g. Seoul named top global travel destination" className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Summary</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Summary</label>
               <textarea required rows={3} value={summary} onChange={(e) => setSummary(e.target.value)} placeholder="Write a brief summary of the news..." className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50 resize-none"/>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Original Article URL (Optional)</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Original Article URL (Optional)</label>
               <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://news.example.com/article" className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
             </div>
             <button type="submit" disabled={loading} className="mt-2 w-full bg-white text-black font-medium py-3 rounded-lg hover:bg-white/90 transition-colors disabled:opacity-50">
@@ -121,25 +121,25 @@ export function AdminNews() {
         {tab === 'popup' && (
           <form onSubmit={handlePopupSubmit} className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Popup Store Title</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Popup Store Title</label>
               <input type="text" required value={pTitle} onChange={(e) => setPTitle(e.target.value)} placeholder="E.g. NewJeans Supernatural Popup" className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Location (Address or Area)</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Location (Address or Area)</label>
               <input type="text" required value={pLocation} onChange={(e) => setPLocation(e.target.value)} placeholder="E.g. Seongsu-dong (Line Friends Store)" className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <label className="text-xs text-white/70 uppercase tracking-wider">Start Date</label>
+                <label className="text-xs text-white/70 uppercase tracking-normal">Start Date</label>
                 <input type="date" required value={pStartDate} onChange={(e) => setPStartDate(e.target.value)} className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-xs text-white/70 uppercase tracking-wider">End Date</label>
+                <label className="text-xs text-white/70 uppercase tracking-normal">End Date</label>
                 <input type="date" required value={pEndDate} onChange={(e) => setPEndDate(e.target.value)} className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50"/>
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-white/70 uppercase tracking-wider">Description</label>
+              <label className="text-xs text-white/70 uppercase tracking-normal">Description</label>
               <textarea required rows={4} value={pDesc} onChange={(e) => setPDesc(e.target.value)} placeholder="What can visitors expect here?" className="bg-black border border-white/20 rounded-lg px-4 py-3 text-white outline-none focus:border-white/50 resize-none"/>
             </div>
             <button type="submit" disabled={loading} className="mt-2 w-full bg-white text-black font-medium py-3 rounded-lg hover:bg-white/90 transition-colors disabled:opacity-50">

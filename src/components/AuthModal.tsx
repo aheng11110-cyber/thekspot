@@ -93,7 +93,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
             </button>
 
             {/* Header */}
-            <h2 className="text-white text-[24px] font-light tracking-[-0.02em] mb-2">
+            <h2 className="text-white text-[24px] font-light tracking-[-0.05em] mb-2">
               {mode === 'login' ? 'Sign In' : 'Create Account'}
             </h2>
             <p className="text-white/40 text-[14px] mb-8">

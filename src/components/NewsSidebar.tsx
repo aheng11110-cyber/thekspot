@@ -95,7 +95,7 @@ export function NewsSidebar() {
         {/* 헤더 */}
         <div className="flex items-center gap-3 mb-8">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_12px_rgba(239,68,68,0.9)]" />
-          <h3 className="bg-gradient-to-r from-red-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-lg tracking-[0.15em] uppercase font-bold">K-Trend News</h3>
+          <h3 className="bg-gradient-to-r from-red-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-lg tracking-[0.05em] uppercase font-bold">K-Trend News</h3>
         </div>
         
         {/* 뉴스 리스트 영역 */}
@@ -115,7 +115,7 @@ export function NewsSidebar() {
                 onClick={() => handleNewsClick(news)}
                 className="group cursor-pointer flex flex-col"
               >
-                <p className="text-red-400 font-medium text-[10px] mb-1.5 uppercase tracking-widest">
+                <p className="text-red-400 font-medium text-[10px] mb-1.5 uppercase tracking-wide">
                   {formatTime(news.createdAt)}
                 </p>
                 <h4 className="text-white/90 group-hover:text-white text-[14px] leading-relaxed transition-all line-clamp-3 font-medium">
@@ -155,10 +155,10 @@ export function NewsSidebar() {
 
               <div className={`p-8 pt-12`}>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-0.5 bg-white/10 rounded text-[10px] text-white/70 uppercase tracking-widest">
+                  <span className="px-2 py-0.5 bg-white/10 rounded text-[10px] text-white/70 uppercase tracking-wide">
                     Trending
                   </span>
-                  <span className="text-[10px] text-white/30 uppercase tracking-widest">
+                  <span className="text-[10px] text-white/30 uppercase tracking-wide">
                     {formatTime(selectedNews.createdAt)}
                   </span>
                 </div>

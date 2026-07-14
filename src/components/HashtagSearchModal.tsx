@@ -55,7 +55,7 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
         </button>
 
         <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20">
-          <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight flex items-center gap-3 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3 mb-6">
             <Hash className="text-white/40" />
             {content.title}
           </h2>
@@ -110,7 +110,7 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
                       <div className="flex flex-col gap-1">
                         <span className="text-white font-medium tracking-wide">{t.tag}</span>
                         {(t as any).meaning && <span className="text-white/60 text-sm tracking-wide font-light">{(t as any).meaning}</span>}
-                        <span className="text-white/30 text-xs uppercase tracking-widest mt-1">{localizedCat}</span>
+                        <span className="text-white/30 text-xs uppercase tracking-wide mt-1">{localizedCat}</span>
                       </div>
                     <button 
                       className={`p-2 rounded-lg transition-colors ${

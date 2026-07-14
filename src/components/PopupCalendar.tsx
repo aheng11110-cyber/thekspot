@@ -151,7 +151,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
         <div className="w-full md:w-[60%] lg:w-[65%] border-b md:border-b-0 md:border-r border-white/10 p-6 sm:p-10 flex flex-col bg-black/20">
           
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tight flex items-center gap-3">
+            <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3">
               <CalendarIcon className="text-white/40" />
               Popup Stores
             </h2>
@@ -167,13 +167,13 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
 
           <div className="flex items-center justify-between mb-6 bg-white/5 p-2 rounded-xl">
             <button onClick={handlePrevMonth} className="p-2 hover:bg-white/10 rounded-lg text-white/70 transition-colors"><ChevronLeft /></button>
-            <span className="text-lg font-medium text-white tracking-widest uppercase">
+            <span className="text-lg font-medium text-white tracking-wide uppercase">
               {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
             </span>
             <button onClick={handleNextMonth} className="p-2 hover:bg-white/10 rounded-lg text-white/70 transition-colors"><ChevronRight /></button>
           </div>
 
-          <div className="grid grid-cols-7 gap-2 text-center text-xs text-white/40 mb-2 uppercase tracking-widest font-medium">
+          <div className="grid grid-cols-7 gap-2 text-center text-xs text-white/40 mb-2 uppercase tracking-wide font-medium">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => <div key={day}>{day}</div>)}
           </div>
 
@@ -216,7 +216,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
             <div className="p-6 sm:p-10 flex flex-col gap-8">
               
               <div className="pb-4 border-b border-white/10">
-                <p className="text-white/40 text-sm tracking-widest uppercase mb-1">
+                <p className="text-white/40 text-sm tracking-wide uppercase mb-1">
                   {selectedPopup ? 'Popup Details' : `Events on ${selectedDate}`}
                 </p>
                 <h3 className="text-xl font-light text-white">

@@ -51,7 +51,7 @@ export function Navbar({ entranceComplete }: NavbarProps) {
               whileTap={{ scale: 0.98 }}
             >
               <ConnectAILabLogo size={18} className="text-white" />
-              <span className="text-[16px] font-medium tracking-tight text-white">
+              <span className="text-[16px] font-medium tracking-tighter text-white">
                 {BRAND_NAME}
               </span>
             </motion.div>
@@ -206,7 +206,7 @@ export function Navbar({ entranceComplete }: NavbarProps) {
               transition={{ type: 'spring', stiffness: 350, damping: 28 }}
             >
               <ConnectAILabLogo size={14} className="text-white shrink-0" />
-              <span className="text-[13px] font-medium tracking-tight text-white whitespace-nowrap">
+              <span className="text-[13px] font-medium tracking-tighter text-white whitespace-nowrap">
                 {BRAND_NAME}
               </span>
             </motion.div>

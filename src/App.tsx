@@ -147,7 +147,7 @@ function MainApp() {
               <foreignObject width="100%" height="100%">
                 <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
                   <h1
-                    className="text-white font-light leading-[1.1] tracking-[-0.03em] text-left"
+                    className="text-white font-light leading-[1.1] tracking-[-0.06em] text-left"
                     style={{ fontSize: '72px' }}
                   >
                     <motion.span
@@ -196,7 +196,7 @@ function MainApp() {
               animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <p className="text-white/70 text-[13px] mb-3 uppercase tracking-wider font-medium">Join our Newsletter</p>
+              <p className="text-white/70 text-[13px] mb-3 uppercase tracking-normal font-medium">Join our Newsletter</p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input 
                   type="email" 
@@ -236,11 +236,11 @@ function MainApp() {
             transition={{ duration: 1.0 }}
             viewport={{ once: true, amount: 0.4 }}
           >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-3">
+            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.1em] uppercase mb-3">
               {architecture.subtitle}
             </p>
             <h2
-              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-10"
+              className="text-white font-light leading-[1.15] tracking-[-0.05em] mb-10"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
             >
               {architecture.heading}
@@ -271,7 +271,7 @@ function MainApp() {
                   onClick={handleClick}
                   className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:bg-white/5 hover:border-white/30 transition-colors group"
                 >
-                  <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
+                  <span className="text-white/30 text-[12px] tracking-[0.05em] uppercase">
                     Layer {l.num}
                   </span>
                   <span className="text-white text-[16px] sm:text-[18px] font-light group-hover:text-blue-300 transition-colors">
@@ -296,11 +296,11 @@ function MainApp() {
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
+            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.1em] uppercase mb-8">
               {pricing.subtitle}
             </p>
             <h2
-              className="text-white font-light leading-[1.15] tracking-[-0.02em] mb-3"
+              className="text-white font-light leading-[1.15] tracking-[-0.05em] mb-3"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
             >
               {pricing.title}
@@ -322,9 +322,9 @@ function MainApp() {
                   Newsletter
                 </span>
               </div>
-              <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.free}</p>
+              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.free}</p>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-white text-[42px] font-light tracking-tight">$0</span>
+                <span className="text-white text-[42px] font-light tracking-tighter">$0</span>
                 <span className="text-white/30 text-[14px]">/free</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-4">
@@ -355,9 +355,9 @@ function MainApp() {
                   {pricing.mostPopular}
                 </span>
               </div>
-              <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.pro}</p>
+              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.pro}</p>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-white text-[42px] font-light tracking-tight">$29.99</span>
+                <span className="text-white text-[42px] font-light tracking-tighter">$29.99</span>
                 <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-4">
@@ -385,9 +385,9 @@ function MainApp() {
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.enterprise}</p>
+              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.enterprise}</p>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-white text-[42px] font-light tracking-tight">Custom</span>
+                <span className="text-white text-[42px] font-light tracking-tighter">Custom</span>
               </div>
               <p className="text-white/40 text-[13px] leading-relaxed mb-4">
                 {pricing.enterpriseDesc}
@@ -420,7 +420,7 @@ function MainApp() {
 
         <div className="relative z-20 pt-32 pb-32 px-6 max-w-6xl mx-auto w-full">
           <motion.p
-            className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-20 text-center"
+            className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.1em] uppercase mb-20 text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
@@ -459,7 +459,7 @@ function MainApp() {
         <div className="relative z-20 flex flex-col flex-1 px-8 sm:px-12 md:px-16 py-12 sm:py-16">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
             <motion.h2
-              className="text-white font-light leading-[0.95] tracking-[-0.03em]"
+              className="text-white font-light leading-[0.95] tracking-[-0.06em]"
               style={{ fontSize: 'clamp(36px, 8vw, 72px)' }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -529,7 +529,7 @@ function MainApp() {
         {/* 3D text content */}
         <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
           <motion.p
-            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.02em] select-none px-6 sm:px-12 text-center"
+            className="font-sans font-normal text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.05em] select-none px-6 sm:px-12 text-center"
             style={{
               transform: transform3D,
               opacity: textOpacity,
@@ -552,7 +552,7 @@ function MainApp() {
             <div>
               <div className="flex items-center gap-2.5 mb-8">
                 <ConnectAILabLogo size={18} className="text-white/70" />
-                <span className="text-[15px] font-medium text-white/70 tracking-tight">
+                <span className="text-[15px] font-medium text-white/70 tracking-tighter">
                   {BRAND_NAME}
                 </span>
               </div>

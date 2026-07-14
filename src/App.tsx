@@ -25,6 +25,8 @@ import { HashtagSearchModal } from './components/HashtagSearchModal';
 import { FoodMapModal } from './components/FoodMapModal';
 import { KSlangModal } from './components/KSlangModal';
 import { Calendar as CalendarIcon } from 'lucide-react';
+import { auth } from './lib/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function App() {
   const isAdminRoute = window.location.search.includes('admin=true');
@@ -50,11 +52,23 @@ function MainApp() {
 
     setNewsletterStatus('loading');
     try {
+      // 1. Send to webhook (existing newsletter logic)
       await fetch('https://hook.us2.make.com/vxh0xtei54rpvmombfmg61dbvanvcbrs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: newsletterEmail, source: 'TheKSpot Footer', timestamp: new Date().toISOString() }),
       });
+      
+      // 2. Automatically register user in Firebase Auth
+      try {
+        await createUserWithEmailAndPassword(auth, newsletterEmail, 'Kspot1234!');
+      } catch (authErr: any) {
+        // Ignore if user already exists
+        if (authErr.code !== 'auth/email-already-in-use') {
+          console.error('Auto-signup error:', authErr);
+        }
+      }
+
       setNewsletterStatus('success');
       setNewsletterEmail('');
       setTimeout(() => {

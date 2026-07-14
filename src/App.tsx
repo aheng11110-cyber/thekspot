@@ -135,7 +135,7 @@ function MainApp() {
 
         {/* Hero content on the right */}
         <motion.div
-          className="relative z-20 flex flex-col flex-1 px-8 lg:px-16 pr-[280px] lg:pr-[360px]"
+          className="relative z-20 flex flex-col flex-1 px-8 lg:px-16 pr-8 xl:pr-[360px]"
 
           initial={{ opacity: 0 }}
           animate={{ opacity: entranceComplete ? 1 : 0 }}
@@ -143,7 +143,7 @@ function MainApp() {
         >
           <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center">
             {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
-            <svg viewBox="0 0 800 600" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+            <svg viewBox="0 0 800 500" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
               <foreignObject width="100%" height="100%">
                 <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
                   <h1
@@ -228,7 +228,7 @@ function MainApp() {
       <CurationSection />
 
       {/* ════════════════ SECTION 5: ARCHITECTURE (Moved to Page 3) ════════════════ */}
-      <section className="snap-start snap-always min-h-[100dvh] flex items-center justify-center bg-black overflow-y-auto">
+      <section className="snap-start snap-always h-[100dvh] flex items-center justify-center bg-black overflow-y-auto">
         <div className="max-w-3xl mx-auto px-6 py-8 md:py-12 2xl:py-32 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -289,7 +289,7 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
-      <section id="pricing-section" className="snap-start snap-always min-h-[100dvh] bg-black py-8 md:py-12 2xl:py-32 px-4 md:px-6 flex items-center justify-center overflow-y-auto">
+      <section id="pricing-section" className="snap-start snap-always h-[100dvh] bg-black py-8 md:py-12 2xl:py-32 px-4 md:px-6 flex items-center justify-center overflow-y-auto">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center mb-10 md:mb-16"
@@ -517,14 +517,17 @@ function MainApp() {
         className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
       >
 
-        {/* Top gradient overlay */}
-        <div
-          className="absolute top-0 left-0 right-0 z-10"
-          style={{
-            height: 180,
-            background: 'linear-gradient(to bottom, #010103, transparent)',
-          }}
-        />
+        {/* News Sidebar (Gradient Overlay) */}
+        <div className="hidden xl:block fixed right-0 top-0 bottom-0 w-[400px] pointer-events-none z-50">
+          {/* Top gradient overlay */}
+          <div
+            className="absolute top-0 left-0 right-0 z-10"
+            style={{
+              height: 180,
+              background: 'linear-gradient(to bottom, #010103, transparent)',
+            }}
+          />
+        </div>
 
         {/* 3D text content */}
         <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>

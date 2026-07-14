@@ -22,6 +22,8 @@ import { useLanguage } from './contexts/LanguageContext';
 import { AdminNews } from './pages/AdminNews';
 import { PopupCalendar } from './components/PopupCalendar';
 import { HashtagSearchModal } from './components/HashtagSearchModal';
+import { FoodMapModal } from './components/FoodMapModal';
+import { KSlangModal } from './components/KSlangModal';
 import { Calendar as CalendarIcon } from 'lucide-react';
 
 export default function App() {
@@ -36,6 +38,8 @@ function MainApp() {
   const [entranceComplete, setEntranceComplete] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const [showHashtagModal, setShowHashtagModal] = useState(false);
+  const [showFoodMapModal, setShowFoodMapModal] = useState(false);
+  const [showSlangModal, setShowSlangModal] = useState(false);
   const { user } = useAuth();
   const { lang } = useLanguage();
 
@@ -194,19 +198,23 @@ function MainApp() {
             viewport={{ once: true, amount: 0.4 }}
           >
             {architecture.layers.map((l: any) => {
-              const isLayer4 = l.num === 4;
+              const handleClick = () => {
+                if (l.num === 1) setShowFoodMapModal(true);
+                else if (l.num === 2) setShowCalendar(true);
+                else if (l.num === 3) setShowSlangModal(true);
+                else if (l.num === 4) setShowHashtagModal(true);
+              };
+
               return (
                 <div
                   key={l.num}
-                  onClick={() => { if (isLayer4) setShowHashtagModal(true); }}
-                  className={`w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 ${
-                    isLayer4 ? 'cursor-pointer hover:bg-white/5 hover:border-white/30 transition-colors group' : ''
-                  }`}
+                  onClick={handleClick}
+                  className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:bg-white/5 hover:border-white/30 transition-colors group"
                 >
                   <span className="text-white/30 text-[12px] tracking-[0.15em] uppercase">
                     Layer {l.num}
                   </span>
-                  <span className={`text-white text-[16px] sm:text-[18px] font-light ${isLayer4 ? 'group-hover:text-blue-300 transition-colors' : ''}`}>
+                  <span className="text-white text-[16px] sm:text-[18px] font-light group-hover:text-blue-300 transition-colors">
                     {l.name}
                   </span>
                 </div>
@@ -526,6 +534,16 @@ function MainApp() {
       {/* ──────────────── HASHTAG SEARCH MODAL ──────────────── */}
       <AnimatePresence>
         {showHashtagModal && <HashtagSearchModal onClose={() => setShowHashtagModal(false)} />}
+      </AnimatePresence>
+
+      {/* ──────────────── FOOD MAP MODAL (Layer 1) ──────────────── */}
+      <AnimatePresence>
+        {showFoodMapModal && <FoodMapModal onClose={() => setShowFoodMapModal(false)} />}
+      </AnimatePresence>
+
+      {/* ──────────────── K-SLANG MODAL (Layer 3) ──────────────── */}
+      <AnimatePresence>
+        {showSlangModal && <KSlangModal onClose={() => setShowSlangModal(false)} />}
       </AnimatePresence>
     </div>
   );

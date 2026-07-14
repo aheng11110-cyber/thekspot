@@ -126,7 +126,7 @@ export const SITE_CONTENT = {
     },
     architecture: {
       subtitle: '큐레이션 레이어',
-      heading: '클릭 한 번으로, 리얼 서울',
+      heading: '클릭 한 번으로, 리얼 한국',
       description: "여행 계획을 짜느라 피곤해하지 마세요. 최고의 로컬 핫플을 구글 맵으로 직배송 해드리고 주간 뉴스레터로 트렌드를 짚어드립니다.",
       layers: [
         { num: 1, name: '네이버 필터링 클린 맛집' },

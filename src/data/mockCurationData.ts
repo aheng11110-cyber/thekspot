@@ -33,6 +33,20 @@ export const MOCK_LOCATIONS: Record<Language, LocationData[]> = {
       tags: ["Popup Store", "K-Culture"], groupSizes: ["Solo", "2-3 People", "4-5 People"],
     },
     {
+      id: "popup-anoetic", name: "Anoetic Beauty Pop-up", city: "Seoul", province: "Seoul", type: "popup",
+      description: "Visit the trendy Anoetic Beauty pop-up store in Seongsu. Complete the stamp mission to receive free green tea ice cream. Succeed in the time attack event to win a free lip balm!",
+      imageUrl: "/images/39.jpg", links: { instagram: "https://www.instagram.com/anoetic_beauty" },
+      schedule: { startDate: "2026-07-10", endDate: "2026-07-19", time: "11:00 ~ 20:00" },
+      tags: ["Popup Store", "K-Beauty", "Event"], groupSizes: ["Solo", "2-3 People"],
+    },
+    {
+      id: "popup-hellskitchen", name: "Welcome to Hell's Kitchen Pop-up", city: "Seoul", province: "Seoul", type: "popup",
+      description: "Experience the thrilling Hell's Kitchen themed pop-up in Seongsu. Participate in the lucky draw event for a chance to win exclusive prizes. Prizes include musical tickets and special discount coupons!",
+      imageUrl: "/images/29.jpg", links: { instagram: "https://www.instagram.com/hellskitchen_kr" },
+      schedule: { startDate: "2026-07-10", endDate: "2026-07-19", time: "11:00 ~ 21:00" },
+      tags: ["Popup Store", "K-Culture", "Event"], groupSizes: ["Solo", "2-3 People", "4-5 People"],
+    },
+    {
       id: "2", name: "Samcheong-dong Hanok Cafe", city: "Seoul", province: "Seoul", type: "cafe",
       description: "Enjoy a relaxing tea time in a traditional Korean Hanok.",
       imageUrl: "/images/29.jpg", links: { instagram: "https://instagram.com", blog: "https://blog.naver.com" },
@@ -58,6 +72,20 @@ export const MOCK_LOCATIONS: Record<Language, LocationData[]> = {
       imageUrl: "/images/39.jpg", links: { instagram: "https://instagram.com" },
       schedule: { startDate: "2026-07-15", endDate: "2026-08-15" },
       tags: ["팝업스토어", "K-컬쳐"], groupSizes: ["혼자", "2-3명", "4-5명"],
+    },
+    {
+      id: "popup-anoetic", name: "아노에틱", city: "성동구", province: "서울특별시", type: "popup",
+      description: "스탬프 미션 완료시 녹차 아이스크림. 타임어택이벤트 성공시 립밥 제공",
+      imageUrl: "/images/39.jpg", links: { instagram: "https://www.instagram.com/anoetic_beauty" },
+      schedule: { startDate: "2026-07-10", endDate: "2026-07-19", time: "11:00 ~ 20:00" },
+      tags: ["팝업스토어", "성수동"], groupSizes: ["혼자", "2-3명"],
+    },
+    {
+      id: "popup-hellskitchen", name: "웰컴 투 헬스키친", city: "성동구", province: "서울특별시", type: "popup",
+      description: "럭키 드로우를 통한 뮤지컬 티켓, 할인쿠폰 등 제공",
+      imageUrl: "/images/29.jpg", links: { instagram: "https://www.instagram.com/hellskitchen_kr" },
+      schedule: { startDate: "2026-07-10", endDate: "2026-07-19", time: "11:00 ~ 21:00" },
+      tags: ["팝업스토어", "성수동"], groupSizes: ["혼자", "2-3명", "4-5명"],
     },
     {
       id: "2", name: "삼청동 한옥 카페", city: "서울", province: "서울특별시", type: "cafe",

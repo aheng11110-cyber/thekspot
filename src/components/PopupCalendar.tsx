@@ -36,6 +36,19 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
     const q = query(collection(db, 'popups'), orderBy('startDate', 'asc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Popup[];
+      
+      // Add mock data if database is empty so the user can test the UI
+      if (items.length === 0) {
+        const today = new Date();
+        const y = today.getFullYear();
+        const m = String(today.getMonth() + 1).padStart(2, '0');
+        
+        items.push(
+          { id: 'mock1', title: '탬버린즈 성수 팝업', location: '성동구 연무장5길 8', startDate: `${y}-${m}-01`, endDate: `${y}-${m}-31`, description: '새로운 향수 컬렉션 런칭 기념 팝업스토어. 한정판 샘플 증정.' },
+          { id: 'mock2', title: '아더에러 스페이스', location: '성동구 성수이로 82', startDate: `${y}-${m}-01`, endDate: `${y}-${m}-31`, description: '시즌 오프 특별 전시 및 팝업. 의류 및 굿즈 판매.' }
+        );
+      }
+      
       setPopups(items);
     });
     return () => unsubscribe();

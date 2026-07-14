@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Search, Copy, Check, Hash } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { SITE_CONTENT } from '../config/content';
+import { SITE_CONTENT, GLOBAL_HASHTAGS } from '../config/content';
 
 interface HashtagSearchModalProps {
   onClose: () => void;
@@ -24,10 +24,12 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
   };
 
   // Filter tags based on search query and active category
-  const filteredTags = content.tags.filter((t) => {
+  const catKeys = ['Popup', 'Cafe', 'Food', 'Culture', 'Beauty', 'K-Pop'];
+  const filteredTags = GLOBAL_HASHTAGS.filter((t) => {
+    const localizedCat = content.categories[catKeys.indexOf(t.cat) + 1];
     const matchesSearch = t.tag.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           t.cat.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = activeCategory === content.categories[0] || t.cat === activeCategory;
+    const matchesCategory = activeCategory === content.categories[0] || localizedCat === activeCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -98,6 +100,7 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredTags.map((t, idx) => {
                 const isCopied = copiedTag === t.tag;
+                const localizedCat = content.categories[catKeys.indexOf(t.cat) + 1];
                 return (
                     <div 
                       key={idx} 
@@ -107,7 +110,7 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
                       <div className="flex flex-col gap-1">
                         <span className="text-white font-medium tracking-wide">{t.tag}</span>
                         {(t as any).meaning && <span className="text-white/60 text-sm tracking-wide font-light">{(t as any).meaning}</span>}
-                        <span className="text-white/30 text-xs uppercase tracking-widest mt-1">{t.cat}</span>
+                        <span className="text-white/30 text-xs uppercase tracking-widest mt-1">{localizedCat}</span>
                       </div>
                     <button 
                       className={`p-2 rounded-lg transition-colors ${

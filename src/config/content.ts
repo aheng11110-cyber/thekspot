@@ -5,6 +5,63 @@
 export const BRAND_NAME = 'THE K-SPOT';
 export const COPYRIGHT = '© 2026 THE K-SPOT. All rights reserved.';
 
+
+export const GLOBAL_HASHTAGS = [
+  { cat: 'Popup', tag: '#성수팝업', meaning: '#SeongsuPopup' },
+  { cat: 'Popup', tag: '#더현대서울팝업', meaning: '#TheHyundaiSeoulPopup' },
+  { cat: 'Popup', tag: '#뷰티팝업', meaning: '#BeautyPopup' },
+  { cat: 'Popup', tag: '#패션팝업', meaning: '#FashionPopup' },
+  { cat: 'Popup', tag: '#캐릭터팝업', meaning: '#CharacterPopup' },
+  { cat: 'Popup', tag: '#식음료팝업', meaning: '#FandBPopup' },
+  { cat: 'Popup', tag: '#체험형팝업', meaning: '#ExperiencePopup' },
+  { cat: 'Popup', tag: '#팝업스토어', meaning: '#PopupStore' },
+  { cat: 'Cafe', tag: '#성수동카페', meaning: '#SeongsuCafe' },
+  { cat: 'Cafe', tag: '#연남동카페', meaning: '#YeonnamCafe' },
+  { cat: 'Cafe', tag: '#에스프레소바', meaning: '#EspressoBar' },
+  { cat: 'Cafe', tag: '#베이커리카페', meaning: '#BakeryCafe' },
+  { cat: 'Cafe', tag: '#루프탑카페', meaning: '#RooftopCafe' },
+  { cat: 'Cafe', tag: '#한옥카페', meaning: '#HanokCafe' },
+  { cat: 'Cafe', tag: '#디저트맛집', meaning: '#DessertCafe' },
+  { cat: 'Cafe', tag: '#대형카페', meaning: '#LargeCafe' },
+  { cat: 'Cafe', tag: '#비건카페', meaning: '#VeganCafe' },
+  { cat: 'Food', tag: '#성수맛집', meaning: '#SeongsuFood' },
+  { cat: 'Food', tag: '#홍대맛집', meaning: '#HongdaeFood' },
+  { cat: 'Food', tag: '#압구정로데오맛집', meaning: '#ApgujeongRodeoFood' },
+  { cat: 'Food', tag: '#을지로맛집', meaning: '#EuljiroFood' },
+  { cat: 'Food', tag: '#오마카세', meaning: '#Omakase' },
+  { cat: 'Food', tag: '#파인다이닝', meaning: '#FineDining' },
+  { cat: 'Food', tag: '#KBBQ', meaning: '#KoreanBBQ' },
+  { cat: 'Food', tag: '#삼겹살맛집', meaning: '#Samgyeopsal' },
+  { cat: 'Food', tag: '#평양냉면', meaning: '#PyeongyangNaengmyeon' },
+  { cat: 'Food', tag: '#로컬노포', meaning: '#LocalOldEatery' },
+  { cat: 'Food', tag: '#국밥맛집', meaning: '#Gukbap' },
+  { cat: 'Food', tag: '#길거리음식', meaning: '#StreetFood' },
+  { cat: 'Food', tag: '#분식맛집', meaning: '#Bunsik' },
+  { cat: 'Culture', tag: '#서울전시회', meaning: '#SeoulExhibition' },
+  { cat: 'Culture', tag: '#미디어아트', meaning: '#MediaArt' },
+  { cat: 'Culture', tag: '#원데이클래스', meaning: '#OneDayClass' },
+  { cat: 'Culture', tag: '#경복궁야간개장', meaning: '#GyeongbokgungNight' },
+  { cat: 'Culture', tag: '#고궁투어', meaning: '#PalaceTour' },
+  { cat: 'Culture', tag: '#북촌한옥마을', meaning: '#BukchonHanokVillage' },
+  { cat: 'Culture', tag: '#템플스테이', meaning: '#TempleStay' },
+  { cat: 'Culture', tag: '#사찰여행', meaning: '#TempleTour' },
+  { cat: 'Culture', tag: '#전통시장', meaning: '#TraditionalMarket' },
+  { cat: 'Culture', tag: '#광장시장', meaning: '#GwangjangMarket' },
+  { cat: 'Culture', tag: '#박물관투어', meaning: '#MuseumTour' },
+  { cat: 'Culture', tag: '#K드라마촬영지', meaning: '#KDramaLocation' },
+  { cat: 'Culture', tag: '#한강공원', meaning: '#HangangPark' },
+  { cat: 'Culture', tag: '#피크닉', meaning: '#Picnic' },
+  { cat: 'Beauty', tag: '#올리브영추천템', meaning: '#OliveYoungMustHave' },
+  { cat: 'Beauty', tag: '#퍼스널컬러진단', meaning: '#PersonalColor' },
+  { cat: 'Beauty', tag: '#K뷰티', meaning: '#KBeauty' },
+  { cat: 'Beauty', tag: '#플래그십스토어', meaning: '#FlagshipStore' },
+  { cat: 'Beauty', tag: '#디자이너브랜드', meaning: '#DesignerBrand' },
+  { cat: 'K-Pop', tag: '#아이돌생일카페', meaning: '#IdolBirthdayCafe' },
+  { cat: 'K-Pop', tag: '#성지순례', meaning: '#KpopPilgrimage' },
+  { cat: 'K-Pop', tag: '#사옥투어', meaning: '#AgencyTour' },
+  { cat: 'K-Pop', tag: '#음악방송', meaning: '#MusicShow' }
+];
+
 export const SITE_CONTENT = {
   EN: {
     hero: {
@@ -350,7 +407,7 @@ export const SITE_CONTENT = {
     hashtag: {
       title: '便利なハッシュタグ検索',
       placeholder: 'タグを検索 (例: カフェ, ポップアップ)',
-      categories: ['すべて', 'ポップアップ', 'カフェ', 'グルメ', '文化'],
+      categories: ['すべて', 'ポップアップ', 'カフェ', 'グルメ', '文化', 'ビューティー', 'K-Pop'],
       tags: [
         { cat: 'ポップアップ', tag: '#성수팝업', meaning: '#SeongsuPopup' },
         { cat: 'ポップアップ', tag: '#팝업스토어', meaning: '#PopupStore' },
@@ -440,7 +497,7 @@ export const SITE_CONTENT = {
     hashtag: {
       title: '实用K-标签查询',
       placeholder: '搜索标签 (例如：咖啡店, 快闪店)',
-      categories: ['全部', '快闪店', '咖啡店', '美食', '文化'],
+      categories: ['全部', '快闪店', '咖啡店', '美食', '文化', '美容', 'K-Pop'],
       tags: [
         { cat: '快闪店', tag: '#성수팝업', meaning: '#SeongsuPopup' },
         { cat: '快闪店', tag: '#팝업스토어', meaning: '#PopupStore' },
@@ -530,7 +587,7 @@ export const SITE_CONTENT = {
     hashtag: {
       title: 'Tra cứu Hashtag K-Hữu ích',
       placeholder: 'Tìm kiếm thẻ (VD: cafe, popup)',
-      categories: ['Tất cả', 'Pop-up', 'Cafe', 'Ẩm thực', 'Văn hóa'],
+      categories: ['Tất cả', 'Pop-up', 'Cafe', 'Ẩm thực', 'Văn hóa', 'Sắc đẹp', 'K-Pop'],
       tags: [
         { cat: 'Pop-up', tag: '#성수팝업', meaning: '#SeongsuPopup' },
         { cat: 'Pop-up', tag: '#팝업스토어', meaning: '#PopupStore' },

@@ -90,7 +90,7 @@ export function NewsSidebar() {
 
   return (
     <>
-      <div className="absolute top-24 right-4 bottom-6 w-[280px] lg:w-[320px] bg-black/50 backdrop-blur-xl border-2 border-white/30 rounded-2xl z-30 flex flex-col py-6 px-6 shadow-2xl">
+      <div className="absolute top-24 right-4 bottom-6 w-[30vw] min-w-[200px] max-w-[320px] bg-black/50 backdrop-blur-xl border-2 border-white/30 rounded-2xl z-30 flex flex-col p-4 lg:p-6 shadow-2xl">
         
         {/* 헤더 */}
         <div className="flex items-center gap-3 mb-8">

@@ -40,6 +40,29 @@ function MainApp() {
   const [showHashtagModal, setShowHashtagModal] = useState(false);
   const [showFoodMapModal, setShowFoodMapModal] = useState(false);
   const [showSlangModal, setShowSlangModal] = useState(false);
+
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setNewsletterStatus('loading');
+    try {
+      await fetch('https://hook.us2.make.com/vxh0xtei54rpvmombfmg61dbvanvcbrs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: newsletterEmail, source: 'TheKSpot Footer', timestamp: new Date().toISOString() }),
+      });
+      setNewsletterStatus('success');
+      setNewsletterEmail('');
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setNewsletterStatus('error');
+    }
+  };
+
   const { user } = useAuth();
   const { lang } = useLanguage();
 
@@ -514,9 +537,33 @@ function MainApp() {
                   {BRAND_NAME}
                 </span>
               </div>
-              <p className="text-white/40 text-[14px] sm:text-[15px] leading-relaxed max-w-sm">
+              <p className="text-white/40 text-[14px] sm:text-[15px] leading-relaxed max-w-sm mb-12">
                 {footer.tagline}
               </p>
+
+              {/* Newsletter Form */}
+              <form onSubmit={handleSubscribe} className="max-w-sm">
+                <p className="text-white/60 text-[13px] mb-3 uppercase tracking-wider font-medium">Join our Newsletter</p>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-[14px] text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors"
+                  />
+                  <button 
+                    type="submit" 
+                    disabled={newsletterStatus === 'loading'}
+                    className="bg-white text-black px-6 py-3 rounded-lg text-[14px] font-medium hover:bg-white/90 transition-colors disabled:opacity-50"
+                  >
+                    {newsletterStatus === 'loading' ? 'Sending...' : 'Subscribe'}
+                  </button>
+                </div>
+                {newsletterStatus === 'success' && <p className="text-[#39FF14] text-[12px] mt-2">Successfully subscribed! Welcome aboard.</p>}
+                {newsletterStatus === 'error' && <p className="text-red-400 text-[12px] mt-2">Failed to subscribe. Please try again.</p>}
+              </form>
             </div>
 
             <p className="text-white/25 text-[12px] mt-12">

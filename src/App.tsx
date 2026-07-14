@@ -188,7 +188,7 @@ function MainApp() {
           </div>
 
           {/* Newsletter Form Aligned to the Bottom */}
-          <div className="w-full max-w-[800px] pb-12 sm:pb-16 pl-10 sm:pl-20">
+          <div className="w-full max-w-[800px] pb-12 sm:pb-16">
             <motion.form 
               onSubmit={handleSubscribe} 
               className="max-w-[450px]"

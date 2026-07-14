@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @tailwind base;
@@ -5,9 +6,9 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Space Mono", monospace;
-  --font-sans: "Space Mono", monospace;
-  --font-serif: "Space Mono", monospace;
+  font-family: "Pretendard", "Space Mono", monospace;
+  --font-sans: "Pretendard", "Space Mono", monospace;
+  --font-serif: "Pretendard", "Space Mono", monospace;
   --font-mono: "Space Mono", monospace;
 }
 

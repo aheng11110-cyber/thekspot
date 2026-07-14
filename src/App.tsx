@@ -127,7 +127,7 @@ function MainApp() {
       <Navbar entranceComplete={entranceComplete} />
 
       {/* ════════════════ SECTION 1: HERO ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-row overflow-hidden bg-black">
+      <section className="relative min-h-[100dvh] flex flex-row bg-black">
         {/* Animated Mondrian Grid on the left */}
         <div className="relative w-[45%] h-full shrink-0">
           <MondrianHeroGrid />
@@ -227,7 +227,7 @@ function MainApp() {
       <CurationSection />
 
       {/* ════════════════ SECTION 5: ARCHITECTURE (Moved to Page 3) ════════════════ */}
-      <section className="snap-start min-h-screen flex items-center justify-center bg-black py-16">
+      <section className="min-h-screen flex items-center justify-center bg-black py-16">
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -288,7 +288,7 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
-      <section id="pricing-section" className="snap-start min-h-screen bg-black py-16 px-4 md:px-6 flex items-center justify-center">
+      <section id="pricing-section" className="min-h-screen bg-black py-16 px-4 md:px-6 flex items-center justify-center">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center mb-20"
@@ -415,7 +415,7 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 3: METRICS ════════════════ */}
-      <section className="snap-start snap-always relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
 
         <div className="relative z-20 pt-32 pb-32 px-6 max-w-6xl mx-auto w-full">
           <motion.p
@@ -453,7 +453,7 @@ function MainApp() {
       </section>
 
       {/* ════════════════ SECTION 4: TECHNOLOGY ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col overflow-hidden bg-black">
+      <section className="relative min-h-[100dvh] flex flex-col overflow-hidden bg-black">
 
         <div className="relative z-20 flex flex-col flex-1 px-8 sm:px-12 md:px-16 py-12 sm:py-16">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
@@ -513,7 +513,7 @@ function MainApp() {
       {/* ════════════════ SECTION 2: CINEMATIC TEXT (Moved to Page 5) ════════════════ */}
       <section
         ref={section2Ref}
-        className="snap-start snap-always relative h-screen h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+        className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
       >
 
         {/* Top gradient overlay */}
@@ -540,7 +540,7 @@ function MainApp() {
       </section>
 
       {/* ════════════════ FOOTER ════════════════ */}
-      <footer className="snap-start snap-always bg-black overflow-hidden flex flex-col justify-end">
+      <footer className="bg-black overflow-hidden flex flex-col justify-end">
         <div className="flex flex-col md:flex-row min-h-[400px]">
           {/* Left: Empty Space or Fallback */}
           <div className="md:w-1/2 h-[300px] md:h-auto relative bg-black">

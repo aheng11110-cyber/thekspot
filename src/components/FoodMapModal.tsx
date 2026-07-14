@@ -68,10 +68,17 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
             ))}
           </div>
           
-          <div className="mt-8 p-6 border border-dashed border-white/20 rounded-xl flex flex-col items-center justify-center text-center gap-3 bg-white/5">
-            <Map size={32} className="text-white/20 mb-2" />
-            <h4 className="text-white font-medium">Interactive Map Coming Soon</h4>
-            <p className="text-white/40 text-sm max-w-md">We are currently integrating the live Google Maps API to let you import these curated routes directly to your phone.</p>
+          <div className="mt-8 p-6 border border-dashed border-orange-500/30 rounded-xl flex flex-col items-center justify-center text-center gap-3 bg-orange-500/5 hover:bg-orange-500/10 transition-colors">
+            <Map size={32} className="text-orange-400/50 mb-2" />
+            <h4 className="text-white font-medium flex items-center justify-center gap-2">
+              <span className="bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider">Pro Feature</span>
+              {lang === 'KO' ? '원클릭 네비게이션 연동 (오픈 예정)' : '1-Click Navigation Sync'}
+            </h4>
+            <p className="text-white/40 text-sm max-w-md">
+              {lang === 'KO' 
+                ? '곧 Pro 멤버십 전용으로 이 엄선된 프리미엄 맛집 리스트를 내 폰의 네이버지도/구글맵에 한 번에 담는 연동 기능이 추가됩니다.'
+                : 'Soon, Pro members will be able to export this curated premium list directly to their Naver Map or Google Maps app.'}
+            </p>
           </div>
         </div>
       </motion.div>

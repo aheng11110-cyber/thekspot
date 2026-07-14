@@ -143,7 +143,7 @@ function MainApp() {
         >
           <div className="w-full max-w-[800px] flex-1 flex flex-col justify-center">
             {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
-            <svg viewBox="0 0 800 450" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+            <svg viewBox="0 0 800 600" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
               <foreignObject width="100%" height="100%">
                 <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
                   <h1
@@ -228,8 +228,8 @@ function MainApp() {
       <CurationSection />
 
       {/* ════════════════ SECTION 5: ARCHITECTURE (Moved to Page 3) ════════════════ */}
-      <section className="snap-start snap-always min-h-screen flex items-center justify-center bg-black">
-        <div className="max-w-3xl mx-auto px-6 py-32 text-center">
+      <section className="snap-start snap-always min-h-[100dvh] flex items-center justify-center bg-black overflow-y-auto">
+        <div className="max-w-3xl mx-auto px-6 py-8 md:py-12 2xl:py-32 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -289,10 +289,10 @@ function MainApp() {
 
 
       {/* ════════════════ SECTION 6: PRICING ════════════════ */}
-      <section id="pricing-section" className="snap-start snap-always min-h-screen bg-black py-32 px-6 flex items-center justify-center">
+      <section id="pricing-section" className="snap-start snap-always min-h-[100dvh] bg-black py-8 md:py-12 2xl:py-32 px-4 md:px-6 flex items-center justify-center overflow-y-auto">
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-10 md:mb-16"
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -313,7 +313,7 @@ function MainApp() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* ── Free ── */}
             <motion.div
-              className="border border-white/10 rounded-2xl p-8 flex flex-col relative"
+              className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col relative"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -346,7 +346,7 @@ function MainApp() {
 
             {/* ── Pro (Featured) ── */}
             <motion.div
-              className="border border-white/25 rounded-2xl p-8 flex flex-col relative bg-white/[0.03]"
+              className="border border-white/25 rounded-2xl p-5 lg:p-8 flex flex-col relative bg-white/[0.03]"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
@@ -381,7 +381,7 @@ function MainApp() {
 
             {/* ── Enterprise ── */}
             <motion.div
-              className="border border-white/10 rounded-2xl p-8 flex flex-col"
+              className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >

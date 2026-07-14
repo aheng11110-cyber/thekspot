@@ -35,7 +35,7 @@ export default function App() {
 }
 
 function MainApp() {
-  const [entranceComplete, setEntranceComplete] = useState(false);
+  const [entranceComplete, setEntranceComplete] = useState(true);
   const [showCalendar, setShowCalendar] = useState(false);
   const [showHashtagModal, setShowHashtagModal] = useState(false);
   const [showFoodMapModal, setShowFoodMapModal] = useState(false);
@@ -293,10 +293,8 @@ function MainApp() {
         <div className="max-w-6xl mx-auto w-full">
           <motion.div
             className="text-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0 }}
-            viewport={{ once: true, amount: 0 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.2em] uppercase mb-8">
               {pricing.subtitle}
@@ -316,10 +314,8 @@ function MainApp() {
             {/* ── Free ── */}
             <motion.div
               className="border border-white/10 rounded-2xl p-8 flex flex-col relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0 }}
-              viewport={{ once: true, amount: 0 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-[#111] border border-white/20 text-white/80 text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -351,10 +347,8 @@ function MainApp() {
             {/* ── Pro (Featured) ── */}
             <motion.div
               className="border border-white/25 rounded-2xl p-8 flex flex-col relative bg-white/[0.03]"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true, amount: 0 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-white text-black text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -388,10 +382,8 @@ function MainApp() {
             {/* ── Enterprise ── */}
             <motion.div
               className="border border-white/10 rounded-2xl p-8 flex flex-col"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true, amount: 0 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
             >
               <p className="text-white/40 text-[12px] tracking-[0.15em] uppercase mb-3">{pricing.enterprise}</p>
               <div className="flex items-baseline gap-1 mb-2">

@@ -10,7 +10,6 @@ interface MapDisplayProps {
 }
 
 export function MapDisplay({ locations }: MapDisplayProps) {
-  const [isActive, setIsActive] = useState(false);
   const [selectedLocId, setSelectedLocId] = useState<string | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   const { lang } = useLanguage();
@@ -27,22 +26,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
     }
   };
 
-  // 지도가 활성화되었을 때(클릭됨) 마우스 휠을 돌려도 
-  // 페이지 전체가 아래로 스냅되어 넘어가는 현상을 완전히 방지합니다.
-  useEffect(() => {
-    if (isActive) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.paddingRight = '15px'; // 스크롤바 사라짐으로 인한 화면 떨림 방지
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-    }
 
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
-    };
-  }, [isActive]);
 
   if (locations.length === 0) {
     return (
@@ -70,7 +54,6 @@ export function MapDisplay({ locations }: MapDisplayProps) {
   return (
     <div 
       ref={mapRef}
-      onMouseLeave={() => setIsActive(false)}
       className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group"
     >
       
@@ -85,22 +68,13 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         style={{ 
           border: 0, 
           filter: 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%)',
-          pointerEvents: isActive ? 'auto' : 'none'
+          pointerEvents: 'auto'
         }}
         src={`https://maps.google.com/maps?q=${query}&t=m&z=15&output=embed&hl=${getGoogleMapsLang(lang)}`}
         title={`Map of ${mainLoc.name}`}
       />
 
-      {/* 클릭해서 활성화하는 오버레이 버튼 */}
-      {!isActive && (
-        <div 
-          onClick={() => setIsActive(true)}
-          className="absolute top-4 right-4 z-20 px-4 py-2 bg-black/80 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2 shadow-2xl transform hover:scale-105 transition-transform cursor-pointer"
-        >
-          <MousePointerClick size={16} className="text-white" />
-          <span className="text-white font-medium text-xs">{text.mapInteract}</span>
-        </div>
-      )}
+
 
       {otherLocations.length > 0 && (
         <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-auto">

@@ -28,6 +28,11 @@ export function MapDisplay({ locations }: MapDisplayProps) {
 
 
 
+  // Reset selected location when the locations prop changes (filters changed)
+  useEffect(() => {
+    setSelectedLocId(null);
+  }, [locations]);
+
   if (locations.length === 0) {
     return (
       <div className="relative w-full aspect-square md:aspect-[4/3] bg-white/[0.02] border border-white/10 rounded-2xl flex flex-col items-center justify-center">
@@ -36,11 +41,6 @@ export function MapDisplay({ locations }: MapDisplayProps) {
       </div>
     );
   }
-
-  // Reset selected location when the locations prop changes (filters changed)
-  useEffect(() => {
-    setSelectedLocId(null);
-  }, [locations]);
 
   const mainLoc = selectedLocId 
     ? locations.find(l => l.id === selectedLocId) || locations[0]

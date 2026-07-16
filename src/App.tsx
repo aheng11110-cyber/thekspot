@@ -128,11 +128,11 @@ function MainApp() {
           animate={{ opacity: entranceComplete ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center">
+          <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center min-h-0">
             {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
-            <svg viewBox="0 0 850 550" className="w-full h-auto block" preserveAspectRatio="xMinYMid meet">
+            <svg viewBox="0 0 850 550" className="w-full h-auto max-h-[35vh] block" preserveAspectRatio="xMinYMin meet">
               <foreignObject width="100%" height="100%">
-                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-6 pt-16 sm:pt-24 h-full justify-center">
+                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-6 pt-4 sm:pt-8 h-full justify-start">
                   <h1
                     className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.08em] text-left"
                     style={{ fontSize: 'clamp(48px, 8vw, 84px)' }}
@@ -174,7 +174,7 @@ function MainApp() {
             </svg>
           </div>
 
-          <div className="w-full max-w-[800px] mx-auto flex items-center justify-center -mt-10 mb-10 z-30">
+          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-center min-h-0 z-30">
              <motion.div
                 initial={{ opacity: 0 }}
                 animate={entranceComplete ? { opacity: 1 } : {}}
@@ -185,7 +185,7 @@ function MainApp() {
           </div>
 
           {/* Newsletter Form Aligned to the Bottom */}
-          <div className="w-full max-w-[800px] mx-auto pb-12 sm:pb-16">
+          <div className="w-full max-w-[800px] mx-auto pb-8 sm:pb-12 shrink-0">
             <motion.form 
               onSubmit={handleSubscribe} 
               className="max-w-[450px]"

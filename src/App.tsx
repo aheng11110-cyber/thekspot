@@ -19,6 +19,7 @@ import { PRODUCTS } from './lib/paypal';
 import { VIDEO_URLS } from './config/videos';
 import { SITE_CONTENT, BRAND_NAME, COPYRIGHT } from './config/content';
 import { useLanguage } from './contexts/LanguageContext';
+import { RandomHoverWrapper } from './components/RandomHoverWrapper';
 import { AdminNews } from './pages/AdminNews';
 import { PopupCalendar } from './components/PopupCalendar';
 import { HashtagSearchModal } from './components/HashtagSearchModal';
@@ -251,10 +252,10 @@ function MainApp() {
               };
 
               return (
-                <div
+                <RandomHoverWrapper
                   key={l.num}
                   onClick={handleClick}
-                  className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:bg-white/5 hover:border-white/30 transition-colors group"
+                  className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:border-white/30 transition-colors group"
                 >
                   <span className="text-white/30 text-[12px] tracking-[0.05em] uppercase">
                     Layer {l.num}
@@ -262,7 +263,7 @@ function MainApp() {
                   <span className="text-white text-[16px] sm:text-[18px] font-light group-hover:text-blue-300 transition-colors">
                     {l.name}
                   </span>
-                </div>
+                </RandomHoverWrapper>
               );
             })}
           </motion.div>
@@ -297,10 +298,8 @@ function MainApp() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* ── Free ── */}
-            <motion.div
+            <RandomHoverWrapper
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col relative"
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-[#111] border border-white/20 text-white/80 text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -327,13 +326,11 @@ function MainApp() {
                     Free Subscribe
                  </button>
               </div>
-            </motion.div>
+            </RandomHoverWrapper>
 
             {/* ── Pro (Featured) ── */}
-            <motion.div
+            <RandomHoverWrapper
               className="border border-white/25 rounded-2xl p-5 lg:p-8 flex flex-col relative bg-white/[0.03]"
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <span className="bg-white text-black text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
@@ -362,13 +359,11 @@ function MainApp() {
                   onError={(err) => console.error('PayPal error:', err)}
                 />
               </div>
-            </motion.div>
+            </RandomHoverWrapper>
 
             {/* ── Enterprise ── */}
-            <motion.div
+            <RandomHoverWrapper
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col"
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
             >
               <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.enterprise}</p>
               <div className="flex items-baseline gap-1 mb-2">
@@ -392,7 +387,7 @@ function MainApp() {
                   {pricing.contactSales}
                 </a>
               </div>
-            </motion.div>
+            </RandomHoverWrapper>
           </div>
         </div>
       </section>

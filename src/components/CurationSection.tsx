@@ -8,6 +8,7 @@ import { MapDisplay } from './curation/MapDisplay';
 import { ScheduleAndLinks } from './curation/ScheduleAndLinks';
 import { PuzzleLookbook } from './PuzzleLookbook';
 import { useLanguage } from '../contexts/LanguageContext';
+import { RandomHoverWrapper } from './RandomHoverWrapper';
 
 const UI_TEXT = {
   EN: {
@@ -233,7 +234,9 @@ export function CurationSection() {
           <h3 className="text-white/60 text-xs tracking-wide uppercase mb-4">{text.placeType}</h3>
           <div className="flex flex-wrap gap-2">
             {types.map(type => (
-              <button
+              <RandomHoverWrapper
+                as="button"
+                disabled={selectedTypes.includes(type)}
                 key={type}
                 onClick={() => setSelectedTypes(prev => 
                   prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
@@ -245,7 +248,7 @@ export function CurationSection() {
                 }`}
               >
                 {translateWord(type, lang, TYPE_MAP)}
-              </button>
+              </RandomHoverWrapper>
             ))}
           </div>
         </div>
@@ -257,7 +260,9 @@ export function CurationSection() {
             {interests.map(interest => {
               const isSelected = selectedInterests.includes(interest);
               return (
-                <button
+                <RandomHoverWrapper
+                  as="button"
+                  disabled={isSelected}
                   key={interest}
                   onClick={() => toggleInterest(interest)}
                   className={`px-3 py-1.5 rounded-md text-xs transition-colors border ${
@@ -267,7 +272,7 @@ export function CurationSection() {
                   }`}
                 >
                   {translateWord(interest, lang, TAG_MAP)}
-                </button>
+                </RandomHoverWrapper>
               );
             })}
           </div>

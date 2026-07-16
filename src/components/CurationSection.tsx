@@ -136,7 +136,7 @@ export function CurationSection() {
     }
   }, [lang]);
 
-  const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<string>(text.allRegion);
   const [excludedIds, setExcludedIds] = useState<string[]>([]);
@@ -145,7 +145,7 @@ export function CurationSection() {
 
   // 언어가 바뀌면 선택된 필터를 초기화
   useEffect(() => {
-    setSelectedType(null);
+    setSelectedTypes([]);
     setSelectedInterests([]);
     setSelectedRegion(UI_TEXT[lang].allRegion);
     setExcludedIds([]);
@@ -156,7 +156,7 @@ export function CurationSection() {
   const interests = useMemo(() => Array.from(new Set(locations.flatMap(l => l.tags))), [locations]);
   const regions = useMemo(() => [text.allRegion, ...Array.from(new Set(locations.map(l => l.province)))], [locations, text.allRegion]);
 
-  const hasActiveFilters = selectedType !== null || selectedInterests.length > 0 || selectedRegion !== text.allRegion;
+  const hasActiveFilters = selectedTypes.length > 0 || selectedInterests.length > 0 || selectedRegion !== text.allRegion;
 
   const toggleInterest = (interest: string) => {
     setSelectedInterests(prev => 
@@ -167,7 +167,7 @@ export function CurationSection() {
   };
 
   const clearFilters = () => {
-    setSelectedType(null);
+    setSelectedTypes([]);
     setSelectedInterests([]);
     setSelectedRegion(text.allRegion);
     setExcludedIds([]);
@@ -197,7 +197,7 @@ export function CurationSection() {
   const filteredLocations = useMemo(() => {
     return locations.filter(loc => {
       if (excludedIds.includes(loc.id)) return false;
-      if (selectedType && loc.type !== selectedType) return false;
+      if (selectedTypes.length > 0 && !selectedTypes.includes(loc.type)) return false;
       if (selectedInterests.length > 0) {
         const hasMatchingInterest = selectedInterests.some(interest => loc.tags.includes(interest));
         if (!hasMatchingInterest) return false;
@@ -207,7 +207,7 @@ export function CurationSection() {
       }
       return true;
     });
-  }, [locations, selectedType, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
+  }, [locations, selectedTypes, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
 
   // 지도를 위해: hoveredLocationId가 있으면 그 장소가 첫 번째가 되도록 배열 재정렬
   // 빈 배열일 경우 그대로 전달 (MapDisplay에서 처리)
@@ -235,9 +235,11 @@ export function CurationSection() {
             {types.map(type => (
               <button
                 key={type}
-                onClick={() => setSelectedType(type === selectedType ? null : type)}
+                onClick={() => setSelectedTypes(prev => 
+                  prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
+                )}
                 className={`px-4 py-2 rounded-full text-xs transition-colors border ${
-                  selectedType === type 
+                  selectedTypes.includes(type)
                     ? 'bg-white text-black border-white' 
                     : 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
                 }`}

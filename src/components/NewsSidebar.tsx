@@ -16,26 +16,26 @@ interface NewsItem {
 
 const MOCK_NEWS = {
   EN: [
-    { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN', url: 'https://koreajoongangdaily.joins.com/' },
-    { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN', url: 'https://koreaherald.com/' },
-    { id: 'm3', title: 'Seoul opens new night market in Myeongdong', summary: 'A massive new night market featuring over 100 food stalls has opened.', lang: 'EN', url: 'https://koreatimes.co.kr/' }
+    { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN' },
+    { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN' },
+    { id: 'm3', title: 'Seoul opens new night market in Myeongdong', summary: 'A massive new night market featuring over 100 food stalls has opened.', lang: 'EN' }
   ],
   KO: [
-    { id: 'm1', title: '뉴진스, 도쿄돔 팬미팅 성료... 9만명 열광', summary: '데뷔 1년 11개월 만에 도쿄돔에 입성하며 해외 아티스트 최단기간 기록을 세웠습니다.', lang: 'KO', url: 'https://entertain.naver.com/' },
-    { id: 'm2', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO', url: 'https://entertain.naver.com/' },
-    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO', url: 'https://news.naver.com/' }
+    { id: 'm1', title: '뉴진스, 도쿄돔 팬미팅 성료... 9만명 열광', summary: '데뷔 1년 11개월 만에 도쿄돔에 입성하며 해외 아티스트 최단기간 기록을 세웠습니다.', lang: 'KO' },
+    { id: 'm2', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO' },
+    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO' }
   ],
   JP: [
-    { id: 'm1', title: 'ATEEZ、ビルボード200で1位を獲得', summary: '韓国のボーイズグループATEEZが最新アルバムでビルボード200のトップに立ちました。', lang: 'JP', url: 'https://news.yahoo.co.jp/' },
-    { id: 'm2', title: '明洞に新しいナイトマーケットがオープン', summary: '100以上の屋台が集まる巨大なナイトマーケットが明洞にオープンしました。', lang: 'JP', url: 'https://news.yahoo.co.jp/' }
+    { id: 'm1', title: 'ATEEZ、ビルボード200で1位を獲得', summary: '韓国のボーイズグループATEEZが最新アルバムでビルボード200のトップに立ちました。', lang: 'JP' },
+    { id: 'm2', title: '明洞に新しいナイトマーケットがオープン', summary: '100以上の屋台が集まる巨大なナイトマーケットが明洞にオープンしました。', lang: 'JP' }
   ],
   CN: [
-    { id: 'm1', title: 'ATEEZ登顶公告牌二百强专辑榜', summary: '韩国男子组合ATEEZ凭借新专辑首次登顶公告牌二百强专辑榜。', lang: 'CN', url: 'https://news.sina.com.cn/' },
-    { id: 'm2', title: '首尔明洞开设全新夜市', summary: '明洞开设了一个拥有100多个小吃摊的大型新夜市。', lang: 'CN', url: 'https://news.sina.com.cn/' }
+    { id: 'm1', title: 'ATEEZ登顶公告牌二百强专辑榜', summary: '韩国男子组合ATEEZ凭借新专辑首次登顶公告牌二百强专辑榜。', lang: 'CN' },
+    { id: 'm2', title: '首尔明洞开设全新夜市', summary: '明洞开设拥有100多个小吃摊的大型新夜市。', lang: 'CN' }
   ],
   VN: [
-    { id: 'm1', title: 'ATEEZ đứng đầu Billboard 200', summary: 'Nhóm nhạc nam K-pop ATEEZ đã giành được vị trí số 1 đầu tiên trên bảng xếp hạng album Billboard 200.', lang: 'VN', url: 'https://vnexpress.net/' },
-    { id: 'm2', title: 'Chợ đêm mới mở tại Myeongdong', summary: 'Một chợ đêm mới khổng lồ với hơn 100 quầy thức ăn đã được mở.', lang: 'VN', url: 'https://vnexpress.net/' }
+    { id: 'm1', title: 'ATEEZ đứng đầu Billboard 200', summary: 'Nhóm nhạc nam K-pop ATEEZ đã giành được vị trí số 1 đầu tiên trên bảng xếp hạng album Billboard 200.', lang: 'VN' },
+    { id: 'm2', title: 'Chợ đêm mới mở tại Myeongdong', summary: 'Một chợ đêm mới khổng lồ với hơn 100 quầy thức ăn đã được mở.', lang: 'VN' }
   ]
 };
 
@@ -174,7 +174,7 @@ export function NewsSidebar() {
                 </p>
 
                 <a 
-                  href={selectedNews.url ? selectedNews.url : `https://www.google.com/search?q=${encodeURIComponent(selectedNews.title)}`}
+                  href={selectedNews.url ? selectedNews.url : `https://news.google.com/search?q=${encodeURIComponent(selectedNews.title)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white/70 hover:text-white transition-colors text-sm font-light"

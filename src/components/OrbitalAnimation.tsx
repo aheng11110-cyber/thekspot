@@ -57,10 +57,10 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
                     This ensures the text starts perfectly horizontal.
                   */}
                   <div
-                    className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-4 sm:px-8 sm:py-5 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center text-center w-[260px] sm:w-[340px] whitespace-pre-wrap leading-tight"
+                    className="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center text-center w-[130px] sm:w-[170px] whitespace-pre-wrap leading-tight"
                     style={{ transform: `rotate(${-angle}deg)` }}
                   >
-                    <span className="text-white text-[18px] sm:text-[22px] font-bold tracking-wide drop-shadow-md">
+                    <span className="text-white text-[13px] sm:text-[15px] font-bold tracking-wide drop-shadow-md">
                       {feature}
                     </span>
                   </div>

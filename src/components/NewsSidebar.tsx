@@ -78,13 +78,7 @@ export function NewsSidebar() {
   const displayNews = newsList.length > 0 ? newsList : MOCK_NEWS[lang as keyof typeof MOCK_NEWS] || MOCK_NEWS['EN'];
 
   const handleNewsClick = (news: NewsItem) => {
-    if (news.url) {
-      // URL이 있으면 실제 기사 사이트로 새 창 열기
-      window.open(news.url, '_blank');
-    } else {
-      // URL이 없으면 자체 모달 열기
-      setSelectedNews(news);
-    }
+    setSelectedNews(news);
   };
 
   const formatTime = (ts?: Timestamp) => {
@@ -180,16 +174,23 @@ export function NewsSidebar() {
                 </p>
 
                 <a 
-                  href={`https://www.google.com/search?q=${encodeURIComponent(selectedNews.title)}`}
+                  href={selectedNews.url ? selectedNews.url : `https://www.google.com/search?q=${encodeURIComponent(selectedNews.title)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-white/70 hover:text-white transition-colors text-sm font-light"
                 >
                   <Search size={14} />
-                  {lang === 'EN' ? 'Search for more details' : 
-                   lang === 'KO' ? '자세한 내용 검색해보기' : 
-                   lang === 'JP' ? '詳細を検索する' : 
-                   lang === 'CN' ? '搜索更多详情' : 'Tìm kiếm thêm thông tin'}
+                  {selectedNews.url ? (
+                    lang === 'EN' ? 'Read full article' : 
+                    lang === 'KO' ? '기사 원문 보기' : 
+                    lang === 'JP' ? '記事の全文を読む' : 
+                    lang === 'CN' ? '阅读全文' : 'Đọc toàn bộ bài báo'
+                  ) : (
+                    lang === 'EN' ? 'Search for more details' : 
+                    lang === 'KO' ? '자세한 내용 검색해보기' : 
+                    lang === 'JP' ? '詳細を検索する' : 
+                    lang === 'CN' ? '搜索更多详情' : 'Tìm kiếm thêm thông tin'
+                  )}
                 </a>
               </div>
             </motion.div>

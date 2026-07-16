@@ -133,8 +133,8 @@ function MainApp() {
               <foreignObject width="100%" height="100%">
                 <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-10 pt-10 h-full justify-center">
                   <h1
-                    className="text-white font-title leading-[1.1] tracking-[-0.08em] text-left"
-                    style={{ fontSize: '72px' }}
+                    className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.08em] text-left"
+                    style={{ fontSize: 'clamp(48px, 8vw, 84px)' }}
                   >
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
@@ -228,7 +228,7 @@ function MainApp() {
               </p>
             )}
             <h2
-              className="text-white font-title leading-[1.15] tracking-[-0.08em] mb-10"
+              className="text-white font-title font-extrabold leading-[1.15] tracking-[-0.08em] mb-10"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
             >
               {architecture.heading}
@@ -289,7 +289,7 @@ function MainApp() {
               {pricing.subtitle}
             </p>
             <h2
-              className="text-white font-title leading-[1.15] tracking-[-0.08em] mb-3"
+              className="text-white font-title font-extrabold leading-[1.15] tracking-[-0.08em] mb-3"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}
             >
               {pricing.title}
@@ -515,7 +515,7 @@ function MainApp() {
         {/* 3D text content */}
         <div className="relative z-20 max-w-5xl mx-auto" style={{ perspective: 400 }}>
           <motion.p
-            className="font-title text-[22px] sm:text-[30px] md:text-[36px] lg:text-[42px] text-white leading-[1.35] tracking-[-0.08em] select-none px-6 sm:px-12 text-center"
+            className="font-title font-extrabold text-[26px] sm:text-[34px] md:text-[42px] lg:text-[50px] text-white leading-[1.35] tracking-[-0.08em] select-none px-6 sm:px-12 text-center"
             style={{
               transform: transform3D,
               opacity: textOpacity,

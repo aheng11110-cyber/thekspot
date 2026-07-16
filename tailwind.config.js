@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Space Mono"', 'monospace'],
-        serif: ['"Space Mono"', 'monospace'],
+        sans: ['"Noto Sans KR"', 'sans-serif'],
+        serif: ['"Noto Sans KR"', 'sans-serif'],
         mono: ['"Space Mono"', 'monospace'],
-        title: ['"Black Han Sans"', 'sans-serif'],
+        title: ['"Noto Sans KR"', 'sans-serif'],
       },
     },
   },

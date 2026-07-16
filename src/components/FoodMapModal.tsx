@@ -80,7 +80,7 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
         </button>
 
         <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20">
-          <h2 className="text-2xl sm:text-3xl font-title text-white tracking-[-0.08em] flex items-center gap-3 mb-2">
+          <h2 className="text-3xl sm:text-4xl font-title font-extrabold text-white tracking-[-0.08em] flex items-center gap-3 mb-2">
             <Map className="text-orange-400/80" />
             {title}
           </h2>

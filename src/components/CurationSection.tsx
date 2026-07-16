@@ -370,11 +370,11 @@ export function CurationSection() {
                     <MapDisplay locations={mapLocations} />
                     
                     {/* 광고 문의 */}
-                    <div className="mt-8 text-center flex flex-col items-center justify-center">
-                      <span className="text-white/40 text-xs uppercase tracking-widest mb-1.5">For Advertising / Partnership</span>
+                    <div className="mt-20 text-center flex flex-col items-center justify-center">
+                      <span className="text-white/50 text-sm uppercase tracking-widest mb-2">For Advertising / Partnership</span>
                       <a 
                         href="mailto:cjsy97@gmail.com" 
-                        className="text-white/80 hover:text-white text-sm transition-colors border-b border-white/20 hover:border-white pb-0.5"
+                        className="text-white/80 hover:text-white text-xl transition-colors border-b border-white/20 hover:border-white pb-1"
                       >
                         cjsy97@gmail.com
                       </a>

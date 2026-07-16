@@ -16,14 +16,14 @@ interface NewsItem {
 
 const MOCK_NEWS = {
   EN: [
-    { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN', url: 'https://koreajoongangdaily.heraldcorp.com/' },
-    { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN', url: 'https://koreajoongangdaily.heraldcorp.com/' },
+    { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN', url: 'https://koreajoongangdaily.joins.com/' },
+    { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN', url: 'https://koreaherald.com/' },
     { id: 'm3', title: 'Seoul opens new night market in Myeongdong', summary: 'A massive new night market featuring over 100 food stalls has opened.', lang: 'EN', url: 'https://koreatimes.co.kr/' }
   ],
   KO: [
-    { id: 'm1', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO', url: 'https://n.news.naver.com/' },
-    { id: 'm2', title: '넷플릭스 2026 K-콘텐츠 라인업 발표', summary: '오징어게임 시즌3를 포함한 역대급 라인업이 공개되었습니다.', lang: 'KO', url: 'https://n.news.naver.com/' },
-    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO', url: 'https://n.news.naver.com/' }
+    { id: 'm1', title: '뉴진스, 도쿄돔 팬미팅 성료... 9만명 열광', summary: '데뷔 1년 11개월 만에 도쿄돔에 입성하며 해외 아티스트 최단기간 기록을 세웠습니다.', lang: 'KO', url: 'https://entertain.naver.com/' },
+    { id: 'm2', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO', url: 'https://entertain.naver.com/' },
+    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO', url: 'https://news.naver.com/' }
   ],
   JP: [
     { id: 'm1', title: 'ATEEZ、ビルボード200で1位を獲得', summary: '韓国のボーイズグループATEEZが最新アルバムでビルボード200のトップに立ちました。', lang: 'JP', url: 'https://news.yahoo.co.jp/' },

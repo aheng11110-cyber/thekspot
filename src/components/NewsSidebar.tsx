@@ -46,10 +46,10 @@ export function NewsSidebar() {
 
   useEffect(() => {
     // 1. news 컬렉션에서 현재 언어(lang)와 일치하는 문서만 쿼리
+    // 복합 색인(Index) 오류를 우회하기 위해 orderBy를 제거하고 클라이언트에서 정렬합니다.
     const q = query(
       collection(db, 'news'),
-      where('lang', '==', lang),
-      orderBy('createdAt', 'desc')
+      where('lang', '==', lang)
     );
     
     // 2. 실시간 리스너 달기 (문서가 추가/수정되면 자동 갱신됨)
@@ -58,6 +58,14 @@ export function NewsSidebar() {
         id: doc.id,
         ...doc.data()
       })) as NewsItem[];
+      
+      // 클라이언트 측에서 최신순으로 정렬
+      items.sort((a, b) => {
+        const timeA = a.createdAt?.toMillis() || 0;
+        const timeB = b.createdAt?.toMillis() || 0;
+        return timeB - timeA;
+      });
+      
       setNewsList(items);
     }, (error) => {
       // 만약 Firestore 색인(Index) 오류가 나더라도 일단 에러를 출력

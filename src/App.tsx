@@ -304,21 +304,21 @@ function MainApp() {
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <span className="bg-[#111] border border-white/20 text-white/80 text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
+                <span className="bg-[#111] border border-white/20 text-white/80 text-[13px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
                   Newsletter
                 </span>
               </div>
-              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.free}</p>
+              <p className="text-white/40 text-[14px] tracking-[0.05em] uppercase mb-3">{pricing.free}</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tighter">$0</span>
                 <span className="text-white/30 text-[14px]">/free</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
+              <p className="text-white/40 text-[15px] leading-relaxed mb-4">
                 {pricing.freeDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.freeFeatures.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[15px]">
                     <span className="text-white/30">✓</span> {feature}
                   </li>
                 ))}
@@ -336,21 +336,21 @@ function MainApp() {
               className="border border-white/25 rounded-2xl p-5 lg:p-8 flex flex-col relative bg-white/[0.03]"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <span className="bg-white text-black text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
+                <span className="bg-white text-black text-[13px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full">
                   {pricing.mostPopular}
                 </span>
               </div>
-              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.pro}</p>
+              <p className="text-white/40 text-[14px] tracking-[0.05em] uppercase mb-3">{pricing.pro}</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tighter">$29.99</span>
                 <span className="text-white/30 text-[14px]">{pricing.oneTime}</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
+              <p className="text-white/40 text-[15px] leading-relaxed mb-4">
                 {pricing.proDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.proFeatures.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[15px]">
                     <span className="text-white/30">✓</span> {feature}
                   </li>
                 ))}
@@ -369,16 +369,16 @@ function MainApp() {
               variant="border"
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col"
             >
-              <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.enterprise}</p>
+              <p className="text-white/40 text-[14px] tracking-[0.05em] uppercase mb-3">{pricing.enterprise}</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-white text-[42px] font-light tracking-tighter">Custom</span>
               </div>
-              <p className="text-white/40 text-[13px] leading-relaxed mb-4">
+              <p className="text-white/40 text-[15px] leading-relaxed mb-4">
                 {pricing.enterpriseDesc}
               </p>
               <ul className="flex flex-col gap-3 mb-5 flex-1">
                 {pricing.enterpriseFeatures.map((feature: string, idx: number) => (
-                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[13px]">
+                  <li key={idx} className="flex items-center gap-3 text-white/60 text-[15px]">
                     <span className="text-white/30">✓</span> {feature}
                   </li>
                 ))}

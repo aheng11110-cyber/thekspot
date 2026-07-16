@@ -242,7 +242,7 @@ export function CurationSection() {
                 onClick={() => setSelectedTypes(prev => 
                   prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
                 )}
-                className={`px-4 py-2 rounded-full text-xs transition-colors border ${
+                className={`px-5 py-2.5 rounded-full text-[15px] transition-colors border ${
                   selectedTypes.includes(type)
                     ? 'bg-white text-black border-white' 
                     : 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
@@ -267,7 +267,7 @@ export function CurationSection() {
                   disabled={isSelected}
                   key={interest}
                   onClick={() => toggleInterest(interest)}
-                  className={`px-3 py-1.5 rounded-md text-xs transition-colors border ${
+                  className={`px-4 py-2 rounded-md text-[15px] transition-colors border ${
                     isSelected 
                       ? 'bg-white text-black border-white' 
                       : 'bg-white/5 text-white/50 border-white/10 hover:border-white/30'

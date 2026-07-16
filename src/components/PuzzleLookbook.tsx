@@ -137,10 +137,10 @@ export function PuzzleLookbook() {
         
         {/* Left Side: Text */}
         <div className="w-full lg:w-1/3 text-left">
-          <h2 className="text-white font-light tracking-tighter leading-[1.1] mb-6 whitespace-pre-line" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
+          <h2 className="text-white font-light tracking-tighter leading-[1.1] mb-6 whitespace-pre-line break-keep" style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}>
             {text.title}
           </h2>
-          <p className="text-white/50 text-[14px] sm:text-[16px] leading-relaxed max-w-md">
+          <p className="text-white/50 text-[14px] sm:text-[16px] leading-relaxed max-w-md text-justify break-keep">
             {text.desc}
           </p>
         </div>

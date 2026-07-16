@@ -96,7 +96,7 @@ export function MondrianHeroGrid() {
       {/* CSS Animation for the Train Line */}
       <style>{`
         @keyframes stream-move {
-          0% { stroke-dashoffset: 750; }
+          0% { stroke-dashoffset: 550; }
           100% { stroke-dashoffset: 0; }
         }
         .animate-stream {
@@ -112,17 +112,10 @@ export function MondrianHeroGrid() {
           viewBox="0 0 100 100" 
           preserveAspectRatio="none"
         >
-          <defs>
-            <linearGradient id="stream-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#22d3ee" />
-              <stop offset="50%" stopColor="#f472b6" />
-              <stop offset="100%" stopColor="#fde047" />
-            </linearGradient>
-          </defs>
           <path
             d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 100 75 L 100 100 L 0 100 L 0 0"
             fill="none"
-            stroke="url(#stream-gradient)"
+            stroke="#3b82f6"
             strokeWidth="3"
             vectorEffect="non-scaling-stroke"
             strokeLinecap="round"
@@ -131,7 +124,7 @@ export function MondrianHeroGrid() {
             strokeDasharray="75 475"
             className="animate-stream"
             style={{
-              filter: "drop-shadow(0 0 4px rgba(255,255,255,0.6)) drop-shadow(0 0 12px rgba(255,255,255,0.9))"
+              filter: "drop-shadow(0 0 3px #3b82f6) drop-shadow(0 0 8px rgba(59,130,246,0.8))"
             }}
           />
         </svg>

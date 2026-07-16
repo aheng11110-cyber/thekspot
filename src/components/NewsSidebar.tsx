@@ -18,24 +18,42 @@ const MOCK_NEWS = {
   EN: [
     { id: 'm1', title: 'Ateez tops Billboard 200 with new album', summary: 'K-pop boy group Ateez has secured their first No. 1 on the Billboard 200 albums chart.', lang: 'EN' },
     { id: 'm2', title: 'Netflix Korea announces 2026 lineup', summary: 'Netflix revealed its massive Korean content lineup including Squid Game Season 3.', lang: 'EN' },
-    { id: 'm3', title: 'Seoul opens new night market in Myeongdong', summary: 'A massive new night market featuring over 100 food stalls has opened.', lang: 'EN' }
+    { id: 'm3', title: 'BTS Jin finishes military service', summary: 'BTS member Jin has officially completed his mandatory military service and returned to civilian life.', lang: 'EN' },
+    { id: 'm4', title: 'BLACKPINK Lisa releases new solo single Rockstar', summary: 'Lisa from BLACKPINK has made her highly anticipated solo comeback with the new track Rockstar.', lang: 'EN' },
+    { id: 'm5', title: 'SEVENTEEN performs at Glastonbury Festival', summary: 'SEVENTEEN became the first K-pop boy group to perform on the main stage at the UK Glastonbury Festival.', lang: 'EN' },
+    { id: 'm6', title: 'Stray Kids announces 2024 world tour dominATE', summary: 'Stray Kids revealed the dates and locations for their massive upcoming dominATE world tour.', lang: 'EN' }
   ],
   KO: [
     { id: 'm1', title: '뉴진스, 도쿄돔 팬미팅 성료... 9만명 열광', summary: '데뷔 1년 11개월 만에 도쿄돔에 입성하며 해외 아티스트 최단기간 기록을 세웠습니다.', lang: 'KO' },
     { id: 'm2', title: '에이티즈, 빌보드 200 1위 달성', summary: '보이그룹 에이티즈가 새 앨범으로 빌보드 메인 차트 1위에 올랐습니다.', lang: 'KO' },
-    { id: 'm3', title: '명동에 초대형 야시장 개장', summary: '100여개의 푸드트럭이 모인 새로운 명동 야시장이 문을 열었습니다.', lang: 'KO' }
+    { id: 'm3', title: '방탄소년단 진, 군 전역... 아미 곁으로', summary: '방탄소년단의 맏형 진이 18개월간의 군 복무를 마치고 무사히 전역했습니다.', lang: 'KO' },
+    { id: 'm4', title: '블랙핑크 리사, 신곡 락스타(ROCKSTAR) 발표', summary: '블랙핑크 리사가 파격적인 콘셉트의 새 솔로 싱글 락스타(ROCKSTAR)를 발표했습니다.', lang: 'KO' },
+    { id: 'm5', title: '세븐틴, 영국 글래스톤베리 페스티벌 출격', summary: '세븐틴이 K팝 보이그룹 최초로 영국 최대 음악 축제인 글래스톤베리 메인 무대에 섰습니다.', lang: 'KO' },
+    { id: 'm6', title: '스트레이 키즈, 새 월드투어 dominATE 개최', summary: '스트레이 키즈가 역대 최대 규모의 새로운 월드투어 일정을 전격 공개했습니다.', lang: 'KO' }
   ],
   JP: [
     { id: 'm1', title: 'ATEEZ、ビルボード200で1位を獲得', summary: '韓国のボーイズグループATEEZが最新アルバムでビルボード200のトップに立ちました。', lang: 'JP' },
-    { id: 'm2', title: '明洞に新しいナイトマーケットがオープン', summary: '100以上の屋台が集まる巨大なナイトマーケットが明洞にオープンしました。', lang: 'JP' }
+    { id: 'm2', title: 'BTSのJIN、兵役を終えて除隊', summary: 'BTSの最年長メンバーであるJINが18ヶ月の兵役を無事に終えて除隊しました。', lang: 'JP' },
+    { id: 'm3', title: 'BLACKPINKリサ、新曲ROCKSTARをリリース', summary: 'BLACKPINKのリサが新しいソロシングルROCKSTARを発表しカムバックしました。', lang: 'JP' },
+    { id: 'm4', title: 'SEVENTEEN、グラストンベリー・フェスティバルに出演', summary: 'SEVENTEENがK-POPボーイズグループとして初めて英国のグラストンベリーのメインステージに立ちました。', lang: 'JP' },
+    { id: 'm5', title: 'Stray Kids、2024年ワールドツアーdominATEを発表', summary: 'Stray Kidsが過去最大規模となる新しいワールドツアーの日程を公開しました。', lang: 'JP' },
+    { id: 'm6', title: 'NewJeans、東京ドームでファンミーティング開催', summary: 'NewJeansが海外アーティストとして史上最速で東京ドーム公演を行いました。', lang: 'JP' }
   ],
   CN: [
     { id: 'm1', title: 'ATEEZ登顶公告牌二百强专辑榜', summary: '韩国男子组合ATEEZ凭借新专辑首次登顶公告牌二百强专辑榜。', lang: 'CN' },
-    { id: 'm2', title: '首尔明洞开设全新夜市', summary: '明洞开设拥有100多个小吃摊的大型新夜市。', lang: 'CN' }
+    { id: 'm2', title: '防弹少年团Jin正式退伍', summary: '防弹少年团成员Jin结束了为期18个月的兵役，正式退伍回归。', lang: 'CN' },
+    { id: 'm3', title: 'BLACKPINK Lisa发行新单曲ROCKSTAR', summary: 'BLACKPINK成员Lisa带着全新的个人单曲ROCKSTAR强势回归。', lang: 'CN' },
+    { id: 'm4', title: 'SEVENTEEN亮相英国格拉斯顿伯里音乐节', summary: 'SEVENTEEN成为首个登上英国格拉斯顿伯里音乐节主舞台的K-pop男团。', lang: 'CN' },
+    { id: 'm5', title: 'Stray Kids宣布2024年世界巡演dominATE', summary: 'Stray Kids公布了他们即将举行的超大规模世界巡演的日期和地点。', lang: 'CN' },
+    { id: 'm6', title: 'NewJeans东京巨蛋粉丝见面会圆满落幕', summary: 'NewJeans创下了海外艺人最快进入东京巨蛋的纪录，吸引了9万名粉丝。', lang: 'CN' }
   ],
   VN: [
     { id: 'm1', title: 'ATEEZ đứng đầu Billboard 200', summary: 'Nhóm nhạc nam K-pop ATEEZ đã giành được vị trí số 1 đầu tiên trên bảng xếp hạng album Billboard 200.', lang: 'VN' },
-    { id: 'm2', title: 'Chợ đêm mới mở tại Myeongdong', summary: 'Một chợ đêm mới khổng lồ với hơn 100 quầy thức ăn đã được mở.', lang: 'VN' }
+    { id: 'm2', title: 'Jin (BTS) chính thức xuất ngũ', summary: 'Thành viên lớn tuổi nhất của BTS, Jin, đã hoàn thành nghĩa vụ quân sự kéo dài 18 tháng.', lang: 'VN' },
+    { id: 'm3', title: 'Lisa (BLACKPINK) phát hành đĩa đơn mới ROCKSTAR', summary: 'Lisa của BLACKPINK đã trở lại hoành tráng với đĩa đơn solo mới mang tên ROCKSTAR.', lang: 'VN' },
+    { id: 'm4', title: 'SEVENTEEN biểu diễn tại Lễ hội Glastonbury', summary: 'SEVENTEEN trở thành nhóm nhạc nam K-pop đầu tiên biểu diễn trên sân khấu chính của Glastonbury.', lang: 'VN' },
+    { id: 'm5', title: 'Stray Kids công bố chuyến lưu diễn thế giới dominATE', summary: 'Stray Kids đã tiết lộ ngày và địa điểm cho chuyến lưu diễn thế giới khổng lồ sắp tới của họ.', lang: 'VN' },
+    { id: 'm6', title: 'NewJeans tổ chức fan meeting thành công tại Tokyo Dome', summary: 'NewJeans lập kỷ lục là nghệ sĩ nước ngoài biểu diễn tại Tokyo Dome trong thời gian ngắn nhất.', lang: 'VN' }
   ]
 };
 

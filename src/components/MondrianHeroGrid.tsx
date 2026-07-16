@@ -93,8 +93,41 @@ export function MondrianHeroGrid() {
 
   return (
     <div className="absolute inset-y-0 left-0 w-full h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-8 py-8">
+      {/* CSS Animation for the Train Line */}
+      <style>{`
+        @keyframes stream-move {
+          0% { stroke-dashoffset: 126.6; }
+          100% { stroke-dashoffset: 0; }
+        }
+        .animate-stream {
+          animation: stream-move 15s linear infinite;
+        }
+      `}</style>
+
       {/* 4x4 다이나믹 퍼즐 그리드 (조금만 축소) */}
       <div className="w-[95%] lg:w-[92%] xl:w-[90%] aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
+        {/* Glowing Data Stream Line overlay */}
+        <svg 
+          className="absolute inset-0 w-full h-full pointer-events-none z-20" 
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 75 75 L 75 50 L 50 50 L 50 100 L 100 100 L 100 50 L 0 50 L 0 100 L 0 0"
+            fill="none"
+            stroke="#3b82f6"
+            strokeWidth="0.5"
+            vectorEffect="non-scaling-stroke"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            pathLength="100"
+            strokeDasharray="26.6 100"
+            className="animate-stream"
+            style={{
+              filter: "drop-shadow(0 0 2px rgba(59,130,246,1)) drop-shadow(0 0 6px rgba(59,130,246,0.8)) drop-shadow(0 0 12px rgba(59,130,246,0.5))"
+            }}
+          />
+        </svg>
         {images.map((src, index) => {
           const slotClass = SLOTS[index];
           return (

@@ -253,6 +253,7 @@ function MainApp() {
 
               return (
                 <RandomHoverWrapper
+                  variant={l.num <= 2 ? 'glow' : 'border'}
                   key={l.num}
                   onClick={handleClick}
                   className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:border-white/30 transition-colors group"

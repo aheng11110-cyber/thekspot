@@ -13,6 +13,7 @@ const UI_TEXT = {
   EN: {
     title: 'Curate Your\nJourney',
     desc: 'Select your preferred travel style.',
+    placeType: 'Place Type',
     groupSize: 'Group Size',
     interests: 'Interests',
     region: 'Region',
@@ -26,6 +27,7 @@ const UI_TEXT = {
   KO: {
     title: '나만의 여정\n만들기',
     desc: '원하는 여행 스타일을 선택해 보세요.',
+    placeType: '장소 유형',
     groupSize: '인원',
     interests: '관심사',
     region: '지역',
@@ -39,6 +41,7 @@ const UI_TEXT = {
   JP: {
     title: 'あなただけの\n旅を',
     desc: 'ご希望の旅行スタイルを選択してください。',
+    placeType: '場所の種類',
     groupSize: '人数',
     interests: '興味・関心',
     region: '地域',
@@ -52,6 +55,7 @@ const UI_TEXT = {
   CN: {
     title: '定制您的\n旅程',
     desc: '请选择您偏好的旅行风格。',
+    placeType: '地点类型',
     groupSize: '人数',
     interests: '兴趣',
     region: '地区',
@@ -65,6 +69,7 @@ const UI_TEXT = {
   VN: {
     title: 'Tạo hành trình\ncủa bạn',
     desc: 'Chọn phong cách du lịch ưa thích của bạn.',
+    placeType: 'Loại địa điểm',
     groupSize: 'Số người',
     interests: 'Sở thích',
     region: 'Khu vực',
@@ -91,8 +96,16 @@ const TAG_MAP: Record<string, Record<string, string>> = {
   VN: { 'Solo': '1 Người', '2-3 People': '2-3 Người', '4-5 People': '4-5 Người', 'Trending': 'Xu hướng', 'AI Pick': 'AI Chọn', 'Popup Store': 'Cửa hàng Pop-up', 'Culture': 'Văn hóa', 'Healing/Relax': 'Thư giãn', 'K-Culture': 'Văn hóa Hàn', 'Nature': 'Thiên nhiên', 'K-Food': 'Món ăn Hàn' }
 };
 
+const TYPE_MAP: Record<string, Record<string, string>> = {
+  KO: { 'restaurant': '식당', 'cafe': '카페', 'popup': '팝업스토어', 'concert': '공연·콘서트', 'culture': '전시·문화', 'healing': '휴식·자연' },
+  JP: { 'restaurant': 'レストラン', 'cafe': 'カフェ', 'popup': 'ポップアップストア', 'concert': 'コンサート', 'culture': '展示・文化', 'healing': 'ヒーリング' },
+  CN: { 'restaurant': '餐厅', 'cafe': '咖啡馆', 'popup': '快闪店', 'concert': '演唱会', 'culture': '展览·文化', 'healing': '休息' },
+  VN: { 'restaurant': 'Nhà hàng', 'cafe': 'Quán cà phê', 'popup': 'Cửa hàng Pop-up', 'concert': 'Buổi hòa nhạc', 'culture': 'Văn hóa', 'healing': 'Thư giãn' },
+  EN: { 'restaurant': 'Restaurant', 'cafe': 'Cafe', 'popup': 'Pop-up Store', 'concert': 'Concert', 'culture': 'Culture', 'healing': 'Healing' }
+};
+
 const translateWord = (word: string, lang: string, map: Record<string, Record<string, string>>) => {
-  if (lang === 'EN') return word;
+  if (lang === 'EN') return map['EN']?.[word] || word;
   return map[lang]?.[word] || word;
 };
 
@@ -123,6 +136,7 @@ export function CurationSection() {
     }
   }, [lang]);
 
+  const [selectedType, setSelectedType] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<string>(text.allRegion);
   const [excludedIds, setExcludedIds] = useState<string[]>([]);
@@ -131,16 +145,18 @@ export function CurationSection() {
 
   // 언어가 바뀌면 선택된 필터를 초기화
   useEffect(() => {
+    setSelectedType(null);
     setSelectedInterests([]);
     setSelectedRegion(UI_TEXT[lang].allRegion);
     setExcludedIds([]);
   }, [lang]);
 
   // 동적 필터 카테고리 추출 (현재 언어의 데이터 기준)
+  const types = useMemo(() => Array.from(new Set(locations.map(l => l.type))), [locations]);
   const interests = useMemo(() => Array.from(new Set(locations.flatMap(l => l.tags))), [locations]);
   const regions = useMemo(() => [text.allRegion, ...Array.from(new Set(locations.map(l => l.province)))], [locations, text.allRegion]);
 
-  const hasActiveFilters = selectedInterests.length > 0 || selectedRegion !== text.allRegion;
+  const hasActiveFilters = selectedType !== null || selectedInterests.length > 0 || selectedRegion !== text.allRegion;
 
   const toggleInterest = (interest: string) => {
     setSelectedInterests(prev => 
@@ -151,6 +167,7 @@ export function CurationSection() {
   };
 
   const clearFilters = () => {
+    setSelectedType(null);
     setSelectedInterests([]);
     setSelectedRegion(text.allRegion);
     setExcludedIds([]);
@@ -180,6 +197,7 @@ export function CurationSection() {
   const filteredLocations = useMemo(() => {
     return locations.filter(loc => {
       if (excludedIds.includes(loc.id)) return false;
+      if (selectedType && loc.type !== selectedType) return false;
       if (selectedInterests.length > 0) {
         const hasMatchingInterest = selectedInterests.some(interest => loc.tags.includes(interest));
         if (!hasMatchingInterest) return false;
@@ -189,7 +207,7 @@ export function CurationSection() {
       }
       return true;
     });
-  }, [locations, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
+  }, [locations, selectedType, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
 
   // 지도를 위해: hoveredLocationId가 있으면 그 장소가 첫 번째가 되도록 배열 재정렬
   // 빈 배열일 경우 그대로 전달 (MapDisplay에서 처리)
@@ -209,6 +227,26 @@ export function CurationSection() {
           {text.title}
         </h2>
         <p className="text-white/40 text-sm mb-10">{text.desc}</p>
+
+        {/* 장소 유형 선택 */}
+        <div className="mb-8">
+          <h3 className="text-white/60 text-xs tracking-wide uppercase mb-4">{text.placeType}</h3>
+          <div className="flex flex-wrap gap-2">
+            {types.map(type => (
+              <button
+                key={type}
+                onClick={() => setSelectedType(type === selectedType ? null : type)}
+                className={`px-4 py-2 rounded-full text-xs transition-colors border ${
+                  selectedType === type 
+                    ? 'bg-white text-black border-white' 
+                    : 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
+                }`}
+              >
+                {translateWord(type, lang, TYPE_MAP)}
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* 관심사 선택 */}
         <div className="mb-8">

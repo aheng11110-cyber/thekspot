@@ -63,7 +63,7 @@ export function AdminNews() {
         
         {/* Header & Tabs */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-light mb-6">Admin Dashboard</h1>
+          <h1 className="text-3xl sm:text-4xl font-light mb-6">Admin Dashboard</h1>
           <div className="flex bg-black/50 p-1 rounded-xl">
             <button 
               onClick={() => setTab('news')}

@@ -26,7 +26,7 @@ const UI_TEXT = {
     savedItinerary: 'Saved!'
   },
   KO: {
-    title: '나만의 여정\n만들기',
+    title: <>나만의<br />여정 만들기</>,
     desc: '원하는 여행 스타일을 선택해 보세요.',
     placeType: '장소 유형',
     groupSize: '인원',
@@ -224,7 +224,7 @@ export function CurationSection() {
       
       {/* ──────────────── 왼쪽 사이드바 (필터 영역) ──────────────── */}
       <div className="w-full md:w-[320px] lg:w-[400px] shrink-0 border-b md:border-b-0 md:border-r border-white/10 p-8 pt-20 flex flex-col bg-black/50 z-20 overflow-y-auto">
-        <h2 className="text-white font-title font-extrabold tracking-[-0.08em] leading-[1.1] mb-2 whitespace-pre-line" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
+        <h2 className="text-white font-title font-extrabold tracking-[-0.08em] leading-[1.1] mt-10 mb-2 whitespace-pre-line" style={{ fontSize: 'clamp(24px, 3vw, 36px)' }}>
           {text.title}
         </h2>
         <p className="text-white/40 text-sm mb-10">{text.desc}</p>

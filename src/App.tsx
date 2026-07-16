@@ -109,7 +109,7 @@ function MainApp() {
   const { hero, cinematic, metrics, technology, architecture, footer, pricing } = currentContent;
 
   return (
-    <div style={{ fontFamily: '"Space Mono", monospace' }}>
+    <div>
       <Navbar entranceComplete={entranceComplete} />
 
       {/* ════════════════ SECTION 1: HERO ════════════════ */}

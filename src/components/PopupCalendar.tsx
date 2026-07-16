@@ -151,7 +151,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
         <div className="w-full md:w-[60%] lg:w-[65%] border-b md:border-b-0 md:border-r border-white/10 p-6 sm:p-10 flex flex-col bg-black/20">
           
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3">
+            <h2 className="text-2xl sm:text-3xl font-title text-white tracking-[-0.08em] flex items-center gap-3">
               <CalendarIcon className="text-white/40" />
               Popup Stores
             </h2>

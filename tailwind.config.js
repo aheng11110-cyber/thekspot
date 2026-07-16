@@ -7,6 +7,7 @@ export default {
         sans: ['"Space Mono"', 'monospace'],
         serif: ['"Space Mono"', 'monospace'],
         mono: ['"Space Mono"', 'monospace'],
+        title: ['"Black Han Sans"', 'sans-serif'],
       },
     },
   },

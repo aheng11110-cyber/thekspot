@@ -55,7 +55,7 @@ export function HashtagSearchModal({ onClose }: HashtagSearchModalProps) {
         </button>
 
         <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20">
-          <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-title text-white tracking-[-0.08em] flex items-center gap-3 mb-6">
             <Hash className="text-white/40" />
             {content.title}
           </h2>

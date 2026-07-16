@@ -42,7 +42,7 @@ export function KSlangModal({ onClose }: KSlangModalProps) {
 
         <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-light text-white tracking-tighter flex items-center gap-3 mb-2">
+            <h2 className="text-2xl sm:text-3xl font-title text-white tracking-[-0.08em] flex items-center gap-3 mb-2">
               <BookOpen className="text-purple-400/80" />
               {title}
             </h2>

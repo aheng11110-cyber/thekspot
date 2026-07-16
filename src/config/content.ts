@@ -114,7 +114,7 @@ export const SITE_CONTENT = {
       metrics: 'Metrics',
     },
     pricing: {
-      subtitle: 'Pricing',
+      subtitle: '',
       title: 'Choose Your Plan',
       desc: 'Select the styling plan that fits your travel goals.',
       free: 'Free',
@@ -251,7 +251,7 @@ export const SITE_CONTENT = {
       metrics: '데이터',
     },
     pricing: {
-      subtitle: '가격 정책',
+      subtitle: '',
       title: '플랜을 선택하세요',
       desc: '여행 목적에 맞는 완벽한 큐레이션 플랜을 시작해보세요.',
       free: '무료',
@@ -388,7 +388,7 @@ export const SITE_CONTENT = {
       metrics: '指標',
     },
     pricing: {
-      subtitle: '料金プラン',
+      subtitle: '',
       title: 'プランを選択',
       desc: 'あなたの旅行の目的に合った最適なキュレーションプランをお選びください。',
       free: '無料',
@@ -481,7 +481,7 @@ export const SITE_CONTENT = {
       metrics: '数据',
     },
     pricing: {
-      subtitle: '价格方案',
+      subtitle: '',
       title: '选择您的计划',
       desc: '选择适合您旅行目标的完美定制计划。',
       free: '免费',
@@ -574,7 +574,7 @@ export const SITE_CONTENT = {
       metrics: 'Chỉ Số',
     },
     pricing: {
-      subtitle: 'Bảng Giá',
+      subtitle: '',
       title: 'Chọn Gói Của Bạn',
       desc: 'Chọn gói được thiết kế phù hợp với mục tiêu du lịch của bạn.',
       free: 'Miễn phí',

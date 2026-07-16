@@ -54,7 +54,7 @@ export function MapDisplay({ locations }: MapDisplayProps) {
   return (
     <div 
       ref={mapRef}
-      className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group"
+      className="relative w-full aspect-square md:aspect-[4/3] bg-black border border-white/10 rounded-2xl overflow-hidden group pointer-events-auto"
     >
       
       {/* 
@@ -74,22 +74,21 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         title={`Map of ${mainLoc.name}`}
       />
 
-
-
       {otherLocations.length > 0 && (
         <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-auto">
           <p className="text-white/70 text-xs mb-2">{text.otherLocations}</p>
           <div className="flex gap-2 overflow-x-auto pb-1">
             {otherLocations.map(loc => (
-              <RandomHoverWrapper
-                as="button"
-                variant="border"
+              <button
                 key={loc.id}
-                onClick={() => setSelectedLocId(loc.id)}
-                className="whitespace-nowrap px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[12px] text-white/80 hover:text-white transition-colors flex-shrink-0 cursor-pointer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedLocId(loc.id);
+                }}
+                className="whitespace-nowrap px-3 py-1.5 bg-white/10 border border-white/20 rounded-md text-[12px] text-white hover:bg-white/20 transition-colors flex-shrink-0 cursor-pointer pointer-events-auto"
               >
                 {loc.name}
-              </RandomHoverWrapper>
+              </button>
             ))}
           </div>
         </div>

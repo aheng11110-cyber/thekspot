@@ -157,7 +157,7 @@ function MainApp() {
                   </h1>
 
                   <motion.p
-                    className="max-w-[600px] text-white/80 leading-[1.6] font-normal"
+                    className="max-w-full text-white/80 leading-[1.6] font-normal"
                     style={{ fontSize: '32px' }}
                     initial={{ opacity: 0, y: 25 }}
                     animate={entranceComplete ? { opacity: 1, y: 0 } : {}}

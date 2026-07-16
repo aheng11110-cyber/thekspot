@@ -38,48 +38,62 @@ function shuffleArray(array: string[]) {
 }
 
 export function MondrianHeroGrid() {
-  const [images, setImages] = useState<string[]>([]);
+  // Keep the order of images constant so React doesn't move DOM nodes,
+  // which can cause browsers to cancel image loading.
+  const [slotMapping, setSlotMapping] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
   // 최초 로드시 한번만 셔플
   useEffect(() => {
-    setImages(shuffleArray(IMAGES).slice(0, SLOTS.length));
+    setSlotMapping(shuffleArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
   }, []);
 
   useEffect(() => {
-    if (images.length === 0) return;
-
     // 5초마다 주변 작은 사진들 '전체(9장)'를 섞어서 한꺼번에 이동시킴
     const smallInterval = setInterval(() => {
-      setImages(prev => {
-        const newArr = [...prev];
-        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+      setSlotMapping(prev => {
+        const newMapping = [...prev];
+        // small slots are indices 0, 1, 2, 3, 5, 6, 7, 8, 9 in the SLOTS array
+        const smallSlotIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
         
-        // 작은 사진들에 해당하는 이미지들만 추출
-        const smallImages = smallIndices.map(idx => newArr[idx]);
-        // 추출한 작은 사진들 셔플
-        const shuffledSmall = shuffleArray(smallImages);
-        // 다시 원래 위치에 덮어쓰기
-        smallIndices.forEach((idx, i) => {
-          newArr[idx] = shuffledSmall[i];
+        // Find which images are currently in the small slots
+        const imagesInSmallSlots = [];
+        for (let i = 0; i < 10; i++) {
+          if (smallSlotIndices.includes(newMapping[i])) {
+            imagesInSmallSlots.push({ imageIndex: i, currentSlot: newMapping[i] });
+          }
+        }
+        
+        // Extract just the slots and shuffle them
+        const slotsToShuffle = imagesInSmallSlots.map(item => item.currentSlot);
+        const shuffledSlots = shuffleArray(slotsToShuffle);
+        
+        // Assign the shuffled slots back to those images
+        imagesInSmallSlots.forEach((item, i) => {
+          newMapping[item.imageIndex] = shuffledSlots[i];
         });
 
-        return newArr;
+        return newMapping;
       });
     }, 5000);
 
-    // 10초마다 가운데 큰 사진(index 4)을 작은 사진 중 하나와 스왑
+    // 10초마다 가운데 큰 사진(slot index 4)을 작은 사진 중 하나와 스왑
     const centerInterval = setInterval(() => {
-      setImages(prev => {
-        const newArr = [...prev];
-        const smallIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
-        const randomSmall = smallIndices[Math.floor(Math.random() * smallIndices.length)];
+      setSlotMapping(prev => {
+        const newMapping = [...prev];
+        const smallSlotIndices = [0, 1, 2, 3, 5, 6, 7, 8, 9];
+        const randomSmallSlot = smallSlotIndices[Math.floor(Math.random() * smallSlotIndices.length)];
         
-        // 스왑
-        const temp = newArr[4];
-        newArr[4] = newArr[randomSmall];
-        newArr[randomSmall] = temp;
+        // Find which image has slot 4 (center) and which has the random small slot
+        const centerImageIndex = newMapping.findIndex(slot => slot === 4);
+        const randomSmallImageIndex = newMapping.findIndex(slot => slot === randomSmallSlot);
         
-        return newArr;
+        if (centerImageIndex !== -1 && randomSmallImageIndex !== -1) {
+          // 스왑 slots
+          newMapping[centerImageIndex] = randomSmallSlot;
+          newMapping[randomSmallImageIndex] = 4;
+        }
+        
+        return newMapping;
       });
     }, 10000);
 
@@ -87,7 +101,7 @@ export function MondrianHeroGrid() {
       clearInterval(smallInterval);
       clearInterval(centerInterval);
     };
-  }, [images.length]);
+  }, []);
 
 
 
@@ -95,8 +109,10 @@ export function MondrianHeroGrid() {
     <div className="absolute inset-y-0 left-0 w-full h-full flex flex-col justify-center bg-black overflow-hidden z-0 pl-4 lg:pl-8 py-8">
       {/* 4x4 다이나믹 퍼즐 그리드 (조금만 축소) */}
       <div className="w-[95%] lg:w-[92%] xl:w-[90%] aspect-[4/5] sm:aspect-square relative grid grid-cols-4 grid-rows-4 gap-2 md:gap-3">
-        {images.map((src, index) => {
-          const slotClass = SLOTS[index];
+        {IMAGES.slice(0, 10).map((srcPath, index) => {
+          const currentSlotIndex = slotMapping[index];
+          const slotClass = SLOTS[currentSlotIndex];
+          const imgUrl = import.meta.env.BASE_URL + srcPath.replace(/^\//, '');
           return (
             <motion.div
               key={src} // src를 key로 써야 서로 위치가 부드럽게 이동함
@@ -111,7 +127,7 @@ export function MondrianHeroGrid() {
             >
               {/* Removed dark overlay to improve image quality as requested */}
               <img 
-                src={src} 
+                src={imgUrl} 
                 alt={`Hero Lookbook ${index}`} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
               />

@@ -123,7 +123,6 @@ export function CurationSection() {
     }
   }, [lang]);
 
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [selectedRegion, setSelectedRegion] = useState<string>(text.allRegion);
   const [excludedIds, setExcludedIds] = useState<string[]>([]);
@@ -132,18 +131,16 @@ export function CurationSection() {
 
   // 언어가 바뀌면 선택된 필터를 초기화
   useEffect(() => {
-    setSelectedSize(null);
     setSelectedInterests([]);
     setSelectedRegion(UI_TEXT[lang].allRegion);
     setExcludedIds([]);
   }, [lang]);
 
   // 동적 필터 카테고리 추출 (현재 언어의 데이터 기준)
-  const groupSizes = useMemo(() => Array.from(new Set(locations.flatMap(l => l.groupSizes))), [locations]);
   const interests = useMemo(() => Array.from(new Set(locations.flatMap(l => l.tags))), [locations]);
   const regions = useMemo(() => [text.allRegion, ...Array.from(new Set(locations.map(l => l.province)))], [locations, text.allRegion]);
 
-  const hasActiveFilters = selectedSize !== null || selectedInterests.length > 0 || selectedRegion !== text.allRegion;
+  const hasActiveFilters = selectedInterests.length > 0 || selectedRegion !== text.allRegion;
 
   const toggleInterest = (interest: string) => {
     setSelectedInterests(prev => 
@@ -154,7 +151,6 @@ export function CurationSection() {
   };
 
   const clearFilters = () => {
-    setSelectedSize(null);
     setSelectedInterests([]);
     setSelectedRegion(text.allRegion);
     setExcludedIds([]);
@@ -184,7 +180,6 @@ export function CurationSection() {
   const filteredLocations = useMemo(() => {
     return locations.filter(loc => {
       if (excludedIds.includes(loc.id)) return false;
-      if (selectedSize && !loc.groupSizes.includes(selectedSize)) return false;
       if (selectedInterests.length > 0) {
         const hasMatchingInterest = selectedInterests.some(interest => loc.tags.includes(interest));
         if (!hasMatchingInterest) return false;
@@ -194,7 +189,7 @@ export function CurationSection() {
       }
       return true;
     });
-  }, [locations, selectedSize, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
+  }, [locations, selectedInterests, selectedRegion, excludedIds, text.allRegion]);
 
   // 지도를 위해: hoveredLocationId가 있으면 그 장소가 첫 번째가 되도록 배열 재정렬
   // 빈 배열일 경우 그대로 전달 (MapDisplay에서 처리)
@@ -214,26 +209,6 @@ export function CurationSection() {
           {text.title}
         </h2>
         <p className="text-white/40 text-sm mb-10">{text.desc}</p>
-
-        {/* 인원 선택 */}
-        <div className="mb-8">
-          <h3 className="text-white/60 text-xs tracking-wide uppercase mb-4">{text.groupSize}</h3>
-          <div className="flex flex-wrap gap-2">
-            {groupSizes.map(size => (
-              <button
-                key={size}
-                onClick={() => setSelectedSize(size === selectedSize ? null : size)}
-                className={`px-4 py-2 rounded-full text-xs transition-colors border ${
-                  selectedSize === size 
-                    ? 'bg-white text-black border-white' 
-                    : 'bg-transparent text-white/60 border-white/20 hover:border-white/50'
-                }`}
-              >
-                {translateWord(size, lang, TAG_MAP)}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* 관심사 선택 */}
         <div className="mb-8">

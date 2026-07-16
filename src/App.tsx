@@ -174,7 +174,7 @@ function MainApp() {
             </svg>
           </div>
 
-          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-start min-h-0 z-30 pl-[65px] sm:pl-[85px] relative right-[120px]">
+          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-start min-h-0 z-30 pl-[65px] sm:pl-[85px] relative left-[30px]">
              <motion.div
                 initial={{ opacity: 0 }}
                 animate={entranceComplete ? { opacity: 1 } : {}}

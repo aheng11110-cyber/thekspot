@@ -70,34 +70,34 @@ export function ScheduleAndLinks({ locations, onExclude, onHover }: ScheduleAndL
         )}
 
         {/* 링크 버튼들 */}
-        {loc.links && (
-          <div className="flex items-center gap-3 mt-auto relative z-10">
-            {loc.links.instagram && (
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedInstaUrl(loc.links!.instagram!);
-                }}
-                className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
-              >
-                <Instagram size={14} />
-                Instagram
-              </button>
-            )}
-            {loc.links.blog && (
-              <a 
-                href={loc.links.blog} 
-                target="_blank" 
-                rel="noreferrer" 
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
-              >
-                <Link2 size={14} />
-                Blog Review
-              </a>
-            )}
-          </div>
-        )}
+        <div className="flex items-center gap-3 mt-auto relative z-10">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              // 영어, 한글, 숫자만 남기고 공백 및 특수문자 제거하여 해시태그 생성
+              const searchTag = loc.name.replace(/[^a-zA-Z0-9가-힣]/g, '');
+              const instaUrl = `https://www.instagram.com/explore/tags/${encodeURIComponent(searchTag)}/`;
+              setSelectedInstaUrl(instaUrl);
+            }}
+            className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
+          >
+            <Instagram size={14} />
+            Instagram
+          </button>
+          
+          {loc.links?.blog && (
+            <a 
+              href={loc.links.blog} 
+              target="_blank" 
+              rel="noreferrer" 
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-full"
+            >
+              <Link2 size={14} />
+              Blog Review
+            </a>
+          )}
+        </div>
         
         {/* 해시태그 */}
         <div className="flex flex-wrap gap-2 mt-3 relative z-10">

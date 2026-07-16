@@ -96,11 +96,11 @@ export function MondrianHeroGrid() {
       {/* CSS Animation for the Train Line */}
       <style>{`
         @keyframes stream-move {
-          0% { stroke-dashoffset: 126.6; }
+          0% { stroke-dashoffset: 750; }
           100% { stroke-dashoffset: 0; }
         }
         .animate-stream {
-          animation: stream-move 15s linear infinite;
+          animation: stream-move 7s linear infinite;
         }
       `}</style>
 
@@ -113,18 +113,18 @@ export function MondrianHeroGrid() {
           preserveAspectRatio="none"
         >
           <path
-            d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 75 75 L 75 50 L 50 50 L 50 100 L 100 100 L 100 50 L 0 50 L 0 100 L 0 0"
+            d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 100 75 L 100 100 L 0 100 L 0 0"
             fill="none"
-            stroke="#3b82f6"
-            strokeWidth="0.5"
+            stroke="#22d3ee"
+            strokeWidth="3"
             vectorEffect="non-scaling-stroke"
             strokeLinecap="round"
             strokeLinejoin="round"
-            pathLength="100"
-            strokeDasharray="26.6 100"
+            pathLength="550"
+            strokeDasharray="200 550"
             className="animate-stream"
             style={{
-              filter: "drop-shadow(0 0 2px rgba(59,130,246,1)) drop-shadow(0 0 6px rgba(59,130,246,0.8)) drop-shadow(0 0 12px rgba(59,130,246,0.5))"
+              filter: "drop-shadow(0 0 3px #22d3ee) drop-shadow(0 0 8px #22d3ee) drop-shadow(0 0 20px rgba(255,255,255,0.8))"
             }}
           />
         </svg>

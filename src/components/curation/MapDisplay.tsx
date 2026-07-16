@@ -102,8 +102,6 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         </div>
       )}
 
-      )}
-
       {otherLocations.length > 0 && (
         <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-auto">
           <p className="text-white/70 text-xs mb-2">{text.otherLocations}</p>

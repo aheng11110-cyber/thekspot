@@ -9,7 +9,7 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
   const displayFeatures = features.slice(0, 4);
 
   return (
-    <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] flex items-center justify-center pointer-events-none">
+    <div className="relative w-[180px] h-[180px] sm:w-[240px] sm:h-[240px] flex items-center justify-center pointer-events-none">
       {/* 
         The parent wrapper rotates continuously. 
         We set the border to transparent so the circle line isn't visible, 

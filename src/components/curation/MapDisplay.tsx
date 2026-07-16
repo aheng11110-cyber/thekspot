@@ -3,6 +3,7 @@ import { LocationData } from '../../data/mockCurationData';
 import { MapPin, MousePointerClick } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { SITE_CONTENT } from '../../config/content';
+import { RandomHoverWrapper } from '../RandomHoverWrapper';
 
 interface MapDisplayProps {
   locations: LocationData[];
@@ -10,6 +11,7 @@ interface MapDisplayProps {
 
 export function MapDisplay({ locations }: MapDisplayProps) {
   const [isActive, setIsActive] = useState(false);
+  const [selectedLocId, setSelectedLocId] = useState<string | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   const { lang } = useLanguage();
   const text = SITE_CONTENT[lang].curation;
@@ -51,7 +53,17 @@ export function MapDisplay({ locations }: MapDisplayProps) {
     );
   }
 
-  const mainLoc = locations[0];
+  // Reset selected location when the locations prop changes (filters changed)
+  useEffect(() => {
+    setSelectedLocId(null);
+  }, [locations]);
+
+  const mainLoc = selectedLocId 
+    ? locations.find(l => l.id === selectedLocId) || locations[0]
+    : locations[0];
+  
+  const otherLocations = locations.filter(l => l.id !== mainLoc.id);
+
   // 구글 맵에서 정확한 핀을 표시하기 위해 검색어를 더 구체적으로 변경 (이름, 도시, 한국)
   const query = encodeURIComponent(`${mainLoc.name}, ${mainLoc.city}, South Korea`);
 
@@ -90,20 +102,22 @@ export function MapDisplay({ locations }: MapDisplayProps) {
         </div>
       )}
 
-      {/* 장소 이름 오버레이 */}
-      <div className="absolute top-4 left-4 z-10 bg-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-xl flex items-center gap-2 pointer-events-none">
-        <MapPin size={14} className="text-white" />
-        <p className="text-white text-sm font-medium">{mainLoc.name}</p>
-      </div>
+      )}
 
-      {locations.length > 1 && (
-        <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-none">
-          <p className="text-white/70 text-xs mb-1">{text.otherLocations}</p>
-          <div className="flex gap-2 overflow-x-hidden pb-1">
-            {locations.slice(1).map(loc => (
-              <span key={loc.id} className="whitespace-nowrap px-2 py-1 bg-white/10 rounded text-[10px] text-white">
+      {otherLocations.length > 0 && (
+        <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/80 backdrop-blur-md px-4 py-3 rounded-xl border border-white/20 shadow-xl pointer-events-auto">
+          <p className="text-white/70 text-xs mb-2">{text.otherLocations}</p>
+          <div className="flex gap-2 overflow-x-auto pb-1">
+            {otherLocations.map(loc => (
+              <RandomHoverWrapper
+                as="button"
+                variant="border"
+                key={loc.id}
+                onClick={() => setSelectedLocId(loc.id)}
+                className="whitespace-nowrap px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[12px] text-white/80 hover:text-white transition-colors flex-shrink-0 cursor-pointer"
+              >
                 {loc.name}
-              </span>
+              </RandomHoverWrapper>
             ))}
           </div>
         </div>

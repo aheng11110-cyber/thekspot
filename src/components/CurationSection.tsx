@@ -236,6 +236,7 @@ export function CurationSection() {
             {types.map(type => (
               <RandomHoverWrapper
                 as="button"
+                variant="border"
                 disabled={selectedTypes.includes(type)}
                 key={type}
                 onClick={() => setSelectedTypes(prev => 
@@ -262,6 +263,7 @@ export function CurationSection() {
               return (
                 <RandomHoverWrapper
                   as="button"
+                  variant="border"
                   disabled={isSelected}
                   key={interest}
                   onClick={() => toggleInterest(interest)}

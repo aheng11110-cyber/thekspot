@@ -253,7 +253,7 @@ function MainApp() {
 
               return (
                 <RandomHoverWrapper
-                  variant={l.num <= 2 ? 'glow' : 'border'}
+                  variant="border"
                   key={l.num}
                   onClick={handleClick}
                   className="w-full max-w-md h-[72px] border border-white/10 rounded-lg flex items-center justify-between px-6 cursor-pointer hover:border-white/30 transition-colors group"
@@ -300,6 +300,7 @@ function MainApp() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* ── Free ── */}
             <RandomHoverWrapper
+              variant="border"
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -331,6 +332,7 @@ function MainApp() {
 
             {/* ── Pro (Featured) ── */}
             <RandomHoverWrapper
+              variant="border"
               className="border border-white/25 rounded-2xl p-5 lg:p-8 flex flex-col relative bg-white/[0.03]"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -364,6 +366,7 @@ function MainApp() {
 
             {/* ── Enterprise ── */}
             <RandomHoverWrapper
+              variant="border"
               className="border border-white/10 rounded-2xl p-5 lg:p-8 flex flex-col"
             >
               <p className="text-white/40 text-[12px] tracking-[0.05em] uppercase mb-3">{pricing.enterprise}</p>

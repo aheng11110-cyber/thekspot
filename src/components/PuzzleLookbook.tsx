@@ -4,11 +4,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const UI_TEXT = {
   EN: {
-    title: "Real-time Spot\nCuration",
+    title: "Real-time\nSpot Curation",
     desc: "Filter your preferences and get instantly matched with suitable locations. Check out real-time curated Korean spots tailored just for you and find them directly on the map."
   },
   KO: {
-    title: "실시간 스팟\n큐레이션",
+    title: "실시간\n스팟 큐레이션",
     desc: "내 취향을 필터링하면 어울리는 장소들이 즉시 매칭됩니다. 오직 당신만을 위해 실시간으로 선별된 한국의 장소들과 그 위치를 지도에서 바로 확인해 보세요."
   },
   JP: {
@@ -16,7 +16,7 @@ const UI_TEXT = {
     desc: "あなたの好みをフィルタリングすると、ぴったりな場所が即座にマッチングされます。あなただけのためにリアルタイムで厳選された韓国のスポットと、その位置を地図で直接確認してみてください。"
   },
   CN: {
-    title: "实时地点\n策展",
+    title: "实时\n地点策展",
     desc: "筛选您的喜好，即刻为您匹配合适的地点。在地图上直接查看专为您实时精选的韩国地点及其位置。"
   },
   VN: {

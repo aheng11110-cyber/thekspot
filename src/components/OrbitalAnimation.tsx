@@ -10,7 +10,7 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
   const displayFeatures = features.slice(0, 4);
 
   return (
-    <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] mx-auto mt-12 flex items-center justify-center">
+    <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] mt-8 flex items-center justify-center pointer-events-none">
       
       {/* 
         The parent wrapper rotates continuously. 
@@ -23,7 +23,7 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
         transition={{
           repeat: Infinity,
           ease: "linear",
-          duration: 20
+          duration: 30
         }}
       >
         {displayFeatures.map((feature, index) => {
@@ -33,7 +33,7 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
           return (
             <div
               key={index}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full"
+              className="absolute top-1/2 left-1/2 w-full h-full"
               style={{
                 transform: `translate(-50%, -50%) rotate(${angle}deg)`
               }}
@@ -43,26 +43,29 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
                 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
               >
                 {/* 
-                  Counter-rotation so the text remains perfectly upright.
-                  The inner div rotates the opposite way of the parent (-360deg),
-                  and also offsets its initial angle (-angle).
+                  Continuous counter-rotation to negate the parent's rotate: 360 
                 */}
                 <motion.div
-                  className="bg-white/5 backdrop-blur-md border border-white/10 px-4 py-3 sm:px-6 sm:py-4 rounded-xl shadow-xl flex items-center justify-center text-center w-[140px] sm:w-[160px]"
                   animate={{ rotate: -360 }}
                   transition={{
                     repeat: Infinity,
                     ease: "linear",
-                    duration: 20
+                    duration: 30
                   }}
-                  style={{
-                    // Initial counter-rotation
-                    transform: `rotate(${-angle}deg)`
-                  }}
+                  style={{ transformOrigin: 'center center' }}
                 >
-                  <span className="text-white/80 text-[12px] sm:text-[14px] font-medium leading-tight">
-                    {feature}
-                  </span>
+                  {/* 
+                    Initial counter-rotation to negate the item's fixed angle.
+                    This ensures the text starts perfectly horizontal.
+                  */}
+                  <div
+                    className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-4 sm:px-8 sm:py-5 rounded-2xl shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center text-center w-[260px] sm:w-[340px] whitespace-pre-wrap leading-tight"
+                    style={{ transform: `rotate(${-angle}deg)` }}
+                  >
+                    <span className="text-white text-[18px] sm:text-[22px] font-bold tracking-wide drop-shadow-md">
+                      {feature}
+                    </span>
+                  </div>
                 </motion.div>
               </div>
             </div>

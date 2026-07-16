@@ -100,7 +100,7 @@ export function MondrianHeroGrid() {
           100% { stroke-dashoffset: 0; }
         }
         .animate-stream {
-          animation: stream-move 7s linear infinite;
+          animation: stream-move 9s linear infinite;
         }
       `}</style>
 
@@ -112,21 +112,29 @@ export function MondrianHeroGrid() {
           viewBox="0 0 100 100" 
           preserveAspectRatio="none"
         >
-          <path
-            d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 100 75 L 100 100 L 0 100 L 0 0"
-            fill="none"
-            stroke="#22d3ee"
-            strokeWidth="3"
-            vectorEffect="non-scaling-stroke"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            pathLength="550"
-            strokeDasharray="200 550"
-            className="animate-stream"
-            style={{
-              filter: "drop-shadow(0 0 3px #22d3ee) drop-shadow(0 0 8px #22d3ee) drop-shadow(0 0 20px rgba(255,255,255,0.8))"
-            }}
-          />
+          {[
+            { color: '#22d3ee', glow: 'rgba(34,211,238,0.8)', delay: '0s' },
+            { color: '#f472b6', glow: 'rgba(244,114,182,0.8)', delay: '-3s' },
+            { color: '#fde047', glow: 'rgba(253,224,71,0.8)', delay: '-6s' },
+          ].map((line, i) => (
+            <path
+              key={i}
+              d="M 0 0 L 100 0 L 100 25 L 25 25 L 25 75 L 100 75 L 100 100 L 0 100 L 0 0"
+              fill="none"
+              stroke={line.color}
+              strokeWidth="3"
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              pathLength="550"
+              strokeDasharray="120 630"
+              className="animate-stream"
+              style={{
+                animationDelay: line.delay,
+                filter: `drop-shadow(0 0 3px ${line.color}) drop-shadow(0 0 8px ${line.glow}) drop-shadow(0 0 20px rgba(255,255,255,0.7))`
+              }}
+            />
+          ))}
         </svg>
         {images.map((src, index) => {
           const slotClass = SLOTS[index];

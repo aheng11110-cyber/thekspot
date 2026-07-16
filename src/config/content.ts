@@ -92,7 +92,7 @@ export const SITE_CONTENT = {
       ],
     },
     architecture: {
-      subtitle: 'Our Curated Layers',
+      subtitle: '',
       heading: 'One Click. Live Korea.',
       description: "No more planning fatigue. We provide direct Google Map imports for the best local spots and weekly newsletter digests.",
       layers: [
@@ -208,7 +208,7 @@ export const SITE_CONTENT = {
       description: '광고와 오래된 정보는 빼고, 지금 한국에서 가장 뜨는 팝업스토어, 맛집, 카페, 여행지를 실시간으로 큐레이션합니다. 한국의 오늘을 가장 빠르게 만나보세요.',
     },
     cinematic: {
-      text: "한국의 트렌드는 빛의 속도로 변합니다. 평범한 가이드북은 이미 반년 전에 폐업한 곳을 추천하죠. THE K-SPOT은 실시간 커뮤니티 동향, 최신 팝업스토어 일정, 네이버 평점을 엄격하게 필터링하여 마케팅 소음이 0%인 진짜 서울의 바이브를 전달합니다.",
+      text: "한국의 트렌드는 빛의 속도로 변합니다. 평범한 가이드북은 이미 반년 전에 폐업한 곳을 추천하죠. THE K-SPOT은 실시간 커뮤니티 동향, 최신 팝업스토어 일정, 로컬 평점을 엄격하게 필터링하여 마케팅 소음이 0%인 진짜 서울의 바이브를 전달합니다.",
     },
     metrics: {
       subtitle: 'Korean Vibe Curator',
@@ -220,20 +220,20 @@ export const SITE_CONTENT = {
     },
     technology: {
       title: ['진짜 한국의', '바이브'],
-      description: "협찬 광고는 일절 취급하지 않습니다. 온라인 커뮤니티와 네이버 플레이스 데이터를 직접 분석하여, 현지인처럼 한국을 경험하는 데 필요한 완벽한 지도와 문화 가이드만 제공합니다.",
+      description: "협찬 광고는 일절 취급하지 않습니다. 온라인 커뮤니티와 로컬 플레이스 데이터를 직접 분석하여, 현지인처럼 한국을 경험하는 데 필요한 완벽한 지도와 문화 가이드만 제공합니다.",
       features: [
-        { title: '광고 없는 맛집 지도', desc: "가짜 네이버 리뷰와 스폰서 게시물을 필터링한 찐 로컬 맛집 지도입니다." },
+        { title: '광고 없는 맛집 지도', desc: "가짜 리뷰와 스폰서 게시물을 필터링한 찐 로컬 맛집 지도입니다." },
         { title: '실시간 팝업 캘린더', desc: "성수동과 홍대 지역의 팝업스토어 일정과 동선을 매주 업데이트합니다." },
         { title: '주간 신조어 & 밈', desc: "지루한 교과서 언어는 그만. 한국인들이 커뮤니티에서 쓰는 진짜 밈을 알려드립니다." },
         { title: '1-Click Google Maps', desc: "수작업 없이 버튼 한 번으로 맞춤형 루트를 구글 맵에 바로 가져가세요." },
       ],
     },
     architecture: {
-      subtitle: '큐레이션 레이어',
+      subtitle: '',
       heading: '클릭 한 번으로, 리얼 한국',
       description: "여행 계획을 짜느라 피곤해하지 마세요. 최고의 로컬 핫플을 구글 맵으로 직배송 해드리고 주간 뉴스레터로 트렌드를 짚어드립니다.",
       layers: [
-        { num: 1, name: '네이버 필터링 클린 맛집' },
+        { num: 1, name: '로컬 필터링 클린 맛집' },
         { num: 2, name: '성수동 라이브 팝업 투어' },
         { num: 3, name: '주간 K-슬랭 요약본' },
         { num: 4, name: '유용한 해시태그 조회' },
@@ -264,10 +264,10 @@ export const SITE_CONTENT = {
       contactSales: '도입 문의',
       debitOrCreditCard: '직불카드 또는 신용카드',
       oneTime: '/1회 결제',
-      basicDesc: '주간 성수 팝업 루트 맵과 네이버 필터링 클린 맛집 리스트를 제공합니다.',
-      basicFeatures: ['매주 업데이트되는 팝업 지도', '네이버 필터링 클린 맛집 리스트', '기본 K-밈 용어집'],
+      basicDesc: '주간 성수 팝업 루트 맵과 로컬 필터링 클린 맛집 리스트를 제공합니다.',
+      basicFeatures: ['매주 업데이트되는 팝업 지도', '로컬 필터링 클린 맛집 리스트', '기본 K-밈 용어집'],
       proDesc: '실시간 커스텀 맵, K-슬랭 가이드 및 프라이빗 디스코드 채널 피드가 제공됩니다.',
-      proFeatures: ['베이직 플랜의 모든 기능', '전체 네이버 필터링 맛집 지도', '프리미엄 주간 K-슬랭 가이드', '우선 Q&A 및 번역 지원'],
+      proFeatures: ['베이직 플랜의 모든 기능', '전체 로컬 필터링 맛집 지도', '프리미엄 주간 K-슬랭 가이드', '우선 Q&A 및 번역 지원'],
       enterpriseDesc: '맞춤형 기업 투어 가이드 및 리테일 팝업 배치 분석 서비스를 제공합니다.',
       enterpriseFeatures: ['프로 플랜의 모든 기능', 'B2B 브랜드 팝업 배치 지원', '맞춤형 로컬 SEO 및 마케팅 컨설팅', '전담 영어 가이드 지원'],
     },
@@ -366,7 +366,7 @@ export const SITE_CONTENT = {
       ],
     },
     architecture: {
-      subtitle: 'キュレーションレイヤー',
+      subtitle: '',
       heading: 'ワンクリックで、リアルな韓国',
       description: "計画を立てる疲れにさようなら。最高のローカルスポットを直接Googleマップに追加し、週間ニュースレターでお届けします。",
       layers: [
@@ -459,7 +459,7 @@ export const SITE_CONTENT = {
       ],
     },
     architecture: {
-      subtitle: '我们的精选层级',
+      subtitle: '',
       heading: '一键即享。真实的韩国。',
       description: "告别做攻略的疲惫。我们直接为您提供最佳本地景点的谷歌地图导入和每周通讯摘要。",
       layers: [
@@ -552,7 +552,7 @@ export const SITE_CONTENT = {
       ],
     },
     architecture: {
-      subtitle: 'Các Lớp Tuyển Chọn',
+      subtitle: '',
       heading: 'Chỉ 1 Click. Hàn Quốc Sống Động.',
       description: "Không còn mệt mỏi vì lên kế hoạch. Chúng tôi cung cấp các liên kết nhập Google Map trực tiếp cho các địa điểm tuyệt nhất và bản tin tóm tắt hàng tuần.",
       layers: [

@@ -47,7 +47,7 @@ export function FoodMapModal({ onClose }: FoodMapModalProps) {
   const [selectedRes, setSelectedRes] = useState<any>(null);
   const [savedItems, setSavedItems] = useState<Set<string>>(new Set());
   
-  const title = lang === 'KO' ? '네이버 필터링 클린 맛집' : 'Naver-Filtered Clean Food Map';
+  const title = lang === 'KO' ? '로컬 필터링 클린 맛집' : 'Local-Verified Clean Food Map';
   const desc = lang === 'KO' ? '광고와 가짜 리뷰를 모두 걸러낸 진짜 로컬 맛집 리스트입니다.' : 'Curated local restaurants filtered for fake reviews and ads.';
 
   const toggleSave = (e: React.MouseEvent, id: string) => {

@@ -222,9 +222,11 @@ function MainApp() {
             transition={{ duration: 1.0 }}
             viewport={{ once: true, amount: 0.4 }}
           >
-            <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.1em] uppercase mb-3">
-              {architecture.subtitle}
-            </p>
+            {architecture.subtitle && (
+              <p className="text-white/40 text-[13px] sm:text-[14px] tracking-[0.1em] uppercase mb-3">
+                {architecture.subtitle}
+              </p>
+            )}
             <h2
               className="text-white font-light leading-[1.15] tracking-[-0.05em] mb-10"
               style={{ fontSize: 'clamp(28px, 6vw, 56px)' }}

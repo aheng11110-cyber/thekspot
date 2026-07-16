@@ -4,24 +4,24 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const UI_TEXT = {
   EN: {
-    title: "Dynamic\nLookbook",
-    desc: "Hundreds of curated style combinations. Discover the perfect fashion and spaces to inspire you through an ever-changing random puzzle layout."
+    title: "Real-time Spot\nCuration",
+    desc: "Filter your preferences and get instantly matched with suitable locations. Check out real-time curated Korean spots tailored just for you and find them directly on the map."
   },
   KO: {
-    title: "다이내믹\n룩북",
-    desc: "수백 가지의 엄선된 스타일 조합. 매 순간 새롭게 변하는 랜덤 퍼즐 레이아웃으로, 당신에게 영감을 줄 최적의 패션 스타일과 공간을 발견해보세요."
+    title: "실시간 스팟\n큐레이션",
+    desc: "내 취향을 필터링하면 어울리는 장소들이 즉시 매칭됩니다. 오직 당신만을 위해 실시간으로 선별된 한국의 장소들과 그 위치를 지도에서 바로 확인해 보세요."
   },
   JP: {
-    title: "ダイナミック\nルックブック",
-    desc: "何百もの厳選されたスタイルの組み合わせ。常に変化するランダムなパズルレイアウトで、インスピレーションを与える最適なファッションと空間を見つけてください。"
+    title: "リアルタイム\nスポットキュレーション",
+    desc: "あなたの好みをフィルタリングすると、ぴったりな場所が即座にマッチングされます。あなただけのためにリアルタイムで厳選された韓国のスポットと、その位置を地図で直接確認してみてください。"
   },
   CN: {
-    title: "动态\n造型册",
-    desc: "数百种精心挑选的风格组合。通过不断变化的随机拼图布局，发现能激发您灵感的最佳时尚与空间。"
+    title: "实时地点\n策展",
+    desc: "筛选您的喜好，即刻为您匹配合适的地点。在地图上直接查看专为您实时精选的韩国地点及其位置。"
   },
   VN: {
-    title: "Lookbook\nNăng động",
-    desc: "Hàng trăm kết hợp phong cách được tuyển chọn. Khám phá thời trang và không gian hoàn hảo để truyền cảm hứng cho bạn thông qua bố cục câu đố ngẫu nhiên luôn thay đổi."
+    title: "Tuyển chọn\nĐịa điểm trực tiếp",
+    desc: "Lọc sở thích của bạn và ngay lập tức được ghép nối với các địa điểm phù hợp. Kiểm tra các địa điểm Hàn Quốc được tuyển chọn theo thời gian thực dành riêng cho bạn và tìm chúng trực tiếp trên bản đồ."
   }
 };
 

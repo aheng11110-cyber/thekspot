@@ -115,7 +115,7 @@ export function MondrianHeroGrid() {
           const imgUrl = import.meta.env.BASE_URL + srcPath.replace(/^\//, '');
           return (
             <motion.div
-              key={src} // src를 key로 써야 서로 위치가 부드럽게 이동함
+              key={srcPath} // srcPath를 key로 써야 서로 위치가 부드럽게 이동함
               layout
               transition={{
                 type: "spring",

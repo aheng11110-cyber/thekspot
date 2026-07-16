@@ -368,6 +368,17 @@ export function CurationSection() {
                 <div className="w-full xl:w-1/2 flex flex-col">
                   <div className="sticky top-12">
                     <MapDisplay locations={mapLocations} />
+                    
+                    {/* 광고 문의 */}
+                    <div className="mt-8 text-center flex flex-col items-center justify-center">
+                      <span className="text-white/40 text-xs uppercase tracking-widest mb-1.5">For Advertising / Partnership</span>
+                      <a 
+                        href="mailto:cjsy97@gmail.com" 
+                        className="text-white/80 hover:text-white text-sm transition-colors border-b border-white/20 hover:border-white pb-0.5"
+                      >
+                        cjsy97@gmail.com
+                      </a>
+                    </div>
                   </div>
                 </div>
             </motion.div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { RandomHoverWrapper } from './RandomHoverWrapper';
 
 interface OrbitalAnimationProps {
   features: string[];
@@ -56,14 +57,15 @@ export const OrbitalAnimation: React.FC<OrbitalAnimationProps> = ({ features }) 
                     Initial counter-rotation to negate the item's fixed angle.
                     This ensures the text starts perfectly horizontal.
                   */}
-                  <div
-                    className="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center text-center w-[130px] sm:w-[170px] whitespace-pre-wrap leading-tight"
+                  <RandomHoverWrapper
+                    className="bg-white/10 backdrop-blur-md border border-white/20 px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-[0_0_40px_rgba(255,255,255,0.1)] flex items-center justify-center text-center w-[130px] sm:w-[170px] whitespace-pre-wrap leading-tight pointer-events-auto cursor-pointer"
                     style={{ transform: `rotate(${-angle}deg)` }}
+                    variant="glow"
                   >
                     <span className="text-white text-[13px] sm:text-[15px] font-bold tracking-wide drop-shadow-md">
                       {feature}
                     </span>
-                  </div>
+                  </RandomHoverWrapper>
                 </motion.div>
               </div>
             </div>

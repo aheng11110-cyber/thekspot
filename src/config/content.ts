@@ -87,7 +87,7 @@ export const SITE_CONTENT = {
       features: [
         { title: 'Ad-Free Matzip Map', desc: "Curated local maps filtering out fake tourist reviews and sponsored posts." },
         { title: 'Live Popup Calendar', desc: "Weekly updated schedules and routes for popups in Seongsu and Hongdae." },
-        { title: 'Weekly Slang & Memes', desc: "No boring textbook language. Learn the exact words Koreans are typing on Reddit and DC Inside." },
+        { title: 'Live Hashtags', desc: "No boring textbook language. Learn the exact words Koreans are typing on Reddit and DC Inside." },
         { title: '1-Click Google Maps', desc: "Instantly import custom routes to your phone with zero manual effort." },
       ],
     },

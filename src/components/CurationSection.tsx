@@ -327,7 +327,7 @@ export function CurationSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 overflow-y-auto p-6 md:p-12 pt-20 md:pt-20 flex flex-col xl:flex-row gap-8"
+              className="absolute inset-0 overflow-y-auto p-6 md:p-12 pt-20 md:pt-20 flex flex-col-reverse xl:flex-row gap-8"
             >
                 {/* 왼쪽: 리스트 */}
                 <div className="w-full xl:w-1/2 flex flex-col h-full">

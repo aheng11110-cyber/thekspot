@@ -114,27 +114,27 @@ function MainApp() {
       <Navbar entranceComplete={entranceComplete} />
 
       {/* ════════════════ SECTION 1: HERO ════════════════ */}
-      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-row overflow-hidden bg-black">
+      <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-black">
         {/* Animated Mondrian Grid on the left */}
-        <div className="relative w-[45%] h-full shrink-0">
+        <div className="relative w-full h-[35%] lg:w-[45%] lg:h-full shrink-0">
           <MondrianHeroGrid />
         </div>
 
         {/* Hero content on the right */}
         <motion.div
-          className="relative z-20 flex flex-col flex-1 px-8 lg:px-16 pr-8 xl:pr-[360px]"
+          className="relative z-20 flex flex-col flex-1 px-4 lg:px-16 lg:pr-8 xl:pr-[360px]"
 
           initial={{ opacity: 0 }}
           animate={{ opacity: entranceComplete ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center min-h-0">
+          <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center min-h-0 mt-4 lg:mt-0">
             {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
-            <svg viewBox="0 0 850 550" className="w-full h-auto max-h-[35vh] block" preserveAspectRatio="xMinYMin meet">
+            <svg viewBox="0 0 850 550" className="w-full h-auto max-h-[30vh] lg:max-h-[35vh] block" preserveAspectRatio="xMinYMin meet">
               <foreignObject width="100%" height="100%">
-                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-6 pt-20 sm:pt-28 h-full justify-start">
+                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col gap-4 lg:gap-6 pt-4 lg:pt-20 sm:pt-28 h-full justify-start items-center lg:items-start text-center lg:text-left">
                   <h1
-                    className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.03em] text-left"
+                    className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.03em]"
                     style={{ fontSize: 'clamp(48px, 8vw, 84px)' }}
                   >
                     <motion.span
@@ -174,7 +174,7 @@ function MainApp() {
             </svg>
           </div>
 
-          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-start min-h-0 z-30 pl-[65px] sm:pl-[85px] relative left-[40px]">
+          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-center lg:justify-start min-h-0 z-30 lg:pl-[85px] relative lg:left-[40px] my-4 lg:my-0 scale-75 lg:scale-100">
              <motion.div
                 initial={{ opacity: 0 }}
                 animate={entranceComplete ? { opacity: 1 } : {}}
@@ -185,15 +185,15 @@ function MainApp() {
           </div>
 
           {/* Newsletter Form Aligned to the Bottom */}
-          <div className="w-full max-w-[800px] mx-auto pb-8 sm:pb-12 shrink-0">
+          <div className="w-full max-w-[800px] mx-auto pb-4 lg:pb-12 shrink-0 flex justify-center lg:justify-start">
             <motion.form 
               onSubmit={handleSubscribe} 
-              className="max-w-[450px]"
+              className="w-full max-w-[450px]"
               initial={{ opacity: 0, y: 20 }}
               animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <p className="text-white/70 text-[13px] mb-3 uppercase tracking-normal font-medium">Join our Newsletter</p>
+              <p className="text-white/70 text-[13px] mb-3 uppercase tracking-normal font-medium text-center lg:text-left">Join our Newsletter</p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <input 
                   type="email" 
@@ -201,7 +201,7 @@ function MainApp() {
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   required
-                  className="flex-1 bg-transparent border border-white/20 rounded-lg px-4 py-3 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-white/50 transition-all"
+                  className="flex-1 bg-transparent border border-white/20 rounded-lg px-4 py-3 text-[15px] text-white placeholder-white/40 focus:outline-none focus:border-white/50 transition-all text-center lg:text-left"
                 />
                 <button 
                   type="submit" 
@@ -211,8 +211,8 @@ function MainApp() {
                   {newsletterStatus === 'loading' ? 'Sending...' : 'Subscribe'}
                 </button>
               </div>
-              {newsletterStatus === 'success' && <p className="text-[#39FF14] text-[13px] mt-3 font-medium">Successfully subscribed! Welcome aboard.</p>}
-              {newsletterStatus === 'error' && <p className="text-red-400 text-[13px] mt-3 font-medium">Failed to subscribe. Please try again.</p>}
+              {newsletterStatus === 'success' && <p className="text-[#39FF14] text-[13px] mt-3 font-medium text-center lg:text-left">Successfully subscribed! Welcome aboard.</p>}
+              {newsletterStatus === 'error' && <p className="text-red-400 text-[13px] mt-3 font-medium text-center lg:text-left">Failed to subscribe. Please try again.</p>}
             </motion.form>
           </div>
         </motion.div>

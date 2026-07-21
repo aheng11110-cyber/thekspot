@@ -127,7 +127,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
     : (selectedDate ? getPopupsForDate(selectedDate) : []);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-0 sm:p-8">
       <motion.div 
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
         onClick={onClose}
@@ -138,7 +138,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-6xl h-[85vh] bg-[#0a0a0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+        className="relative w-full max-w-6xl h-[100dvh] sm:h-[85vh] bg-[#0a0a0c] border border-white/10 rounded-none sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
       >
         <button 
           onClick={onClose}
@@ -148,7 +148,7 @@ export function PopupCalendar({ onClose }: PopupCalendarProps) {
         </button>
 
         {/* ────────── LEFT: CALENDAR ────────── */}
-        <div className="w-full md:w-[60%] lg:w-[65%] border-b md:border-b-0 md:border-r border-white/10 p-6 sm:p-10 flex flex-col bg-black/20">
+        <div className="w-full md:w-[60%] lg:w-[65%] border-b md:border-b-0 md:border-r border-white/10 p-4 pt-14 sm:p-10 flex flex-col bg-black/20">
           
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl sm:text-4xl font-title font-extrabold text-white tracking-[-0.08em] flex items-center gap-3">

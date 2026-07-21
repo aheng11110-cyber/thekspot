@@ -20,7 +20,7 @@ export function KSlangModal({ onClose }: KSlangModalProps) {
   const desc = lang === 'KO' ? '교과서에 없는, 한국인들이 지금 당장 쓰는 진짜 유행어 사전입니다.' : 'The real slang Koreans are using right now, not the textbook Korean.';
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-0 sm:p-8">
       <motion.div 
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
         onClick={onClose}
@@ -31,7 +31,7 @@ export function KSlangModal({ onClose }: KSlangModalProps) {
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        className="relative w-full max-w-4xl h-[75vh] bg-[#0a0a0c] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+        className="relative w-full max-w-4xl h-[100dvh] sm:h-[75vh] bg-[#0a0a0c] border border-white/10 rounded-none sm:rounded-2xl overflow-hidden shadow-2xl flex flex-col"
       >
         <button 
           onClick={onClose}
@@ -40,7 +40,7 @@ export function KSlangModal({ onClose }: KSlangModalProps) {
           <X size={20} />
         </button>
 
-        <div className="p-6 sm:p-10 border-b border-white/10 bg-black/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className="p-4 pt-14 sm:p-10 border-b border-white/10 bg-black/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h2 className="text-3xl sm:text-4xl font-title font-extrabold text-white tracking-[-0.08em] flex items-center gap-3 mb-2">
               <BookOpen className="text-purple-400/80" />

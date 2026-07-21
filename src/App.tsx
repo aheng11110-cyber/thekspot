@@ -8,6 +8,8 @@ import {
   AnimatePresence,
 } from 'framer-motion';
 import { Navbar } from './components/Navbar';
+import { InteractiveGlobe } from './components/InteractiveGlobe';
+import { MobileFeaturesGrid } from './components/MobileFeaturesGrid';
 import { ConnectAILabLogo } from './components/ConnectAILabLogo';
 import { CurationSection } from './components/CurationSection';
 import { MondrianHeroGrid } from './components/MondrianHeroGrid';
@@ -116,7 +118,7 @@ function MainApp() {
       {/* ════════════════ SECTION 1: HERO ════════════════ */}
       <section className="snap-start snap-always relative h-screen h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-black">
         {/* Animated Mondrian Grid on the left */}
-        <div className="relative w-full h-[35%] lg:w-[45%] lg:h-full shrink-0">
+        <div className="absolute inset-0 lg:relative lg:w-[45%] lg:h-full shrink-0 opacity-20 lg:opacity-100 pointer-events-none lg:pointer-events-auto z-0">
           <MondrianHeroGrid />
         </div>
 
@@ -174,7 +176,7 @@ function MainApp() {
             </svg>
           </div>
 
-          <div className="w-full max-w-[800px] mx-auto flex flex-1 items-center justify-center lg:justify-start min-h-0 z-30 lg:pl-[85px] relative lg:left-[40px] my-4 lg:my-0 scale-75 lg:scale-100">
+          <div className="w-full max-w-[800px] mx-auto hidden lg:flex flex-1 items-center justify-center lg:justify-start min-h-0 z-30 lg:pl-[85px] relative lg:left-[40px] my-4 lg:my-0 scale-75 lg:scale-100">
              <motion.div
                 initial={{ opacity: 0 }}
                 animate={entranceComplete ? { opacity: 1 } : {}}
@@ -183,6 +185,8 @@ function MainApp() {
                 <OrbitalAnimation features={technology.features.map((f: any) => f.title)} />
              </motion.div>
           </div>
+
+          <MobileFeaturesGrid features={technology.features.map((f: any) => f.title)} />
 
           {/* Newsletter Form Aligned to the Bottom */}
           <div className="w-full max-w-[800px] mx-auto pb-4 lg:pb-12 shrink-0 flex justify-center lg:justify-start">

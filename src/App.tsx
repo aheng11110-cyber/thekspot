@@ -182,11 +182,25 @@ function MainApp() {
                 animate={entranceComplete ? { opacity: 1 } : {}}
                 transition={{ duration: 1, delay: 0.8 }}
              >
-                <OrbitalAnimation features={technology.features.map((f: any) => f.title)} />
+                <OrbitalAnimation 
+                  features={technology.features.map((f: any) => f.title)} 
+                  onFeatureClick={(idx) => {
+                    if (idx === 0) setShowCalendar(true);
+                    else if (idx === 1) setShowHashtagModal(true);
+                    else if (idx === 2) setShowFoodMapModal(true);
+                  }}
+                />
              </motion.div>
           </div>
 
-          <MobileFeaturesGrid features={technology.features.map((f: any) => f.title)} />
+          <MobileFeaturesGrid 
+            features={technology.features.map((f: any) => f.title)} 
+            onFeatureClick={(idx) => {
+              if (idx === 0) setShowCalendar(true);
+              else if (idx === 1) setShowHashtagModal(true);
+              else if (idx === 2) setShowFoodMapModal(true);
+            }}
+          />
 
           {/* Newsletter Form Aligned to the Bottom */}
           <div className="w-full max-w-[800px] mx-auto pb-4 lg:pb-12 shrink-0 flex justify-center lg:justify-start">

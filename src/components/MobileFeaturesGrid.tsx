@@ -3,9 +3,10 @@ import { RandomHoverWrapper } from './RandomHoverWrapper';
 
 interface MobileFeaturesGridProps {
   features: string[];
+  onFeatureClick?: (index: number) => void;
 }
 
-export function MobileFeaturesGrid({ features }: MobileFeaturesGridProps) {
+export function MobileFeaturesGrid({ features, onFeatureClick }: MobileFeaturesGridProps) {
   return (
     <div className="w-full max-w-[400px] mx-auto grid grid-cols-2 gap-3 px-4 my-6 lg:hidden z-30 relative">
       {features.map((feature, idx) => (
@@ -18,7 +19,8 @@ export function MobileFeaturesGrid({ features }: MobileFeaturesGridProps) {
           <RandomHoverWrapper
             as="div"
             variant="border"
-            className="w-full h-full p-3 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center text-center shadow-lg"
+            onClick={() => onFeatureClick?.(idx)}
+            className="w-full h-full p-3 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center text-center shadow-lg cursor-pointer"
           >
             <span className="text-white/80 text-[11px] sm:text-[13px] font-medium leading-tight">
               {feature}

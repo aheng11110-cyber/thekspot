@@ -143,23 +143,23 @@ function MainApp() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.8, delay: 0.2 }}
-                      className="inline-block"
+                      className="inline-block whitespace-pre-line"
                     >
-                      {hero.titleLeft.join(' ')}
+                      {hero.titleLeft.filter(Boolean).join('\n')}
                     </motion.span>
                     <br />
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
                       animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.8, delay: 0.4 }}
-                      className="inline-block text-white/60"
+                      className="inline-block text-white/60 whitespace-pre-line"
                     >
-                      {hero.titleRight.join(' ')}
+                      {hero.titleRight.filter(Boolean).join('\n')}
                     </motion.span>
                   </h1>
 
                   <motion.p
-                    className="max-w-full text-white/80 leading-[1.6] font-normal"
+                    className="max-w-full text-white/80 leading-[1.6] font-normal break-keep"
                     style={{ fontSize: '32px' }}
                     initial={{ opacity: 0, y: 25 }}
                     animate={entranceComplete ? { opacity: 1, y: 0 } : {}}

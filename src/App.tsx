@@ -139,10 +139,10 @@ function MainApp() {
           transition={{ duration: 1 }}
         >
           <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center min-h-0 mt-4 lg:mt-0">
-            {/* 텍스트가 SVG 경계를 넘어 잘리지 않도록 viewBox 높이를 800으로 늘리고, 폰트 크기를 약간 줄여 넉넉하게 들어오도록 수정했습니다. foreignObject의 크기도 viewBox와 정확히 동일하게 맞춰 브라우저 버그를 방지합니다. */}
-            <svg viewBox="0 0 1000 800" className="w-full h-full max-h-[40vh] lg:max-h-full block" preserveAspectRatio="xMinYMid meet">
-              <foreignObject width="1000" height="800" x="0" y="0">
-                <div className="flex flex-col gap-4 lg:gap-6 pt-4 lg:pt-12 sm:pt-16 justify-start items-center lg:items-start text-center lg:text-left w-full h-full">
+            {/* 텍스트가 SVG 경계를 넘어 잘리지 않으면서도 상단 네비게이션을 침범하지 않도록, viewBox 높이를 텍스트 실제 높이에 딱 맞는 400으로 타이트하게 설정합니다. 내부 pt 여백을 제거하여 위로 밀리는 현상을 방지합니다. */}
+            <svg viewBox="0 0 1000 400" className="w-full h-full max-h-[40vh] lg:max-h-full block" preserveAspectRatio="xMinYMid meet">
+              <foreignObject width="1000" height="400" x="0" y="0">
+                <div className="flex flex-col gap-4 lg:gap-6 justify-start items-center lg:items-start text-center lg:text-left w-full h-full">
                   <h1
                     className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.03em]"
                     style={{ fontSize: '64px' }}

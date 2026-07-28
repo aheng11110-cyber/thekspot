@@ -160,7 +160,7 @@ function MainApp() {
 
                   <motion.p
                     className="max-w-full text-white/80 leading-[1.6] font-normal break-keep"
-                    style={{ fontSize: '32px' }}
+                    style={{ fontSize: '40px' }}
                     initial={{ opacity: 0, y: 25 }}
                     animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
                     transition={{

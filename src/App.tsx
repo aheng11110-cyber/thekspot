@@ -31,20 +31,12 @@ import { KSlangModal } from './components/KSlangModal';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { auth } from './lib/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { AppView } from './pages/AppView';
 
 export default function App() {
   const isAdminRoute = window.location.search.includes('admin=true');
-  const isAppRoute = window.location.pathname.startsWith('/app') || window.location.search.includes('mode=app');
-
   if (isAdminRoute) {
     return <AdminNews />;
   }
-  
-  if (isAppRoute) {
-    return <AppView />;
-  }
-  
   return <MainApp />;
 }
 
@@ -139,13 +131,13 @@ function MainApp() {
           transition={{ duration: 1 }}
         >
           <div className="w-full max-w-[800px] mx-auto flex-1 flex flex-col justify-center min-h-0 mt-4 lg:mt-0">
-            {/* 텍스트가 SVG 경계를 넘어 잘리지 않으면서도 상단 네비게이션을 침범하지 않도록, viewBox 높이를 텍스트 실제 높이에 딱 맞는 400으로 타이트하게 설정합니다. 내부 pt 여백을 제거하여 위로 밀리는 현상을 방지합니다. */}
-            <svg viewBox="0 0 1000 400" className="w-full h-full max-h-[40vh] lg:max-h-full block" preserveAspectRatio="xMinYMid meet">
-              <foreignObject width="1000" height="400" x="0" y="0">
-                <div className="flex flex-col gap-4 lg:gap-6 justify-start items-center lg:items-start text-center lg:text-left w-full h-full">
+            {/* 텍스트를 벡터 이미지(SVG)로 감싸서 모바일에서도 절대 줄바꿈이 깨지지 않고 그림처럼 통째로 비율 유지 축소되도록 구현 */}
+            <svg viewBox="0 0 850 550" className="w-full h-auto max-h-[30vh] lg:max-h-[35vh] block" preserveAspectRatio="xMinYMin meet">
+              <foreignObject width="100%" height="100%">
+                <div className="flex flex-col gap-4 lg:gap-6 pt-4 lg:pt-20 sm:pt-28 h-full justify-start items-center lg:items-start text-center lg:text-left">
                   <h1
                     className="text-white font-title font-extrabold leading-[1.1] tracking-[-0.03em]"
-                    style={{ fontSize: '64px' }}
+                    style={{ fontSize: '76px' }}
                   >
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
@@ -167,8 +159,8 @@ function MainApp() {
                   </h1>
 
                   <motion.p
-                    className="w-full text-white/80 leading-[1.6] font-normal mt-2"
-                    style={{ fontSize: '28px' }}
+                    className="max-w-full text-white/80 leading-[1.6] font-normal"
+                    style={{ fontSize: '32px' }}
                     initial={{ opacity: 0, y: 25 }}
                     animate={entranceComplete ? { opacity: 1, y: 0 } : {}}
                     transition={{

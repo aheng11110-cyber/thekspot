@@ -124,7 +124,7 @@ function MainApp() {
 
         {/* Hero content on the right */}
         <motion.div
-          className="relative z-20 flex flex-col flex-1 px-4 lg:px-16 lg:pr-8 xl:pr-[360px]"
+          className="relative z-20 flex flex-col flex-1 px-4 lg:pl-16 lg:pr-[300px] xl:pr-[360px]"
 
           initial={{ opacity: 0 }}
           animate={{ opacity: entranceComplete ? 1 : 0 }}
